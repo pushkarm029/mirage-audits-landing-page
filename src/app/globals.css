@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;     
+  }
+}
+
+body {
+  background-color: #0a0a0a; /* Use CSS variable for background */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('/bg-gradient.png') no-repeat center top / cover; /* Overlay a darker gradient */
+  opacity: 1; 
+  z-index: -1;
+}
+
+/* Hero Content Animation */
+.hero-content {
+  opacity: 0.8;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Moving Glow Effect */
+@keyframes moving-glow {
+  0% {
+    box-shadow: 0 0 80px 40px rgba(255, 100, 0, 1);
+    transform: translate(0%, 0%);
+  }
+  50% {
+    box-shadow: 0 0 100px 50px rgba(0, 150, 255, 1);
+    transform: translate(-20px, 20px);
+  }
+  100% {
+    box-shadow: 0 0 80px 40px rgba(255, 100, 0, 1);
+    transform: translate(0%, 0%);
+  }
+}
+
+/* ------- Dropdown Menu Fixes -------- */
+.dropdown-menu {
+  min-width: 240px; /* Ensures proper width */
+  background-color: var(--background);
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: var(--foreground);
+  text-align: left;
+  white-space: nowrap; /* Prevents text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+}
+
+.pricing-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px; /* Set a fixed width */
+  height: 700px; /* Set a fixed height */
+  min-height: 500px; /* Ensure all cards have the same height */
+  padding: 20px;
+}
+
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: var(--blurY, 50%);
+  left: var(--blurX, 50%);
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(50px);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease-out, transform 0.4s ease-out, filter 0.6s ease-out;
+  pointer-events: none;
+  opacity: 0.6; /* Keep the glow always visible */
+}
+
+.pricing-card:hover::before {
+  opacity: 0.8; /* Slightly increase on hover */
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: blur(60px);
+}
