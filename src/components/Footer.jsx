@@ -1,26 +1,21 @@
-"use client";
 import GradientButton from "./ui/GradientButton";
 import { FaTwitter, FaGithub, FaDiscord } from "react-icons/fa";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import "@fontsource/inter"; 
 
 export default function HeroFooterSection() {
-  const incentives = [
+  const ctaPoints = [
     {
-      icon: "🎮",
-      title: "Early Access",
-      description: "Be the first to try Game9 features before anyone else."
+      title: "No Credit Card",
+      description: "Get your free security scan without any payment information."
     },
     {
-      icon: "🏆",
-      title: "Exclusive Rewards",
-      description: "Earn special in-game items only available to early supporters."
+      title: "No Sales Calls",
+      description: "Just instant insights into your smart contract risks."
     },
     {
-      icon: "👥",
-      title: "Community Voice",
-      description: "Your ideas directly influence what we build next."
+      title: "10 Minutes",
+      description: "Get your security scan results in minutes, not weeks."
     }
   ];
 
@@ -40,39 +35,37 @@ export default function HeroFooterSection() {
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
             >
-              Join Our Journey
+              Ready to Ship Secure?
             </h1>
             
             <p 
               className="text-lg md:text-xl text-gray-300 mb-8"
             >
-              Help shape the future of Game9 with your feedback and ideas.
+              Get your free security scan in 10 minutes
             </p>
             
-            {/* Incentives Section */}
+            {/* Benefits Section */}
             <div 
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 mb-14"
             >
-              {incentives.map((item, index) => (
-                <motion.div 
+              {ctaPoints.map((item, index) => (
+                <div 
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 transition-all duration-300 hover:border-blue-300/30 hover:-translate-y-1"
-                  whileHover={{ scale: 1.03, borderColor: "rgba(147, 197, 253, 0.3)" }}
+                  className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10"
                 >
-                  <div className="text-blue-300 text-2xl font-bold mb-3">{item.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
                   <p className="text-white/70 text-sm">{item.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
             
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <div 
-              className="mt-8 items-center justify-center flex mb-16"
+              className="mt-8 flex flex-col sm:flex-row gap-4 items-center justify-center mb-16"
             >
-              <a href="https://forms.example.com/game9-feedback" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <GradientButton className="h-14 px-8 text-lg font-bold">
-                  Join Beta Access
+                  Get Free Scan
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -88,7 +81,15 @@ export default function HeroFooterSection() {
                   </svg>
                 </GradientButton>
               </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <button className="h-14 px-8 text-lg font-bold bg-white/10 hover:bg-white/20 text-white rounded-xl border border-white/20">
+                  Book 15-min Demo
+                </button>
+              </a>
             </div>
+            <p className="text-white/60 text-sm">
+              Join 150+ projects building safer Web3 on niche chains
+            </p>
           </div>
         </div>
 
@@ -98,17 +99,20 @@ export default function HeroFooterSection() {
           <div className="flex flex-col space-y-4 items-center md:items-start text-center md:text-left">
             {/* Logo & Name */}
             <div className="flex items-center space-x-2">
-              <Image src="/logo.png" alt="Game9 Logo" width={24} height={24} />
-              <span className="text-lg text-white font-bold">Game9</span>
+              <Image src="/logo.png" alt="MirageAudits Logo" width={24} height={24} />
+              <span className="text-lg text-white font-bold">MirageAudits</span>
             </div>
             {/* Description */}
             <p className="text-white/60 text-sm max-w-xs">
-              The next generation cloud gaming platform built for gamers.
+              The security partner for builders who can't wait. Specializing in Solana • Sui • Cardano • Arbitrum • Base • Polygon
             </p>
             {/* Links (Visible on Mobile, Hidden on MD+) */}
             <ul className="space-y-1 text-white/80 md:hidden">
-              <li><a href="#what-we-offer" className="hover:text-white hover:underline py-1">What We Offer</a></li>
-              <li><a href="#testimonials" className="hover:text-white hover:underline py-1">Testimonials</a></li>
+              <li><a href="#services" className="hover:text-white hover:underline py-1">Services</a></li>
+              <li><a href="#process" className="hover:text-white hover:underline py-1">Process</a></li>
+              <li><a href="#pricing" className="hover:text-white hover:underline py-1">Pricing</a></li>
+              <li><a href="#partners" className="hover:text-white hover:underline py-1">Partners</a></li>
+              <li><a href="/careers" className="hover:text-white hover:underline py-1">Careers</a></li>
             </ul>
             {/* Social Icons */}
             <div className="flex space-x-4 text-white/60 text-xl pt-2">
@@ -122,9 +126,12 @@ export default function HeroFooterSection() {
           <div className="text-white/60 hidden md:flex flex-col items-end">
             <h3 className="text-white font-medium mb-2">Quick Links</h3>
             <ul className="space-y-1 text-right">
-              <li><a href="#what-we-offer" className="hover:text-white hover:underline py-1">What We Offer</a></li>
-              <li><a href="#testimonials" className="hover:text-white hover:underline py-1">Testimonials</a></li>
-              {/* Add other relevant links here if needed */}
+              <li><a href="#services" className="hover:text-white hover:underline py-1">Services</a></li>
+              <li><a href="#process" className="hover:text-white hover:underline py-1">Process</a></li>
+              <li><a href="#pricing" className="hover:text-white hover:underline py-1">Pricing</a></li>
+              <li><a href="#partners" className="hover:text-white hover:underline py-1">Partners</a></li>
+              <li><a href="/careers" className="hover:text-white hover:underline py-1">Careers</a></li>
+              <li><a href="mailto:contact@mirageaudits.com" className="hover:text-white hover:underline py-1">Contact</a></li>
             </ul>
           </div>
         </footer>

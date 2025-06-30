@@ -1,27 +1,27 @@
 import HeroSectionWithNavbar from "@/components/Hero";
-// import Featuresection from "@/components/Featuresection";
-// import Githubsection from "@/components/Githubsection";
-// import Pricing from "@/components/Pricing";
+import Featuresection from "@/components/Featuresection";
+import PartnersSection from "@/components/Githubsection";
+import Pricing from "@/components/Pricing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import Faq from "@/components/Faq";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata = {
-  title: "Game9 - Next Generation Cloud Gaming | Instant Access, Zero Wait",
-  description: "Experience the future of cloud gaming with Game9. Instant access to a vast library, zero downtime, and no waiting queues. Join the beta today!",
-  metadataBase: new URL('https://getgame9.com'),
+  title: "Mirage Audits - Ship Secure. Ship Fast. | Web3 Security for Small Projects",
+  description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Get expert monitoring and rapid reviews for $500-2000/month instead of $50K+ one-time audits.",
+  metadataBase: new URL('https://mirageaudits.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Game9 - Next Generation Cloud Gaming | Instant Access, Zero Wait",
-    description: "Experience the future of cloud gaming with Game9. Instant access, zero downtime, no queues.",
-    url: 'https://getgame9.com',
-    siteName: 'Game9',
+    title: "Mirage Audits - Ship Secure. Ship Fast. | Web3 Security for Small Projects",
+    description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Stop choosing between security and speed.",
+    url: 'https://mirageaudits.com',
+    siteName: 'Mirage Audits',
     // images: [ // Optional: Add OG image URLs
     //   {
-    //     url: 'https://getgame9.com/og-image.png', 
+    //     url: 'https://mirageaudits.com/og-image.png', 
     //     width: 1200,
     //     height: 630,
     //   },
@@ -31,22 +31,22 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Game9 - Next Generation Cloud Gaming | Instant Access, Zero Wait",
-    description: "Experience the future of cloud gaming with Game9. Instant access, zero downtime, no queues.",
-    // images: ['https://getgame9.com/twitter-image.png'], // Optional: Add Twitter image URL
+    title: "Mirage Audits - Ship Secure. Ship Fast. | Web3 Security for Small Projects",
+    description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Stop choosing between security and speed.",
+    // images: ['https://mirageaudits.com/twitter-image.png'], // Optional: Add Twitter image URL
   },
   // Adding JSON-LD Structured Data
   other: {
     'script[type="application/ld+json"]': JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Game9",
-      "url": "https://getgame9.com",
-      // "logo": "https://getgame9.com/logo.png", // Uncomment and update if you have a logo URL
-      "description": "Next generation cloud gaming platform offering instant access, zero downtime, and no waiting queues.",
+      "name": "Mirage Audits",
+      "url": "https://mirageaudits.com",
+      // "logo": "https://mirageaudits.com/logo.png", // Uncomment and update if you have a logo URL
+      "description": "Web3 security firm specializing in Solana, Sui, Cardano & L2 projects. Professional security audits and monitoring without enterprise pricing.",
       // "sameAs": [ // Uncomment and add social media links if available
-      //   "https://twitter.com/getgame9", 
-      //   "https://facebook.com/getgame9"
+      //   "https://twitter.com/mirageaudits", 
+      //   "https://linkedin.com/company/mirageaudits"
       // ]
     }),
   },
@@ -57,13 +57,10 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Navbar/>
       <HeroSectionWithNavbar />
-      <Testimonial />
-      {/* Sections removed to keep it minimal and story-focused
-      <Featuresection className="pt-20"/>
-      <Githubsection/>
+      <Featuresection />
       <Pricing/>
-      <Faq/>
-      */}
+      <PartnersSection />
+      <Testimonial />
       <Footer/>
     </div>
   );

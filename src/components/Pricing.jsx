@@ -24,8 +24,8 @@ export default function PricingTable() {
   return (
     <div className="w-full flex flex-col items-center gap-6 py-12 bg-black text-white">
       <PricingHeader
-        title="Choose Your Plan"
-        subtitle="Flexible pricing for everyone."
+        title="Choose Your Defense Level"
+        subtitle="Security that fits your budget and timeline."
         frequencies={["monthly", "yearly"]}
         selectedFrequency={selectedFrequency}
         onFrequencyChange={setSelectedFrequency}
@@ -33,33 +33,32 @@ export default function PricingTable() {
 
       <div className="w-full flex flex-col md:flex-row justify-center gap-6">
         <PricingCard
-          title="On The Go"
-          price={{ monthly: 2, yearly: 20 }}
-          description="Free for all users"
-          features={["3 Projects", "Record & Export", "1080p, High quality, 30 FPS", "Up to 5 mins recordings", "10 MB video/audio clips", "500 MB storage"]}
-          buttonText="Join Waitlist"
+          title="Phantom Scan - $300/month"
+          price={{ monthly: 300, yearly: 3000 }}
+          description="per month"
+          features={["AI-powered vulnerability detection across 50+ attack vectors", "Automated gas optimization recommendations", "Weekly security health scores", "Slack/Discord real-time alerts", "Basic compliance checklist (Solana/EVM standards)", "Community support access", "Perfect for: Solo developers & early MVPs"]}
+          buttonText="Start Phantom Scan"
           buttonClass="bg-gradient-to-b from-white/10 to-black"
           selectedFrequency={selectedFrequency}
         />
 
         <PricingCard
-          title="Gold"
-          price={{ monthly: 40, yearly: 400 }}
-          description="per month/user"
-          discount={{ monthly: 65, yearly: 500 }}
-          features={["Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS", "Unlimited recordings", "500 MB video/audio clips", "50 GB storage", "AI Voices (120 mins per month)", "Image/Video Generation, Chat, Notes", "Remove background noise", "Transcribe Audio/Video", "Premium backgrounds and videos"]}
-          buttonText="Become an Early Supporter"
+          title="Mirage Pro - $1,000/month"
+          price={{ monthly: 1000, yearly: 10000 }}
+          description="per month - Most Popular"
+          features={["Everything in Phantom Scan", "Human expert validation by certified auditors", "Traditional audit report (industry standard)", "Issue resolution guidance & best practices", "Fix verification & approval process", "Direct expert chat support (48hr response)", "Quarterly security strategy sessions", "Perfect for: Pre-launch teams seeking credibility"]}
+          buttonText="Choose Mirage Pro"
           buttonClass="bg-blue-600 hover:bg-blue-700"
           selectedFrequency={selectedFrequency}
+          isPopular={true}
         />
 
         <PricingCard
-          title="Platinum"
-          price={{ monthly: 100, yearly: 1000 }}
-          description="per month/user"
-          discount={{ monthly: 140, yearly: 1200 }}
-          features={["Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS", "Unlimited recordings", "1 GB video/audio clips", "100 GB storage", "AI Voices (240 mins per month)", "Image/Video Generation, Chat, Notes", "Remove background noise", "Transcribe Audio/Video", "Premium backgrounds and videos"]}
-          buttonText="Become an Early Supporter"
+          title="Mirage Max - $2,500/month"
+          price={{ monthly: 2500, yearly: 25000 }}
+          description="per month"
+          features={["Everything in Mirage Pro", "Complete dual-defense audit process", "Post-audit implementation support", "Secondary re-review after fixes (our signature process)", "Emergency incident response (24/7)", "Final certification for investors/exchanges", "Dedicated security consultant", "Custom penetration testing", "Bug bounty program setup & management", "Perfect for: Production protocols handling real funds"]}
+          buttonText="Get Mirage Max"
           buttonClass="bg-gradient-to-b from-white/10 to-black"
           selectedFrequency={selectedFrequency}
         />
@@ -68,19 +67,25 @@ export default function PricingTable() {
   );
 }
 
-function PricingCard({ title, price, description, features, buttonText, buttonClass, selectedFrequency }) {
-  const isFirstCard = title === "On The Go";
+function PricingCard({ title, price, description, features, buttonText, buttonClass, selectedFrequency, discount, isPopular }) {
+  const isFirstCard = title === "Phantom Scan - $300/month";
 
   return (
     <div className="pricing-card flex flex-col h-full p-6 rounded-lg bg-zinc-900 bg-opacity-70 backdrop-blur-lg relative overflow-hidden mx-3">
       <div className="glow-effect"></div>
+      
+      {isPopular && (
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+          Most Popular
+        </div>
+      )}
 
       <h2 className="text-xl font-bold mb-4">{title}</h2>
       <hr className="border-gray-600 border-1 w-full mb-4" />
 
-      {/* Adjust price alignment for the first card */}
-      <div className={`mb-6 flex flex-col items-start w-full ${isFirstCard ? "pl-16" : "pl-8"}`}>  
-        <div className="relative h-12">
+      {/* Price section */}
+      <div className="mb-6 flex flex-col items-start w-full pl-4">  
+        <div className="relative h-12 flex items-center gap-2">
           <NumberFlow
             format={{
               style: "currency",
@@ -90,12 +95,17 @@ function PricingCard({ title, price, description, features, buttonText, buttonCl
             value={price[selectedFrequency]}
             className="text-3xl font-bold"
           />
+          {discount && (
+            <span className="text-lg text-zinc-500 line-through">
+              ${discount[selectedFrequency]}
+            </span>
+          )}
         </div>
         <p className="text-zinc-400">{description}</p>
       </div>
 
-      {/* Adjust feature list alignment for the first card */}
-      <div className={`space-y-4 flex-grow ${isFirstCard ? "pl-2" : "pl-4"}`}> 
+      {/* Feature list */}
+      <div className="space-y-4 flex-grow pl-4"> 
         {features.map((feature, index) => (
           <Feature key={index} text={feature} index={index} />
         ))}

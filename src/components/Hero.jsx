@@ -1,31 +1,19 @@
-"use client";
-
 import GradientButton from "./ui/GradientButton";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function HeroSectionWithNavbar() {
-  // const [isMounted, setIsMounted] = useState(false);
-
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
-
   const benefits = [
     {
-      icon: "⚡",
-      title: "Zero Downtime",
-      description: "Our platform is engineered for 99.99% uptime. Game without interruptions, always."
+      title: "Ship in Days, Not Months",
+      description: "24-48 hour security reviews vs 8+ week enterprise backlogs"
     },
     {
-      icon: "🚀",
-      title: "No Waiting Queue",
-      description: "Instant access when you want to play. No more waiting in line after paying."
+      title: "Pay What You Can Afford",
+      description: "$1K-3K/month subscriptions vs $50K+ one-time fees"
     },
     {
-      icon: "🎮",
-      title: "Play Any Game",
-      description: "From AAA titles to indie gems, access our vast library without restrictions."
+      title: "Niche Chain Experts",
+      description: "Deep expertise in Solana, Sui, Cardano & EVM Layer 2s—not just another Ethereum shop"
     }
   ];
 
@@ -38,21 +26,21 @@ export default function HeroSectionWithNavbar() {
         <span 
           className="text-blue-300 font-mono text-sm md:text-base tracking-widest mb-4"
         >
-          NEXT GENERATION CLOUD GAMING PLATFORM
+          WEB3 SECURITY FOR SMALL PROJECTS THAT CAN'T WAIT
         </span>
         
         <h1 
           className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          Welcome to 
-          <span className="text-blue-200"> Game9</span>
+          Ship Secure. 
+          <span className="text-blue-200"> Ship Fast.</span>
         </h1>
         
         <p 
           className="text-white/70 mt-4 text-base md:text-xl max-w-2xl leading-relaxed"
         >
-          This isn&apos;t just another cloud gaming platform charging hefty fees while making you wait. 
-          Game9 is built by gamers who believe in instant access, zero compromises, and putting players first.
+          Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. 
+          Stop choosing between security and speed. Get expert monitoring and rapid reviews for $1K-3K/month instead of $50K+ one-time audits.
         </p>
 
         {/* Benefits Section */}
@@ -61,15 +49,13 @@ export default function HeroSectionWithNavbar() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-12"
         >
           {benefits.map((benefit, index) => (
-            <motion.div 
+            <div 
               key={index}
-              className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 transition-all duration-300 hover:border-blue-300/30 hover:-translate-y-1"
-              whileHover={{ scale: 1.03 }}
+              className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10"
             >
-              <div className="text-3xl mb-3">{benefit.icon}</div>
               <h3 className="text-xl font-semibold text-blue-200 mb-2">{benefit.title}</h3>
               <p className="text-white/70 text-sm">{benefit.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -78,9 +64,9 @@ export default function HeroSectionWithNavbar() {
           id="join-us"
           className="mt-12 md:mt-16"
         >
-          <Link href="https://form.typeform.com/to/H2ifLY5y" target="_blank" rel="noopener noreferrer">
+          <Link href="#" target="_blank" rel="noopener noreferrer">
             <GradientButton className="h-14 px-8 text-lg font-bold">
-              Join Beta Access 
+              Start Free Security Scan
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

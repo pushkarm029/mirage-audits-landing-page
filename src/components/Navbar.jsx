@@ -21,7 +21,7 @@ const Navbar = () => {
     >
       {/* Left: Logo */}
       <div className="flex items-center">
-        <Image src="/logo.png" alt="Game9 Logo" width={150} height={50} className="h-10 w-auto" />
+        <Image src="/logo.png" alt="MirageAudits Logo" width={150} height={50} className="h-10 w-auto" />
       </div>
 
       {/* Middle: Desktop Navigation */}
@@ -29,8 +29,12 @@ const Navbar = () => {
         <NavigationMenu.Root>
           <NavigationMenu.List className="flex space-x-7 text-sm text-white/80">
             {[
-              { name: "What We Offer", href: "#what-we-offer" },
-              { name: "Testimonials", href: "#testimonials" },
+              { name: "Services", href: "#services" },
+              { name: "Process", href: "#process" },
+              { name: "Pricing", href: "#pricing" },
+              { name: "Partners", href: "#partners" },
+              { name: "Careers", href: "/careers" },
+              { name: "Contact", href: "#contact" },
             ].map((item, index) => (
               <NavigationMenu.Item key={index}>
                 <NavigationMenu.Link href={item.href} className="hover:text-white hover:brightness-200 transition-colors">
@@ -46,7 +50,7 @@ const Navbar = () => {
       <div className="hidden lg:flex gap-3">
         <a href="#join-us">
           <GradientButton className="px-4 py-1.5 text-sm font-medium">
-            Join Beta
+            Get Free Scan
           </GradientButton>
         </a>
       </div>
@@ -61,8 +65,12 @@ const Navbar = () => {
         <div className="absolute top-[4rem] left-0 w-full bg-black/80 backdrop-blur-lg rounded-lg shadow-lg py-4 px-6 lg:hidden">
           <ul className="flex flex-col space-y-4 text-white text-center">
             {[
-              { name: "What We Offer", href: "#what-we-offer" },
-              { name: "Testimonials", href: "#testimonials" },
+              { name: "Services", href: "#services" },
+              { name: "Process", href: "#process" },
+              { name: "Pricing", href: "#pricing" },
+              { name: "Partners", href: "#partners" },
+              { name: "Careers", href: "/careers" },
+              { name: "Contact", href: "#contact" },
             ].map((item, index) => (
               <li key={index}>
                 <a href={item.href} className="block py-2 hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>
@@ -76,7 +84,7 @@ const Navbar = () => {
                   className="w-full px-3 py-1.5 text-sm font-medium"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Join Beta
+                  Get Free Scan
                 </GradientButton>
               </a>
             </li>
