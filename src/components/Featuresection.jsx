@@ -1,23 +1,38 @@
 
+"use client";
+
 import { AuditComparison } from "./AuditComparison";
+import { Clock, DollarSign, Shield, AlertTriangle } from "lucide-react";
+import { Particles } from "@/components/magicui/particles";
+import { useEffect, useState } from "react";
 
 const FeatureSection = () => {
+  const [color, setColor] = useState("#ffffff");
+
+  useEffect(() => {
+    setColor("#ffffff");
+  }, []);
+
   const problems = [
     {
       title: "Wait 8+ weeks",
-      description: "for audit slots from top firms"
+      description: "for audit slots from top firms",
+      icon: Clock
     },
     {
       title: "Pay $50K-150K",
-      description: "for enterprise audits (30% of your entire seed round)"
+      description: "for enterprise audits (30% of your entire seed round)",
+      icon: DollarSign
     },
     {
       title: "Ship without security",
-      description: "and pray nothing breaks"
+      description: "and pray nothing breaks",
+      icon: Shield
     },
     {
       title: "Use budget tools",
-      description: "that miss critical vulnerabilities"
+      description: "that miss critical vulnerabilities",
+      icon: AlertTriangle
     }
   ];
 
@@ -44,7 +59,7 @@ const FeatureSection = () => {
   return (
     <section className="relative bg-black text-white py-20">
       {/* About Us Section */}
-      <div id="services" className="max-w-6xl mx-auto px-6 mb-20">
+      {/* <div id="services" className="max-w-6xl mx-auto px-6 mb-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Proven Security Experts Who Actually Ship
@@ -78,48 +93,73 @@ const FeatureSection = () => {
             We're not enterprise consultants—we're builders who secure builders.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Problem Section */}
-      <div className="max-w-6xl mx-auto px-6 mb-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            While Big Projects Get Big Security...
-          </h2>
-          <p className="text-xl text-white/70 mb-8">
-            <strong>Small teams get stuck with impossible choices:</strong>
-          </p>
-        </div>
+      <div className="relative max-w-7xl mx-auto px-6 mb-20">
+        {/* Particles Background */}
+        <Particles
+          className="absolute inset-0 z-0"
+          quantity={60}
+          ease={80}
+          color={color}
+          refresh
+        />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {problems.map((problem, index) => (
-            <div 
-              key={index}
-              className="bg-red-900/20 backdrop-blur-sm p-6 rounded-xl border border-red-500/20"
-            >
-              <h3 className="text-lg font-semibold text-red-300 mb-2">{problem.title}</h3>
-              <p className="text-white/70 text-sm">{problem.description}</p>
-            </div>
-          ))}
+        {/* Content */}
+        <div className="relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="font-space-grotesk text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              While Big Projects Get{" "}
+              <span className="text-blue-200">Big Security</span>...
+            </h2>
+            <p className="font-inter text-lg md:text-xl text-white/70 mb-8">
+              Small teams get stuck with impossible choices:
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {problems.map((problem, index) => (
+              <div 
+                key={index}
+                className="group relative bg-red-900/10 backdrop-blur-lg p-6 rounded-xl border border-red-500/30 hover:border-red-400/50 transition-all duration-300"
+              >
+                {/* Content */}
+                <h3 className="font-space-grotesk text-lg font-semibold text-red-200 mb-2">
+                  {problem.title}
+                </h3>
+                <p className="font-inter text-sm text-white/70">
+                  {problem.description}
+                </p>
+                
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 bg-red-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Solution Section */}
       <div className="max-w-6xl mx-auto px-6 mb-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Built Different. Priced Right.
+          <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold mb-6">
+            Built Different.{" "}
+            <span className="text-blue-200">Priced Right.</span>
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {solutions.map((solution, index) => (
             <div 
               key={index}
-              className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10"
+              className="group relative bg-white/5 backdrop-blur-lg p-6 rounded-xl border border-white/10 hover:border-blue-400/30 transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold text-blue-200 mb-3">{solution.title}</h3>
-              <p className="text-white/70">{solution.description}</p>
+              <h3 className="font-space-grotesk text-lg font-semibold text-blue-200 mb-2">{solution.title}</h3>
+              <p className="font-inter text-sm text-white/70">{solution.description}</p>
+              
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-blue-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>

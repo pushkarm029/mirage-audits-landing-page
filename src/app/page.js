@@ -4,7 +4,6 @@ import PartnersSection from "@/components/Githubsection";
 import Pricing from "@/components/Pricing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// import Faq from "@/components/Faq";
 import Testimonial from "@/components/Testimonial";
 import { SupportedChains } from "@/components/SupportedChains";
 
