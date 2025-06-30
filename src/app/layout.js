@@ -1,46 +1,43 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/Analytics";
 
-// import Footer from "@/components/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 // Define base metadata for the site
 export const metadata = {
-  metadataBase: new URL('https://getgame9.com'),
-  title: { // Add a template for titles on other pages
-    default: 'Game9 - Next Generation Cloud Gaming', // Default title for homepage or if page doesn't specify
-    template: '%s | Game9', // Template for other pages (e.g., "About Us | Game9")
+  metadataBase: new URL('https://mirageaudits.com'),
+  title: {
+    default: 'Mirage Audits - Ship Secure. Ship Fast.',
+    template: '%s | Mirage Audits',
   },
-  description: "Experience the future of cloud gaming with Game9. Instant access to a vast library, zero downtime, and no waiting queues. Join the beta today!", // Default description
-  // Basic icons setup (Next.js automatically handles favicon.ico in /app)
+  description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Stop choosing between security and speed.",
   icons: {
-    icon: '/favicon.ico', // Explicitly link favicon
-    apple: '/apple-touch-icon.png', // Standard Apple touch icon
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
-  // Add WebSite JSON-LD schema
   other: {
     'script[type="application/ld+json"]': JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "url": "https://getgame9.com",
-      "name": "Game9",
-      "description": "Next generation cloud gaming platform offering instant access, zero downtime, and no waiting queues.",
-      // Potential Search Action - uncomment if you add site search
-      // "potentialAction": {
-      //   "@type": "SearchAction",
-      //   "target": "https://getgame9.com/search?q={search_term_string}",
-      //   "query-input": "required name=search_term_string"
-      // }
+      "url": "https://mirageaudits.com",
+      "name": "Mirage Audits",
+      "description": "Web3 security firm specializing in Solana, Sui, Cardano & L2 projects. Professional security audits and monitoring without enterprise pricing.",
     }),
   },
 };
@@ -50,8 +47,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* Head is automatically managed by Next.js metadata API */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
-        // Updated body classes to match Hero section for consistency
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
       >
         {/* Add GA component here - it will only render in production */} 
         <GoogleAnalytics GA_MEASUREMENT_ID="G-2ZG6WW5KNX" />

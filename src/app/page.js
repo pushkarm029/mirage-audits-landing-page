@@ -1,4 +1,4 @@
-import HeroSectionWithNavbar from "@/components/Hero";
+import Hero from "@/components/Hero";
 import Featuresection from "@/components/Featuresection";
 import PartnersSection from "@/components/Githubsection";
 import Pricing from "@/components/Pricing";
@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import Faq from "@/components/Faq";
 import Testimonial from "@/components/Testimonial";
+import { SupportedChains } from "@/components/SupportedChains";
 
 export const metadata = {
   title: "Mirage Audits - Ship Secure. Ship Fast. | Web3 Security for Small Projects",
@@ -56,8 +57,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar/>
-      <HeroSectionWithNavbar />
+      <Hero />
       <Featuresection />
+      <SupportedChains />
       <Pricing/>
       <PartnersSection />
       <Testimonial />

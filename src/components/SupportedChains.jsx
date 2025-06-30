@@ -1,0 +1,117 @@
+import { cn } from "@/lib/utils";
+import { Marquee } from "@/components/magicui/marquee";
+
+const chains = [
+  {
+    name: "Solana",
+    description: "High-performance blockchain",
+  },
+  {
+    name: "Sui", 
+    description: "Move-based smart contracts",
+  },
+  {
+    name: "Cardano",
+    description: "Research-driven blockchain",
+  },
+  {
+    name: "Ethereum",
+    description: "Leading smart contract platform",
+  },
+  {
+    name: "Optimism",
+    description: "Ethereum Layer 2",
+  },
+  {
+    name: "Avalanche",
+    description: "Fast consensus protocol",
+  },
+  {
+    name: "Arbitrum",
+    description: "Ethereum scaling solution",
+  },
+  {
+    name: "Base",
+    description: "Coinbase Layer 2",
+  },
+  {
+    name: "Polygon",
+    description: "Ethereum scaling platform",
+  },
+  {
+    name: "BNB Chain",
+    description: "Binance ecosystem",
+  },
+  {
+    name: "NEAR",
+    description: "Carbon-neutral blockchain",
+  },
+  {
+    name: "Aptos",
+    description: "Move-based blockchain",
+  }
+];
+
+const firstRow = chains.slice(0, chains.length / 2);
+const secondRow = chains.slice(chains.length / 2);
+
+const ChainCard = ({
+  name,
+  description,
+}) => {
+  return (
+    <figure
+      className={cn(
+        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        // dark styles
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+      )}
+    >
+      <div className="flex flex-col items-center text-center gap-3">
+        <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center">
+          <span className="text-white font-bold text-lg">{name.charAt(0)}</span>
+        </div>
+        <div className="flex flex-col">
+          <figcaption className="text-lg font-semibold dark:text-white">
+            {name}
+          </figcaption>
+          <p className="text-sm text-white/60">{description}</p>
+        </div>
+      </div>
+    </figure>
+  );
+};
+
+export function SupportedChains() {
+  return (
+    <section className="py-20 bg-black text-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Securing the Multi-Chain Future
+          </h2>
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <strong>We audit across the entire Web3 ecosystem:</strong>
+          </p>
+        </div>
+        
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {firstRow.map((chain) => (
+              <ChainCard key={chain.name} {...chain} />
+            ))}
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:20s]">
+            {secondRow.map((chain) => (
+              <ChainCard key={chain.name} {...chain} />
+            ))}
+          </Marquee>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black"></div>
+        </div>
+      </div>
+    </section>
+  );
+}

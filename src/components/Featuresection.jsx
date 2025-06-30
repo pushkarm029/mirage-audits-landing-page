@@ -1,4 +1,6 @@
 
+import { AuditComparison } from "./AuditComparison";
+
 const FeatureSection = () => {
   const problems = [
     {
@@ -38,33 +40,6 @@ const FeatureSection = () => {
     }
   ];
 
-  const howItWorks = [
-    {
-      step: "1",
-      title: "Initial Quote & Free Assessment",
-      description: "Upload your code. Get instant AI analysis + pricing quote in 10 minutes."
-    },
-    {
-      step: "2",
-      title: "Rigorous Expert Audit",
-      description: "Our security engineers dive deep into your smart contracts, finding critical vulnerabilities others miss."
-    },
-    {
-      step: "3",
-      title: "Hands-On Issue Resolution",
-      description: "We don't just point out problems—we help you fix them. Code reviews, pair programming sessions, architecture guidance."
-    },
-    {
-      step: "4",
-      title: "Fix Verification & Re-Review",
-      description: "Every fix gets verified. No guessing if you've actually solved the problem."
-    },
-    {
-      step: "5",
-      title: "Final Audit Report & Certification",
-      description: "Ship with confidence. Get a report that actually means something to investors and users."
-    }
-  ];
 
   return (
     <section className="relative bg-black text-white py-20">
@@ -151,34 +126,16 @@ const FeatureSection = () => {
       </div>
 
       {/* How It Works Section */}
-      <div id="process" className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <div id="process" className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
             The Only Security Process That Actually Helps You Ship
           </h2>
-          <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-xl text-white/70 mb-4">
-              <strong>Most firms:</strong> Find bugs → Hand you a PDF → Good luck fixing it yourself
-            </p>
-            <p className="text-xl text-blue-200 font-medium">
-              <strong>We do:</strong> Find bugs → Guide you through fixes → Verify solutions → Certify completion
-            </p>
-          </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {howItWorks.map((step, index) => (
-            <div 
-              key={index}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                {step.step}
-              </div>
-              <h3 className="text-xl font-semibold text-blue-200 mb-4">{step.title}</h3>
-              <p className="text-white/70">{step.description}</p>
-            </div>
-          ))}
+        {/* Audit Comparison Demo */}
+        <div>
+          <AuditComparison />
         </div>
       </div>
     </section>
