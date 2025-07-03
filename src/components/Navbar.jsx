@@ -27,12 +27,11 @@ const Navbar = () => {
         <NavigationMenu.Root>
           <NavigationMenu.List className="font-inter flex space-x-7 text-base text-white/80">
             {[
-              { name: "Services", href: "#services" },
-              { name: "Process", href: "#process" },
               { name: "Pricing", href: "#pricing" },
-              { name: "Partners", href: "#partners" },
-              { name: "Careers", href: "/careers" },
-              { name: "Contact", href: "#contact" },
+              { name: "Audits", href: "#audits" },
+              { name: "Process", href: "#process" },
+              { name: "About", href: "#about" },
+              { name: "Blog", href: "/#" },
             ].map((item, index) => (
               <NavigationMenu.Item key={index}>
                 <NavigationMenu.Link href={item.href} className="hover:text-white hover:brightness-200 transition-colors">
@@ -46,15 +45,10 @@ const Navbar = () => {
 
       {/* Right: CTA Buttons */}
       <div className="hidden lg:flex gap-3">
-        <a href="#pricing">
+        <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
           <button className="relative h-10 px-4 text-sm font-semibold bg-white text-black rounded-md border border-white/20 shadow-md flex items-center gap-2 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
-            <span className="relative z-10 font-inter">Get Free Scan</span>
-          </button>
-        </a>
-        <a href="#contact">
-          <button className="h-10 px-4 text-sm font-medium border border-white/20 rounded-md bg-white/5 backdrop-blur-sm text-white font-inter">
-            Book Demo
+            <span className="relative z-10 font-inter">Book Security Audit</span>
           </button>
         </a>
       </div>
@@ -69,12 +63,11 @@ const Navbar = () => {
         <div className="absolute top-[4rem] left-0 w-full bg-black/80 backdrop-blur-lg rounded-lg shadow-lg py-4 px-6 lg:hidden">
           <ul className="font-inter flex flex-col space-y-4 text-white text-center">
             {[
-              { name: "Services", href: "#services" },
-              { name: "Process", href: "#process" },
               { name: "Pricing", href: "#pricing" },
-              { name: "Partners", href: "#partners" },
-              { name: "Careers", href: "/careers" },
-              { name: "Contact", href: "#contact" },
+              { name: "Audits", href: "#audits" },
+              { name: "Process", href: "#process" },
+              { name: "About", href: "#about" },
+              { name: "Blog", href: "/#" },
             ].map((item, index) => (
               <li key={index}>
                 <a href={item.href} className="block py-2 hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>
@@ -83,21 +76,13 @@ const Navbar = () => {
               </li>
             ))}
             <li className="space-y-3">
-              <a href="#pricing">
+              <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
                 <button 
                   className="relative w-full h-10 px-4 text-sm font-semibold bg-white text-black rounded-md border border-white/20 shadow-md flex items-center justify-center gap-2 transition-all duration-300"
                   onClick={() => setMenuOpen(false)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
-                  <span className="relative z-10 font-inter">Get Free Scan</span>
-                </button>
-              </a>
-              <a href="#contact">
-                <button 
-                  className="w-full h-10 px-4 text-sm font-medium border border-white/20 rounded-md bg-white/5 backdrop-blur-sm text-white font-inter"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Book Demo
+                  <span className="relative z-10 font-inter">Book Security Audit</span>
                 </button>
               </a>
             </li>

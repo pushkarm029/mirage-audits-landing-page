@@ -1,24 +1,22 @@
 import Hero from "@/components/Hero";
+import CredibilitySection from "@/components/CredibilitySection";
+import PricingSection from "@/components/PricingSection";
 import Featuresection from "@/components/Featuresection";
-import PartnersSection from "@/components/Githubsection";
-import Pricing from "@/components/Pricing";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Testimonial from "@/components/Testimonial";
-import { SupportedChains } from "@/components/SupportedChains";
+import Footer from "@/components/NewFooter";
 
 export const metadata = {
-  title: "Mirage Audits - Ship Secure. Ship Fast. | Web3 Security for Small Projects",
-  description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Get expert monitoring and rapid reviews for $500-2000/month instead of $50K+ one-time audits.",
+  title: "MirageAudits - Professional Security Audits for Early-Stage Builders | Rust Ecosystem Specialists",
+  description: "Don't blow your grant money on $50K audits. Professional security for Rust ecosystems at $1K/week. Specialists in Solana, Cardano, Fuel, Sui, and Starknet.",
   metadataBase: new URL('https://mirageaudits.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Mirage Audits - Ship Secure. Ship Fast. | Web3 Security for Small Projects",
-    description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Stop choosing between security and speed.",
+    title: "MirageAudits - Professional Security Audits for Early-Stage Builders",
+    description: "Don't blow your grant money on $50K audits. Professional security for Rust ecosystems at $1K/week. Specialists in Solana, Cardano, Fuel, Sui, and Starknet.",
     url: 'https://mirageaudits.com',
-    siteName: 'Mirage Audits',
+    siteName: 'MirageAudits',
     // images: [ // Optional: Add OG image URLs
     //   {
     //     url: 'https://mirageaudits.com/og-image.png', 
@@ -31,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Mirage Audits - Ship Secure. Ship Fast. | Web3 Security for Small Projects",
-    description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Stop choosing between security and speed.",
+    title: "MirageAudits - Professional Security Audits for Early-Stage Builders",
+    description: "Don't blow your grant money on $50K audits. Professional security for Rust ecosystems at $1K/week. Specialists in Solana, Cardano, Fuel, Sui, and Starknet.",
     // images: ['https://mirageaudits.com/twitter-image.png'], // Optional: Add Twitter image URL
   },
   // Adding JSON-LD Structured Data
@@ -40,10 +38,10 @@ export const metadata = {
     'script[type="application/ld+json"]': JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Mirage Audits",
+      "name": "MirageAudits",
       "url": "https://mirageaudits.com",
       // "logo": "https://mirageaudits.com/logo.png", // Uncomment and update if you have a logo URL
-      "description": "Web3 security firm specializing in Solana, Sui, Cardano & L2 projects. Professional security audits and monitoring without enterprise pricing.",
+      "description": "Rust ecosystem security specialists. Professional security audits for Solana, Cardano, Fuel, Sui, and Starknet at $1K/week.",
       // "sameAs": [ // Uncomment and add social media links if available
       //   "https://twitter.com/mirageaudits", 
       //   "https://linkedin.com/company/mirageaudits"
@@ -57,11 +55,13 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Navbar/>
       <Hero />
+      <CredibilitySection />
+      <PricingSection />
       <Featuresection />
-      <SupportedChains />
-      <Pricing/>
-      <PartnersSection />
-      <Testimonial />
+      {/* <SupportedChains /> */}
+      {/* <Contact/> */}
+      {/* <PartnersSection /> */}
+      {/* <Testimonial /> */}
       <Footer/>
     </div>
   );
