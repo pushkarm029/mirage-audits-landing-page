@@ -51,31 +51,31 @@ export default function CredibilitySection() {
   ];
 
   return (
-    <section id="about" className="relative bg-black text-white py-20">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="about" className="relative bg-black text-white py-12 sm:py-16 lg:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
             Proven{" "}
             <span className="text-blue-200">Non-EVM Specialists</span>
           </h2>
-          <p className="font-inter text-lg md:text-xl text-white/70">
+          <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
             Deep expertise in next-generation blockchains
           </p>
         </div>
 
         {/* Key Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {credibilityStats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-lg p-6 rounded-xl border border-white/10 hover:border-blue-400/30 transition-all duration-300 text-center group"
+              className="bg-white/5 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-white/10 hover:border-blue-400/30 transition-all duration-300 text-center group"
             >
-              <div className="text-3xl font-bold text-blue-200 mb-2 font-space-grotesk">
+              <div className="text-2xl sm:text-3xl font-bold text-blue-200 mb-2 font-space-grotesk">
                 {stat.highlight}
               </div>
-              <h3 className="font-space-grotesk text-lg font-semibold text-white mb-2">
+              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-white mb-2">
                 {stat.title}
               </h3>
               <p className="font-inter text-sm text-white/70">
@@ -86,8 +86,8 @@ export default function CredibilitySection() {
         </div>
 
         {/* Deep Expertise Section */}
-        <div className="bg-white/5 backdrop-blur-lg p-8 rounded-xl border border-white/10 mb-8">
-          <h3 className="font-space-grotesk text-xl font-semibold text-blue-200 mb-6 text-center">
+        <div className="bg-white/5 backdrop-blur-lg p-6 sm:p-8 rounded-xl border border-white/10 mb-6 sm:mb-8">
+          <h3 className="font-space-grotesk text-lg sm:text-xl font-semibold text-blue-200 mb-4 sm:mb-6 text-center">
             Deep Ecosystem Expertise
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
@@ -117,7 +117,7 @@ export default function CredibilitySection() {
         {/* CTA Section */}
         <div className="text-center">
           <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
-            <button className="relative h-12 px-6 text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300 mx-auto">
+            <button className="relative h-11 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
               <span className="relative z-10">Book Security Audit</span>
             </button>

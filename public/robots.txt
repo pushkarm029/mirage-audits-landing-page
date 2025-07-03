@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://getgame9.com
+Host: https://mirageaudits.com
 
 # Sitemaps
-Sitemap: https://getgame9.com/sitemap.xml
+Sitemap: https://mirageaudits.com/sitemap.xml

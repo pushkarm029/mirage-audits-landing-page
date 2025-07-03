@@ -38,20 +38,20 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 md:px-12">
-        <div className="mx-auto max-w-4xl pt-16 md:pt-24">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 md:px-12">
+        <div className="mx-auto max-w-4xl pt-20 sm:pt-24 md:pt-32">
 
           {/* Badge */}
-          <div className="mb-6 text-center">
-            <span className="font-jetbrains-mono text-sm font-medium tracking-widest text-blue-300 md:text-base uppercase">
+          <div className="mb-4 sm:mb-6 text-center">
+            <span className="font-jetbrains-mono text-sm sm:text-base font-medium tracking-widest text-blue-300 md:text-lg uppercase">
               {/* SECURITY AUDITS FOR EARLY-STAGE BUILDERS */}
               Don&apos;t blow your grant money on $10K+ audits.
             </span>
           </div>
 
           {/* Main Headlines */}
-          <div className="mb-8 text-center">
-            <h2 className="font-space-grotesk mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-7xl">
+          <div className="mb-6 sm:mb-8 text-center">
+            <h2 className="font-space-grotesk mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
               Security Audits for{" "}
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Early-Stage Builders</span>
             </h2>
@@ -66,8 +66,8 @@ export default function Hero() {
             </p> */}
 
             {/* Supported Networks */}
-            <div className="mt-8 mb-4">
-              <div className="flex flex-wrap justify-center items-center gap-4 max-w-2xl mx-auto">
+            <div className="mt-6 sm:mt-8 mb-4">
+              <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 max-w-2xl mx-auto">
                 {SUPPORTED_NETWORKS.map((network, index) => (
                   <div
                     key={index}
@@ -75,7 +75,7 @@ export default function Hero() {
                     title={network.name}
                   >
                     <div
-                      className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-jetbrains-mono font-bold text-white/80 group-hover:border-white/40 transition-all duration-300 group-hover:scale-110"
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-jetbrains-mono font-bold text-white/80 group-hover:border-white/40 transition-all duration-300 group-hover:scale-110"
                       style={{
                         backgroundColor: network.color + '20',
                         borderColor: network.color + '40'
@@ -83,7 +83,7 @@ export default function Hero() {
                     >
                       {network.symbol}
                     </div>
-                    <span className="text-xs text-white/50 mt-1 font-inter">
+                    <span className="text-sm text-white/50 mt-1 font-inter">
                       {network.name}
                     </span>
                   </div>
@@ -96,10 +96,10 @@ export default function Hero() {
                     className="flex flex-col items-center"
                     title="More networks coming soon"
                   >
-                    <div className="w-12 h-12 rounded-full border-2 border-white/10 border-dashed flex items-center justify-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white/10 border-dashed flex items-center justify-center">
                       <div className="w-2 h-2 bg-white/20 rounded-full"></div>
                     </div>
-                    <span className="text-xs text-white/30 mt-1 font-inter">
+                    <span className="text-sm text-white/30 mt-1 font-inter">
                       Soon
                     </span>
                   </div>
@@ -109,13 +109,13 @@ export default function Hero() {
           </div>
 
           {/* Benefits Grid */}
-          <div className="mb-16 grid w-full grid-cols-1 gap-6 md:grid-cols-3 mt-12 max-w-6xl mx-auto">
+          <div className="mb-12 sm:mb-16 grid w-full grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3 mt-8 sm:mt-12 max-w-6xl mx-auto">
             {BENEFITS.map((benefit, index) => (
               <div
                 key={index}
-                className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+                className="rounded-xl border border-white/10 bg-white/5 p-4 sm:p-6 backdrop-blur-sm"
               >
-                <h3 className="font-space-grotesk mb-2 text-xl font-semibold text-blue-200">
+                <h3 className="font-space-grotesk mb-2 text-base sm:text-lg md:text-xl font-semibold text-blue-200">
                   {benefit.title}
                 </h3>
                 <p className="font-inter text-sm text-white/70">
@@ -128,7 +128,7 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
-              <button className="relative h-12 px-6 text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300">
+              <button className="relative h-11 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
                 <span className="relative z-10">Book Security Audit</span>
                 <svg

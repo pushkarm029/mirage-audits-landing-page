@@ -60,17 +60,17 @@ const ChainCard = ({
 }) => {
   return (
     <figure
-      className="relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+      className="relative h-full w-48 sm:w-56 md:w-64 cursor-pointer overflow-hidden rounded-xl border p-3 sm:p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
     >
-      <div className="flex flex-col items-center text-center gap-3">
-        <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center">
-          <span className="text-white font-bold text-lg">{name.charAt(0)}</span>
+      <div className="flex flex-col items-center text-center gap-2 sm:gap-3">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center">
+          <span className="text-white font-bold text-base sm:text-lg">{name.charAt(0)}</span>
         </div>
         <div className="flex flex-col">
-          <figcaption className="text-lg font-semibold dark:text-white">
+          <figcaption className="text-base sm:text-lg font-semibold dark:text-white">
             {name}
           </figcaption>
-          <p className="text-sm text-white/60">{description}</p>
+          <p className="text-xs sm:text-sm text-white/60">{description}</p>
         </div>
       </div>
     </figure>
@@ -79,13 +79,13 @@ const ChainCard = ({
 
 export function SupportedChains() {
   return (
-    <section className="py-20 bg-black text-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <section className="py-12 sm:py-16 lg:py-20 bg-black text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Securing the Multi-Chain Future
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
             <strong>We audit across the entire Web3 ecosystem:</strong>
           </p>
         </div>

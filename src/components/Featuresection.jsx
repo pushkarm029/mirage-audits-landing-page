@@ -31,29 +31,29 @@ const FeatureSection = () => {
 
 
   return (
-    <section id="audits" className="relative bg-black text-white py-20">
+    <section id="audits" className="relative bg-black text-white py-12 sm:py-16 lg:py-20">
 
       {/* Problem Section */}
-      <div className="relative max-w-6xl mx-auto px-6 mb-20">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16 lg:mb-20">
         {/* Content */}
         <div className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
               Why Enterprise Audits Fail{" "}
               <span className="text-red-400">Early-Stage Builders</span>
             </h2>
-            <p className="font-inter text-lg md:text-xl text-white/70">
+            <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
               Your grant should build product, not pay audit premiums
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {problems.map((problem, index) => (
               <div 
                 key={index}
-                className="bg-red-900/10 backdrop-blur-lg p-6 rounded-xl border border-red-500/30 text-center"
+                className="bg-red-900/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-red-500/30 text-center"
               >
-                <h3 className="font-space-grotesk text-lg font-semibold text-red-200 mb-2">
+                <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-red-200 mb-2">
                   {problem.title}
                 </h3>
                 <p className="font-inter text-sm text-white/70">
@@ -68,40 +68,40 @@ const FeatureSection = () => {
 
 
       {/* Process Section */}
-      <div id="process" className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold mb-6">
+      <div id="process" className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
             Streamlined Security{" "}
             <span className="text-blue-200">Methodology</span>
           </h2>
-          <p className="font-inter text-lg md:text-xl text-white/70">
+          <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
             Transparent process, predictable timeline
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white/5 backdrop-blur-lg p-8 rounded-xl border border-white/10">
-            <div className="flex items-center mb-4">
-              <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mr-3">
-                <span className="font-jetbrains-mono text-sm font-bold text-green-300">1</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          <div className="bg-white/5 backdrop-blur-lg p-4 sm:p-6 lg:p-8 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3 sm:mb-4">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-green-500/20 rounded-full flex items-center justify-center mr-3">
+                <span className="font-jetbrains-mono text-xs sm:text-sm font-bold text-green-300">1</span>
               </div>
-              <h3 className="font-space-grotesk text-lg font-semibold text-green-200">Discovery (Free)</h3>
+              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-green-200">Discovery (Free)</h3>
             </div>
-            <ul className="font-inter text-sm text-white/70 space-y-1">
+            <ul className="font-inter text-xs sm:text-sm text-white/70 space-y-1">
               <li>• Quick project assessment</li>
               <li>• Fixed-price quote in 24hrs</li>
               <li>• No sales calls or pressure</li>
             </ul>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-lg p-8 rounded-xl border border-white/10">
-            <div className="flex items-center mb-4">
-              <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center mr-3">
-                <span className="font-jetbrains-mono text-sm font-bold text-blue-300">2</span>
+          <div className="bg-white/5 backdrop-blur-lg p-4 sm:p-6 lg:p-8 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3 sm:mb-4">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-500/20 rounded-full flex items-center justify-center mr-3">
+                <span className="font-jetbrains-mono text-xs sm:text-sm font-bold text-blue-300">2</span>
               </div>
-              <h3 className="font-space-grotesk text-lg font-semibold text-blue-200">Security Review</h3>
+              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-blue-200">Security Review</h3>
             </div>
-            <ul className="font-inter text-sm text-white/70 space-y-1">
+            <ul className="font-inter text-xs sm:text-sm text-white/70 space-y-1">
               <li>• Architecture & business logic review</li>
               <li>• Manual code analysis</li>
               <li>• Automated testing & fuzzing</li>
@@ -110,14 +110,14 @@ const FeatureSection = () => {
             </ul>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-lg p-8 rounded-xl border border-white/10">
-            <div className="flex items-center mb-4">
-              <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center mr-3">
-                <span className="font-jetbrains-mono text-sm font-bold text-purple-300">3</span>
+          <div className="bg-white/5 backdrop-blur-lg p-4 sm:p-6 lg:p-8 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3 sm:mb-4">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-500/20 rounded-full flex items-center justify-center mr-3">
+                <span className="font-jetbrains-mono text-xs sm:text-sm font-bold text-purple-300">3</span>
               </div>
-              <h3 className="font-space-grotesk text-lg font-semibold text-purple-200">Ship Secure</h3>
+              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-purple-200">Ship Secure</h3>
             </div>
-            <ul className="font-inter text-sm text-white/70 space-y-1">
+            <ul className="font-inter text-xs sm:text-sm text-white/70 space-y-1">
               <li>• Help you fix every issue</li>
               <li>• Quick verification review</li>
               <li>• Public report for credibility</li>
@@ -139,15 +139,15 @@ const FeatureSection = () => {
       </div>
 
       {/* Final CTA Section */}
-      <div className="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold mb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 text-center">
+        <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">
           Ready to Secure{" "}
           <span className="text-blue-200">Your Project?</span>
         </h2>
         
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
-            <button className="relative h-12 px-6 text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300 mx-auto">
+            <button className="relative h-11 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
               <span className="relative z-10">Book Security Audit</span>
               <svg
@@ -167,11 +167,11 @@ const FeatureSection = () => {
           </a>
         </div>
         
-        <div className="space-y-4">
-          <p className="font-inter text-lg text-white/70">
+        <div className="space-y-3 sm:space-y-4">
+          <p className="font-inter text-base sm:text-lg text-white/70">
             <span className="font-semibold">Contact:</span> security@mirageaudits.com
           </p>
-          <p className="font-inter text-base text-blue-200">
+          <p className="font-inter text-sm sm:text-base text-blue-200">
             <span className="font-semibold">Response time:</span> 4 hours
           </p>
         </div>
