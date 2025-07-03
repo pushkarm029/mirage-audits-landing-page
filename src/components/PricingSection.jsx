@@ -32,9 +32,9 @@ export default function PricingSection() {
         {/* Quick Comparison */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="bg-red-500/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-red-500/30">
-            <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-red-200 mb-3">
+            <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-red-200 mb-3">
               Traditional Audits
-            </h3>
+            </h4>
             <ul className="font-inter text-sm text-white/70 space-y-2">
               <li>• $10K+ minimums</li>
               <li>• 8+ week backlogs</li>
@@ -44,9 +44,9 @@ export default function PricingSection() {
           </div>
           
           <div className="bg-green-500/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-green-500/30">
-            <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-green-200 mb-3">
+            <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-green-200 mb-3">
               Mirage Audits
-            </h3>
+            </h4>
             <ul className="font-inter text-sm text-white/70 space-y-2">
               <li>• $1K weekly rate</li>
               <li>• Start within days</li>

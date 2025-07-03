@@ -1,9 +1,9 @@
 export default function CredibilitySection() {
   const credibilityStats = [
     {
-      title: "Exploits Prevented",
-      description: "Real security that saves real money",
-      highlight: "$100M+"
+      title: "Focused on Niche Ecosystems",
+      description: "Solana, Cardano, Fuel, Sui, Starknet",
+      highlight: "🎯"
     },
     {
       title: "Vulnerabilities Disclosed",
@@ -11,13 +11,14 @@ export default function CredibilitySection() {
       highlight: "40+"
     },
     {
-      title: "Focused on Niche Ecosystems",
-      description: "Solana, Cardano, Fuel, Sui, Starknet",
-      highlight: "5"
+      title: "Exploits Prevented",
+      description: "Real security that saves real money for builders",
+      highlight: "$100M+"
     },
+
     {
       title: "Builders Securing Builders",
-      description: "Not enterprise consultants charging enterprise rates",
+      description: "We understand the startup journey—security shouldn't break your budget",
       highlight: "🤝"
     }
   ];
@@ -29,13 +30,13 @@ export default function CredibilitySection() {
       color: "#9945FF"
     },
     {
-      ecosystem: "Cardano", 
+      ecosystem: "Cardano",
       language: "Plutus",
       color: "#0033AD"
     },
     {
       ecosystem: "Fuel",
-      language: "Sway", 
+      language: "Sway",
       color: "#00C896"
     },
     {
@@ -53,15 +54,15 @@ export default function CredibilitySection() {
   return (
     <section id="about" className="relative bg-black text-white py-12 sm:py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-            Proven{" "}
-            <span className="text-blue-200">Non-EVM Specialists</span>
+            Security Specialists for{" "}
+            <span className="text-blue-200">Early-Stage Builders</span>
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
-            Deep expertise in next-generation blockchains
+            When you're building your project, security should be a priority—not an afterthought
           </p>
         </div>
 
@@ -75,9 +76,9 @@ export default function CredibilitySection() {
               <div className="text-2xl sm:text-3xl font-bold text-blue-200 mb-2 font-space-grotesk">
                 {stat.highlight}
               </div>
-              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-white mb-2">
+              <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-white mb-2">
                 {stat.title}
-              </h3>
+              </h4>
               <p className="font-inter text-sm text-white/70">
                 {stat.description}
               </p>
@@ -86,7 +87,7 @@ export default function CredibilitySection() {
         </div>
 
         {/* Deep Expertise Section */}
-        <div className="bg-white/5 backdrop-blur-lg p-6 sm:p-8 rounded-xl border border-white/10 mb-6 sm:mb-8">
+        <div className="bg-gray-900/60 backdrop-blur-lg p-6 sm:p-8 rounded-xl border border-white/20 mb-6 sm:mb-8">
           <h3 className="font-space-grotesk text-lg sm:text-xl font-semibold text-blue-200 mb-4 sm:mb-6 text-center">
             Deep Ecosystem Expertise
           </h3>
@@ -94,7 +95,7 @@ export default function CredibilitySection() {
             {expertiseAreas.map((area, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 bg-white/5 backdrop-blur-lg px-4 py-2 rounded-lg border border-white/10"
+                className="flex items-center gap-2 bg-gray-900/80 backdrop-blur-lg px-4 py-2 rounded-lg border border-white/20"
               >
                 <div
                   className="w-3 h-3 rounded-full"

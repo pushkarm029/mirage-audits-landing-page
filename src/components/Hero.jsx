@@ -10,7 +10,7 @@ const BENEFITS = [
   },
   {
     title: "$1K/week vs $10K+ minimums",
-    description: "Professional security that won't eat 30% of your seed funding"
+    description: "Professional security that doesn't consume your major development budget"
   },
 ];
 
@@ -44,17 +44,16 @@ export default function Hero() {
           {/* Badge */}
           <div className="mb-4 sm:mb-6 text-center">
             <span className="font-jetbrains-mono text-sm sm:text-base font-medium tracking-widest text-blue-300 md:text-lg uppercase">
-              {/* SECURITY AUDITS FOR EARLY-STAGE BUILDERS */}
-              Don&apos;t blow your grant money on $10K+ audits.
+              Building a Web3 project? Security audit is step #1
             </span>
           </div>
 
           {/* Main Headlines */}
           <div className="mb-6 sm:mb-8 text-center">
-            <h2 className="font-space-grotesk mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+            <h1 className="font-space-grotesk mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
               Security Audits for{" "}
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Early-Stage Builders</span>
-            </h2>
+            </h1>
             {/* <h2 className="font-space-grotesk mb-6 text-2xl font-medium leading-tight md:text-3xl lg:text-4xl text-white/90">
               <span className="text-red-400 font-bold">Don't blow your grant money on $50K audits.</span>
             </h2> */}

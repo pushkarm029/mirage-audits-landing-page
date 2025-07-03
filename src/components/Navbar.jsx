@@ -10,6 +10,8 @@ const Navbar = () => {
 
   return (
     <nav
+      role="navigation"
+      aria-label="Main navigation"
       className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 
       w-full sm:w-[90%] md:w-[75%] lg:w-[66rem] max-w-[66rem] 
       backdrop-blur-lg rounded-xl shadow-lg px-4 sm:px-5 py-2 sm:py-3 
@@ -19,7 +21,7 @@ const Navbar = () => {
     >
       {/* Left: Logo */}
       <div className="flex items-center">
-        <Image src="/logo.png" alt="MirageAudits Logo" width={150} height={50} className="h-8 sm:h-10 w-auto rounded-lg" />
+        <Image src="/logo.png" alt="Mirage Audits - Smart Contract Security Audits for Solana, Cardano, and Non-EVM Blockchains" width={150} height={50} className="h-8 sm:h-10 w-auto rounded-lg" />
       </div>
 
       {/* Middle: Desktop Navigation */}

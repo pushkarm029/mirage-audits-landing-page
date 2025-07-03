@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black text-white">
+    <footer className="relative bg-black text-white" role="contentinfo">
       {/* Background with enhanced glassmorphism effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 to-black backdrop-blur-sm"></div>
       
@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Logo and Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4 sm:mb-6">
-              <Image src="/logo.png" alt="Mirage Audits Logo" width={36} height={36} className="rounded-lg" />
+              <Image src="/logo.png" alt="Mirage Audits - Professional Smart Contract Security Audits" width={36} height={36} className="rounded-lg" />
               <span className="text-xl sm:text-2xl font-bold text-white font-['Space_Grotesk']">Mirage Audits</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">

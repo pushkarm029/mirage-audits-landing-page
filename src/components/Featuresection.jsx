@@ -7,24 +7,24 @@ const FeatureSection = () => {
 
   const problems = [
     {
-      title: "$10K+ minimums",
-      description: "30% of your seed funding gone",
-      icon: DollarSign
+      title: "Skipping security entirely",
+      description: "Building without audits = guaranteed exploits",
+      icon: AlertTriangle
     },
     {
-      title: "Competitors launch while you wait",
-      description: "8+ week backlogs kill momentum",
+      title: "Waiting until mainnet",
+      description: "Post-launch audits can't prevent user fund loss",
       icon: Clock
     },
     {
-      title: "Generic EVM focus",
-      description: "miss critical non-EVM vulnerabilities",
+      title: "Wrong audit firm choice", 
+      description: "EVM-only auditors miss non-EVM vulnerabilities",
       icon: Shield
     },
     {
-      title: "PDF + goodbye",
-      description: "no support fixing what they found",
-      icon: AlertTriangle
+      title: "Budget-breaking minimums",
+      description: "$10K+ audit fees consume your entire runway",
+      icon: DollarSign
     }
   ];
 
@@ -39,11 +39,11 @@ const FeatureSection = () => {
         <div className="relative z-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-              Why Enterprise Audits Fail{" "}
-              <span className="text-red-400">Early-Stage Builders</span>
+              Building a Project? Avoid These{" "}
+              <span className="text-red-400">Security Mistakes</span>
             </h2>
             <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
-              Your grant should build product, not pay audit premiums
+              Don't let expensive, slow audits derail your development timeline
             </p>
           </div>
           
@@ -53,9 +53,12 @@ const FeatureSection = () => {
                 key={index}
                 className="bg-red-900/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-red-500/30 text-center"
               >
-                <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-red-200 mb-2">
+                <div className="flex justify-center mb-3">
+                  <problem.icon className="w-6 h-6 text-red-300" />
+                </div>
+                <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-red-200 mb-2">
                   {problem.title}
-                </h3>
+                </h4>
                 <p className="font-inter text-sm text-white/70">
                   {problem.description}
                 </p>
@@ -71,11 +74,11 @@ const FeatureSection = () => {
       <div id="process" className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-            Streamlined Security{" "}
-            <span className="text-blue-200">Methodology</span>
+            Security Process for{" "}
+            <span className="text-blue-200">Building Projects</span>
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
-            Transparent process, predictable timeline
+            Integrate security into your development workflow—no delays, no surprises
           </p>
         </div>
         
@@ -85,7 +88,7 @@ const FeatureSection = () => {
               <div className="w-6 h-6 sm:w-8 sm:h-8 bg-green-500/20 rounded-full flex items-center justify-center mr-3">
                 <span className="font-jetbrains-mono text-xs sm:text-sm font-bold text-green-300">1</span>
               </div>
-              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-green-200">Discovery (Free)</h3>
+              <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-green-200">Discovery (Free)</h4>
             </div>
             <ul className="font-inter text-xs sm:text-sm text-white/70 space-y-1">
               <li>• Quick project assessment</li>
@@ -99,7 +102,7 @@ const FeatureSection = () => {
               <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-500/20 rounded-full flex items-center justify-center mr-3">
                 <span className="font-jetbrains-mono text-xs sm:text-sm font-bold text-blue-300">2</span>
               </div>
-              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-blue-200">Security Review</h3>
+              <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-blue-200">Security Review</h4>
             </div>
             <ul className="font-inter text-xs sm:text-sm text-white/70 space-y-1">
               <li>• Architecture & business logic review</li>
@@ -115,7 +118,7 @@ const FeatureSection = () => {
               <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-500/20 rounded-full flex items-center justify-center mr-3">
                 <span className="font-jetbrains-mono text-xs sm:text-sm font-bold text-purple-300">3</span>
               </div>
-              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-purple-200">Ship Secure</h3>
+              <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-purple-200">Ship Secure</h4>
             </div>
             <ul className="font-inter text-xs sm:text-sm text-white/70 space-y-1">
               <li>• Help you fix every issue</li>
