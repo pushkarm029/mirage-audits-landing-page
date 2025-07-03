@@ -62,7 +62,7 @@ export default function CredibilitySection() {
             <span className="text-blue-200">Early-Stage Builders</span>
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
-            When you're building your project, security should be a priority—not an afterthought
+            When you&apos;re building your project, security should be a priority—not an afterthought
           </p>
         </div>
 

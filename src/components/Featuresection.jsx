@@ -43,7 +43,7 @@ const FeatureSection = () => {
               <span className="text-red-400">Security Mistakes</span>
             </h2>
             <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
-              Don't let expensive, slow audits derail your development timeline
+              Don&apos;t let expensive, slow audits derail your development timeline
             </p>
           </div>
           
