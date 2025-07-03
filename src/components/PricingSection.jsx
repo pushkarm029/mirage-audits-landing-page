@@ -1,4 +1,17 @@
+'use client';
+
+import { usePostHog } from 'posthog-js/react';
+
 export default function PricingSection() {
+  const posthog = usePostHog();
+
+  const handleCTAClick = () => {
+    posthog?.capture('cta_clicked', {
+      location: 'pricing_section',
+      cta_text: 'Book Security Audit',
+      destination: 'telegram'
+    });
+  };
   return (
     <section id="pricing" className="relative bg-black text-white py-12 sm:py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
@@ -58,7 +71,7 @@ export default function PricingSection() {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
             <button className="relative h-11 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
               <span className="relative z-10">Book Security Audit</span>

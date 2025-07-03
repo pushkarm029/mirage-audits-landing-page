@@ -4,9 +4,26 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { usePostHog } from 'posthog-js/react';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const posthog = usePostHog();
+
+  const handleCTAClick = () => {
+    posthog?.capture('cta_clicked', {
+      location: 'navbar',
+      cta_text: 'Book Security Audit',
+      destination: 'telegram'
+    });
+  };
+
+  const handleNavClick = (itemName) => {
+    posthog?.capture('navigation_clicked', {
+      location: 'navbar',
+      nav_item: itemName
+    });
+  };
 
   return (
     <nav
@@ -36,7 +53,11 @@ const Navbar = () => {
               { name: "Blog", href: "/#" },
             ].map((item, index) => (
               <NavigationMenu.Item key={index}>
-                <NavigationMenu.Link href={item.href} className="hover:text-white hover:brightness-200 transition-colors">
+                <NavigationMenu.Link 
+                  href={item.href} 
+                  className="hover:text-white hover:brightness-200 transition-colors"
+                  onClick={() => handleNavClick(item.name)}
+                >
                   {item.name}
                 </NavigationMenu.Link>
               </NavigationMenu.Item>
@@ -47,7 +68,7 @@ const Navbar = () => {
 
       {/* Right: CTA Buttons */}
       <div className="hidden lg:flex gap-3">
-        <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
+        <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
           <button className="relative h-9 sm:h-10 px-3 sm:px-4 text-xs sm:text-sm font-semibold bg-white text-black rounded-md border border-white/20 shadow-md flex items-center gap-2 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
             <span className="relative z-10 font-inter">Book Security Audit</span>
@@ -72,16 +93,30 @@ const Navbar = () => {
               { name: "Blog", href: "/#" },
             ].map((item, index) => (
               <li key={index}>
-                <a href={item.href} className="block py-2 text-sm sm:text-base hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>
+                <a 
+                  href={item.href} 
+                  className="block py-2 text-sm sm:text-base hover:text-blue-400 transition" 
+                  onClick={() => {
+                    setMenuOpen(false);
+                    handleNavClick(item.name);
+                  }}
+                >
                   {item.name}
                 </a>
               </li>
             ))}
             <li className="space-y-3">
-              <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://t.me/mirageaudits" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => {
+                  setMenuOpen(false);
+                  handleCTAClick();
+                }}
+              >
                 <button 
                   className="relative w-full h-9 sm:h-10 px-3 sm:px-4 text-xs sm:text-sm font-semibold bg-white text-black rounded-md border border-white/20 shadow-md flex items-center justify-center gap-2 transition-all duration-300"
-                  onClick={() => setMenuOpen(false)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
                   <span className="relative z-10 font-inter">Book Security Audit</span>

@@ -1,6 +1,25 @@
+'use client';
+
 import Image from "next/image";
+import { usePostHog } from 'posthog-js/react';
 
 export default function Footer() {
+  const posthog = usePostHog();
+
+  const handleEmailClick = () => {
+    posthog?.capture('email_clicked', {
+      location: 'footer',
+      email: 'security@mirageaudits.com'
+    });
+  };
+
+  const handleCTAClick = () => {
+    posthog?.capture('cta_clicked', {
+      location: 'footer',
+      cta_text: 'Book Security Audit',
+      destination: 'telegram'
+    });
+  };
   return (
     <footer className="relative bg-black text-white" role="contentinfo">
       {/* Background with enhanced glassmorphism effect */}
@@ -52,8 +71,8 @@ export default function Footer() {
               CONTACT
             </h3>
             <ul className="space-y-2 sm:space-y-3">
-              <li><a href="mailto:security@mirageaudits.com" className="text-white/70 hover:text-blue-300 transition-colors text-xs sm:text-sm">security@mirageaudits.com</a></li>
-              <li><a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-blue-300 transition-colors text-xs sm:text-sm">Book Security Audit</a></li>
+              <li><a href="mailto:security@mirageaudits.com" className="text-white/70 hover:text-blue-300 transition-colors text-xs sm:text-sm" onClick={handleEmailClick}>security@mirageaudits.com</a></li>
+              <li><a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-blue-300 transition-colors text-xs sm:text-sm" onClick={handleCTAClick}>Book Security Audit</a></li>
             </ul>
           </div>
 

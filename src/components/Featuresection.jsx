@@ -2,8 +2,25 @@
 "use client";
 
 import { Clock, DollarSign, Shield, AlertTriangle } from "lucide-react";
+import { usePostHog } from 'posthog-js/react';
 
 const FeatureSection = () => {
+  const posthog = usePostHog();
+
+  const handleCTAClick = () => {
+    posthog?.capture('cta_clicked', {
+      location: 'features_section',
+      cta_text: 'Book Security Audit',
+      destination: 'telegram'
+    });
+  };
+
+  const handleEmailClick = () => {
+    posthog?.capture('email_clicked', {
+      location: 'features_section',
+      email: 'security@mirageaudits.com'
+    });
+  };
 
   const problems = [
     {
@@ -149,7 +166,7 @@ const FeatureSection = () => {
         </h2>
         
         <div className="mb-6 sm:mb-8">
-          <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
             <button className="relative h-11 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
               <span className="relative z-10">Book Security Audit</span>
@@ -172,7 +189,7 @@ const FeatureSection = () => {
         
         <div className="space-y-3 sm:space-y-4">
           <p className="font-inter text-base sm:text-lg text-white/70">
-            <span className="font-semibold">Contact:</span> security@mirageaudits.com
+            <span className="font-semibold">Contact:</span> <a href="mailto:security@mirageaudits.com" className="text-blue-300 hover:text-blue-200 transition-colors" onClick={handleEmailClick}>security@mirageaudits.com</a>
           </p>
           <p className="font-inter text-sm sm:text-base text-blue-200">
             <span className="font-semibold">Response time:</span> 4 hours
