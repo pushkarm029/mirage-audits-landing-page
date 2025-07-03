@@ -1,6 +1,7 @@
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/Analytics";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-}
+};
 
 export const metadata = {
   metadataBase: new URL('https://mirageaudits.com'),
@@ -205,7 +206,7 @@ export const metadata = {
             "position": 1
           },
           {
-            "@type": "HowToStep", 
+            "@type": "HowToStep",
             "name": "Phase 2: Security-First Development",
             "text": "Implement security best practices during development: use established patterns, conduct peer reviews, implement comprehensive testing, and document all functions. Security should be built-in, not bolt-on.",
             "position": 2
@@ -236,7 +237,7 @@ export const metadata = {
             "name": "Professional Security Audit",
             "estimatedCost": {
               "@type": "MonetaryAmount",
-              "currency": "USD", 
+              "currency": "USD",
               "value": "1000-4000"
             }
           }
@@ -256,9 +257,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
       >
-        {/* Add GA component here - it will only render in production */} 
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-2ZG6WW5KNX" />
-        {children}
+        <PostHogProvider>
+          {/* Add GA component here - it will only render in production */}
+          <GoogleAnalytics GA_MEASUREMENT_ID="G-2ZG6WW5KNX" />
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
