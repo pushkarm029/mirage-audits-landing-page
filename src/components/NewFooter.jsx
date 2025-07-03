@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <Image src="/logo.png" alt="Mirage Audits Logo" width={36} height={36} />
-              <span className="text-2xl font-bold text-white font-['Space_Grotesk']">MIRAGE</span>
+              <span className="text-2xl font-bold text-white font-['Space_Grotesk']">Mirage Audits</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
               Non-EVM security specialists

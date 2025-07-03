@@ -2,15 +2,8 @@
 "use client";
 
 import { Clock, DollarSign, Shield, AlertTriangle } from "lucide-react";
-import { Particles } from "@/components/magicui/particles";
-import { useEffect, useState } from "react";
 
 const FeatureSection = () => {
-  const [color, setColor] = useState("#ffffff");
-
-  useEffect(() => {
-    setColor("#ffffff");
-  }, []);
 
   const problems = [
     {
@@ -42,15 +35,6 @@ const FeatureSection = () => {
 
       {/* Problem Section */}
       <div className="relative max-w-6xl mx-auto px-6 mb-20">
-        {/* Particles Background */}
-        <Particles
-          className="absolute inset-0 z-0"
-          quantity={60}
-          ease={80}
-          color={color}
-          refresh
-        />
-        
         {/* Content */}
         <div className="relative z-10">
           <div className="text-center mb-16">

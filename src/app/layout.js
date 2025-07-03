@@ -34,8 +34,8 @@ export const metadata = {
   },
   description: "Professional security for Solana, Sui, Cardano & L2 projects—without the enterprise price tag. Stop choosing between security and speed.",
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
   other: {
     'script[type="application/ld+json"]': JSON.stringify({
