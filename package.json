@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next-sitemap",
     "start": "next start",
-    "lint": "next lint && eslint . --ext .js,.jsx --fix"
+    "lint": "next lint && eslint . --ext .js,.jsx --fix",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.5",
