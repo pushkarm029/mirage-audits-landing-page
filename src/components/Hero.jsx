@@ -1,6 +1,7 @@
 
 'use client';
 
+import Image from 'next/image';
 import { usePostHog } from 'posthog-js/react';
 
 const BENEFITS = [
@@ -19,11 +20,11 @@ const BENEFITS = [
 ];
 
 const SUPPORTED_NETWORKS = [
-  { name: "Solana", symbol: "SOL", color: "#9945FF" },
-  { name: "Cardano", symbol: "ADA", color: "#0033AD" },
-  { name: "Fuel", symbol: "FUEL", color: "#00C896" },
-  { name: "Sui", symbol: "SUI", color: "#4CA2FF" },
-  { name: "Starknet", symbol: "STRK", color: "#EC796B" },
+  { name: "Cardano", symbol: "ADA", color: "#0033AD", image: "/images/cardano.png" },
+  { name: "Fuel", symbol: "FUEL", color: "#00C896", image: "/images/fuel.png" },
+  { name: "Solana", symbol: "SOL", color: "#9945FF", image: "/images/solana.png" },
+  { name: "Starknet", symbol: "STRK", color: "#EC796B", image: "/images/starknet.png" },
+  { name: "Sui", symbol: "SUI", color: "#4CA2FF", image: "/images/sui.png" },
 ];
 
 export default function Hero() {
@@ -88,17 +89,20 @@ export default function Hero() {
                     title={network.name}
                   >
                     <div
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-jetbrains-mono font-bold text-white/80 group-hover:border-white/40 transition-all duration-300 group-hover:scale-110"
-                      style={{
-                        backgroundColor: network.color + '20',
-                        borderColor: network.color + '40'
-                      }}
+                      className="w-12 h-12 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                     >
-                      {network.symbol}
+                      <Image
+                        src={network.image}
+                        alt={`${network.name} logo`}
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 object-contain"
+                      />
                     </div>
-                    <span className="text-sm text-white/50 mt-1 font-inter">
+                    <span className="text-sm text-white/50 mt-3 font-inter">
                       {network.name}
                     </span>
+
                   </div>
                 ))}
 
@@ -106,15 +110,12 @@ export default function Hero() {
                 {[1, 2].map((i) => (
                   <div
                     key={`empty-${i}`}
-                    className="flex flex-col items-center"
+                    className="group cursor-pointer"
                     title="More networks coming soon"
                   >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white/10 border-dashed flex items-center justify-center">
+                    <div className="w-12 h-12 sm:w-12 sm:h-12 rounded-full border-2 border-white/10 border-dashed flex items-center justify-center">
                       <div className="w-2 h-2 bg-white/20 rounded-full"></div>
                     </div>
-                    <span className="text-sm text-white/30 mt-1 font-inter">
-                      Soon
-                    </span>
                   </div>
                 ))}
               </div>
