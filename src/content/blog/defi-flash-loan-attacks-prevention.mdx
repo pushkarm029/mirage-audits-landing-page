@@ -1,0 +1,287 @@
+---
+id: 2
+title: "DeFi Flash Loan Attacks: Prevention and Detection"
+slug: "defi-flash-loan-attacks-prevention"
+excerpt: "Learn how flash loan attacks work, real-world examples, and comprehensive strategies to protect your DeFi protocol from these sophisticated exploits."
+author: "Sarah Kim"
+date: "2024-07-08"
+category: "DeFi Security"
+tags: ["DeFi", "Flash Loans", "Security", "Ethereum"]
+readingTime: "15 min read"
+featured: true
+blockchain: "Ethereum"
+---
+
+Flash loan attacks have become one of the most sophisticated and devastating attack vectors in DeFi, responsible for hundreds of millions in losses. Understanding these attacks is crucial for building secure protocols.
+
+## What Are Flash Loans?
+
+Flash loans are uncollateralized loans that must be repaid within the same transaction. If the loan cannot be repaid, the entire transaction reverts, making them theoretically "risk-free" for lenders.
+
+### Flash Loan Mechanics
+1. Borrow large amount of tokens
+2. Execute complex operations
+3. Repay loan + fees
+4. Keep profits (if any)
+
+## Anatomy of Flash Loan Attacks
+
+### 1. Price Manipulation Attacks
+
+The most common flash loan attack vector involves manipulating price oracles:
+
+```solidity
+// VULNERABLE: Relying on spot price
+function getPrice() public view returns (uint256) {
+    uint256 reserve0 = token0.balanceOf(address(this));
+    uint256 reserve1 = token1.balanceOf(address(this));
+    return (reserve1 * 1e18) / reserve0; // Spot price calculation
+}
+
+// Attack scenario:
+// 1. Flash loan large amount of token0
+// 2. Swap token0 for token1, manipulating price
+// 3. Interact with vulnerable protocol using manipulated price
+// 4. Reverse operations and repay loan
+```
+
+### 2. Governance Token Attacks
+
+Attackers can temporarily acquire governance tokens to pass malicious proposals:
+
+```solidity
+// VULNERABLE: Instant voting power
+contract VulnerableGovernance {
+    function vote(uint256 proposalId, bool support) external {
+        uint256 votingPower = governanceToken.balanceOf(msg.sender);
+        // No timelock or delegation delay
+        votes[proposalId][support] += votingPower;
+    }
+}
+```
+
+### 3. Liquidity Pool Attacks
+
+Manipulating liquidity pools to exploit automated market makers:
+
+```solidity
+// Example attack flow:
+// 1. Flash loan Token A
+// 2. Swap A->B in Pool 1 (manipulate Pool 1 price)
+// 3. Arbitrage using manipulated price in Pool 2
+// 4. Reverse swaps
+// 5. Repay flash loan with profit
+```
+
+## Real-World Attack Examples
+
+### bZx Attack (February 2020)
+- **Loss**: $350,000
+- **Method**: Price manipulation + arbitrage
+- **Root Cause**: Reliance on single DEX for pricing
+
+### Harvest Finance Attack (October 2020)
+- **Loss**: $24 million
+- **Method**: Curve pool manipulation
+- **Root Cause**: Insufficient slippage protection
+
+### Cream Finance Attack (August 2021)
+- **Loss**: $18.8 million
+- **Method**: Reentrancy + flash loans
+- **Root Cause**: Missing reentrancy guards
+
+## Prevention Strategies
+
+### 1. Robust Price Oracles
+
+Use Time-Weighted Average Prices (TWAP) and multiple oracle sources:
+
+```solidity
+// SECURE: TWAP implementation
+contract SecureOracle {
+    uint256 public constant PERIOD = 3600; // 1 hour TWAP
+    
+    function getSecurePrice() external view returns (uint256) {
+        uint256 price0 = chainlinkOracle.getPrice();
+        uint256 price1 = uniswapTWAP.consult(PERIOD);
+        uint256 price2 = bandOracle.getPrice();
+        
+        // Use median price from multiple sources
+        return _median(price0, price1, price2);
+    }
+    
+    function _median(uint256 a, uint256 b, uint256 c) private pure returns (uint256) {
+        if (a > b) {
+            if (b > c) return b;
+            else if (a > c) return c;
+            else return a;
+        } else {
+            if (a > c) return a;
+            else if (b > c) return c;
+            else return b;
+        }
+    }
+}
+```
+
+### 2. Reentrancy Protection
+
+Implement comprehensive reentrancy guards:
+
+```solidity
+// SECURE: Reentrancy protection
+contract ReentrancyGuard {
+    uint256 private constant _NOT_ENTERED = 1;
+    uint256 private constant _ENTERED = 2;
+    
+    uint256 private _status;
+    
+    constructor() {
+        _status = _NOT_ENTERED;
+    }
+    
+    modifier nonReentrant() {
+        require(_status != _ENTERED, "ReentrancyGuard: reentrant call");
+        _status = _ENTERED;
+        _;
+        _status = _NOT_ENTERED;
+    }
+}
+```
+
+### 3. Flash Loan Detection
+
+Detect and prevent flash loan attacks:
+
+```solidity
+// SECURE: Flash loan detection
+contract FlashLoanProtection {
+    mapping(address => uint256) private balanceSnapshots;
+    
+    modifier noFlashLoan() {
+        uint256 balanceBefore = address(this).balance;
+        _;
+        require(
+            address(this).balance >= balanceBefore,
+            "Flash loan detected"
+        );
+    }
+    
+    function sensitiveFunction() external noFlashLoan {
+        // Function logic here
+    }
+}
+```
+
+### 4. Slippage Protection
+
+Implement maximum slippage limits:
+
+```solidity
+// SECURE: Slippage protection
+function swapWithSlippageProtection(
+    uint256 amountIn,
+    uint256 minAmountOut,
+    uint256 maxSlippage // basis points (e.g., 100 = 1%)
+) external {
+    uint256 expectedOut = getAmountOut(amountIn);
+    uint256 maxSlippageAmount = (expectedOut * maxSlippage) / 10000;
+    uint256 adjustedMinOut = expectedOut - maxSlippageAmount;
+    
+    require(adjustedMinOut >= minAmountOut, "Excessive slippage");
+    
+    // Perform swap with slippage protection
+}
+```
+
+## Detection and Monitoring
+
+### 1. On-Chain Monitoring
+
+Implement real-time monitoring for suspicious activities:
+
+```solidity
+event SuspiciousActivity(
+    address indexed user,
+    uint256 amount,
+    uint256 timestamp
+);
+
+function monitorTransaction() internal {
+    if (msg.value > LARGE_TRANSACTION_THRESHOLD) {
+        emit SuspiciousActivity(msg.sender, msg.value, block.timestamp);
+    }
+}
+```
+
+### 2. Multi-Block Constraints
+
+Require operations to span multiple blocks:
+
+```solidity
+mapping(address => uint256) private lastActionBlock;
+
+modifier multiBlockRequired() {
+    require(
+        block.number > lastActionBlock[msg.sender] + MIN_BLOCK_DELAY,
+        "Must wait multiple blocks"
+    );
+    lastActionBlock[msg.sender] = block.number;
+    _;
+}
+```
+
+## Emergency Response
+
+### 1. Circuit Breakers
+
+Implement emergency pause mechanisms:
+
+```solidity
+contract EmergencyPause {
+    bool public paused = false;
+    address public admin;
+    
+    modifier whenNotPaused() {
+        require(!paused, "Contract is paused");
+        _;
+    }
+    
+    function emergencyPause() external {
+        require(msg.sender == admin, "Only admin");
+        paused = true;
+    }
+}
+```
+
+### 2. Rate Limiting
+
+Implement transaction rate limiting:
+
+```solidity
+mapping(address => uint256) private lastTransactionTime;
+uint256 public constant RATE_LIMIT = 1 hours;
+
+modifier rateLimited() {
+    require(
+        block.timestamp >= lastTransactionTime[msg.sender] + RATE_LIMIT,
+        "Rate limit exceeded"
+    );
+    lastTransactionTime[msg.sender] = block.timestamp;
+    _;
+}
+```
+
+## Conclusion
+
+Flash loan attacks represent a sophisticated threat to DeFi protocols. Protection requires:
+
+1. **Robust price oracles** with TWAP and multiple sources
+2. **Comprehensive reentrancy protection**
+3. **Flash loan detection mechanisms**
+4. **Slippage and rate limiting**
+5. **Emergency response procedures**
+
+Remember: Defense in depth is key. Implement multiple layers of protection and always conduct thorough security audits before deploying to mainnet.
+
+The DeFi space continues to evolve, and so do attack vectors. Stay informed, implement best practices, and prioritize security in every aspect of your protocol design.

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { usePostHog } from 'posthog-js/react';
 
 const Navbar = () => {
@@ -47,31 +47,25 @@ const Navbar = () => {
             <div className="top-0 right-0 absolute h-12 w-full bg-transparent"></div>
             <nav className="z-50 relative rounded-full bg-white/10 text-white/70 text-sm shadow-lg flex justify-center space-x-6 px-4 py-2">
               
-              <div className="">
+              <a href="https://github.com/MirageAudits#contacts-and-profiles" target="_blank" rel="noopener noreferrer" onClick={() => handleNavClick('Portfolio')}>
                 <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px]">
-                  Solutions
+                  Portfolio
                 </p>
-              </div>
+              </a>
               
-              <div className="">
+              <a href="/case-studies" onClick={() => handleNavClick('Case Studies')}>
                 <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px]">
-                  Company
+                  Case Studies
                 </p>
-              </div>
+              </a>
               
-              <div className="">
-                <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px]">
-                  Resources
-                </p>
-              </div>
-              
-              <a href="#blog" onClick={() => handleNavClick('Blog')}>
+              <a href="/blog" onClick={() => handleNavClick('Blog')}>
                 <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px]">
                   Blog
                 </p>
               </a>
               
-              <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
+              <a href="/contact" onClick={() => handleNavClick('Contact')}>
                 <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px]">
                   Contact
                 </p>
@@ -81,33 +75,21 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Right: Theme Toggle & CTA Buttons */}
+        {/* Right: CTA Buttons */}
         <div className="flex flex-row items-center gap-3">
-          
-          {/* Theme Toggle */}
-          <div className="bg-white/10 rounded-full">
-            <button 
-              className="p-[6px] rounded-md focus:outline-none transition-colors duration-300 text-opacity-50 flex text-white/70 hover:text-white hover:text-opacity-100" 
-              aria-label="Toggle Theme"
-            >
-              <Sun className="w-6 h-6" />
-            </button>
-          </div>
           
           {/* CTA Buttons - Always Visible */}
           <div className="relative w-fit print:hidden mx-0 hidden sm:block">
-            <nav className="z-50 relative rounded-full bg-white/10 text-white/70 text-sm shadow-lg flex justify-center space-x-2 md:space-x-4 px-3 md:px-4 py-2">
-              <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
-                <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px] text-xs md:text-sm">
-                  Book An Audit
-                </p>
-              </a>
-              <a href="#portfolio" onClick={() => handleNavClick('Portfolio')}>
-                <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px] text-xs md:text-sm">
-                  Portfolio
-                </p>
-              </a>
-            </nav>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full border-2 border-blue-500 animate-spin" style={{animation: 'rotate-border 3s linear infinite'}}></div>
+              <nav className="z-50 relative rounded-full bg-white/10 text-white/70 text-sm shadow-lg flex justify-center space-x-2 md:space-x-4 px-3 md:px-4 py-2 border-2 border-blue-500/60">
+                <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
+                  <p className="font-inter text-opacity-50 cursor-pointer text-white/70 transition ease-in-out hover:text-white uppercase font-light tracking-[0.7px] text-xs md:text-sm">
+                    Book An Audit
+                  </p>
+                </a>
+              </nav>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,37 +113,27 @@ const Navbar = () => {
               
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
-                  <button className="uppercase flex justify-between w-full" onClick={() => handleNavClick('Solutions')}>
+                  <a href="https://github.com/MirageAudits#contacts-and-profiles" target="_blank" rel="noopener noreferrer" onClick={() => {handleNavClick('Portfolio'); setMenuOpen(false);}}>
                     <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
-                      Solutions
+                      Portfolio
                     </p>
-                  </button>
+                  </a>
                 </div>
               </li>
               
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
-                  <button className="uppercase flex justify-between w-full" onClick={() => handleNavClick('Company')}>
+                  <a href="/case-studies" onClick={() => {handleNavClick('Case Studies'); setMenuOpen(false);}}>
                     <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
-                      Company
+                      Case Studies
                     </p>
-                  </button>
+                  </a>
                 </div>
               </li>
               
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
-                  <button className="uppercase flex justify-between w-full" onClick={() => handleNavClick('Resources')}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
-                      Resources
-                    </p>
-                  </button>
-                </div>
-              </li>
-              
-              <li className="flex justify-between">
-                <div className="flex flex-col w-full">
-                  <a href="#blog" onClick={() => {handleNavClick('Blog'); setMenuOpen(false);}}>
+                  <a href="/blog" onClick={() => {handleNavClick('Blog'); setMenuOpen(false);}}>
                     <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
                       Blog
                     </p>
@@ -171,7 +143,7 @@ const Navbar = () => {
               
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
-                  <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={() => {handleCTAClick(); setMenuOpen(false);}}>
+                  <a href="/contact" onClick={() => {handleNavClick('Contact'); setMenuOpen(false);}}>
                     <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
                       Contact
                     </p>
@@ -184,16 +156,6 @@ const Navbar = () => {
                   <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={() => {handleCTAClick(); setMenuOpen(false);}}>
                     <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
                       Book An Audit
-                    </p>
-                  </a>
-                </div>
-              </li>
-              
-              <li className="flex justify-between">
-                <div className="flex flex-col w-full">
-                  <a href="#portfolio" onClick={() => {handleNavClick('Portfolio'); setMenuOpen(false);}}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
-                      Portfolio
                     </p>
                   </a>
                 </div>

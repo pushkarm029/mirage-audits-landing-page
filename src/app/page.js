@@ -3,6 +3,7 @@ import TrustedBySection from "@/components/TrustedBySection";
 import CredibilitySection from "@/components/CredibilitySection";
 import PricingSection from "@/components/PricingSection";
 import Featuresection from "@/components/Featuresection";
+import CaseStudies from "@/components/CaseStudies";
 import BlogSection from "@/components/BlogSection";
 import TwitterSection from "@/components/TwitterSection";
 import Navbar from "@/components/Navbar";
@@ -22,6 +23,7 @@ export default function Home() {
         <CredibilitySection />
         <PricingSection />
         <Featuresection />
+        <CaseStudies />
         <BlogSection />
         {/* <TwitterSection /> */}
         {/* <SupportedChains /> */}

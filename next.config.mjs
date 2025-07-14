@@ -1,31 +1,23 @@
+import createMDX from '@next/mdx';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for maximum performance
-  output: 'export',
+  // Configure page extensions to include .mdx files
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   
-  // Optimize for static hosting
+  // Use standard Next.js rendering (removed static export)
   trailingSlash: true,
   
-  // Image optimization for static export
+  // Standard image optimization
   images: {
-    unoptimized: true
+    domains: ['localhost'],
   },
   
   // Performance optimizations
   // Note: optimizeCss requires 'critters' package, removed for now
   
-  // Bundle optimization
+  // Standard webpack configuration for Next.js
   webpack: (config, { isServer }) => {
-    // Optimize for production
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-      };
-    }
-    
     // Tree shaking optimization
     config.optimization = {
       ...config.optimization,
@@ -62,4 +54,13 @@ const nextConfig = {
   // Note: swcMinify is now default in Next.js 15+
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
+// Wrap MDX and Next.js config
+export default withMDX(nextConfig);

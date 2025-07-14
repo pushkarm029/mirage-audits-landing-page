@@ -18,20 +18,20 @@ npm run build
 npm run analyze
 ```
 
-## 📦 Current Setup: Static Export
+## 📦 Current Setup: Dynamic Next.js App Router
 
-This site is currently optimized as a **static export** for maximum performance:
+This site uses modern **Next.js App Router** with dynamic server-side rendering:
 
-- ✅ **Lightning fast loading** (< 1s)
-- ✅ **Perfect for daily content updates** via git push
-- ✅ **Automatic Vercel deployment** on every push to main
-- ✅ **95+ Lighthouse scores**
-- ✅ **CDN-optimized** static assets
+- ✅ **Real-time content updates** without rebuilds
+- ✅ **Full API route capabilities** for dynamic features
+- ✅ **Server-side MDX processing** with proper rendering
+- ✅ **Automatic deployment** on push to main
+- ✅ **Modern Next.js 15** with React 19
 
 ### Build Output
-- Static files generated in `/out` folder
-- Ready for any static hosting (Vercel, Netlify, S3)
-- No server required
+- Dynamic API routes for content serving
+- Server-side rendering with optimal performance
+- Real-time content updates
 
 ## 🔄 Daily Content Updates
 
@@ -191,8 +191,151 @@ npm run build
 
 ## 📝 Content Management
 
-### Quick Content Changes
-Most content can be updated by editing constants at the top of components:
+### Markdown-Based CMS ⚡ **Simple "Drop File and It Appears" System**
+
+The site uses a dynamic file-based markdown system for blog posts and case studies. Simply add `.mdx` files to content directories and they appear immediately via API routes.
+
+#### 📄 Adding a New Blog Post
+
+1. **Create the file** in `src/content/blog/`:
+```bash
+# Create new blog post
+nano src/content/blog/my-new-post.mdx
+```
+
+2. **Add frontmatter and content**:
+```markdown
+---
+id: 7
+title: "Your Blog Post Title"
+slug: "your-blog-post-slug"
+excerpt: "Brief description for listings and SEO"
+author: "Your Name"
+date: "2025-01-15"
+category: "Security Guide"  # Options: Security Guide, DeFi Security, Blockchain Security, Infrastructure Security
+tags: ["Solana", "Security", "Smart Contracts"]  # Array of tags
+readingTime: "8 min read"
+featured: true  # Set to true for featured posts
+blockchain: "Solana"  # Optional: Solana, Ethereum, Cardano, Sui, etc.
+---
+
+# Your Content Here
+
+Write your blog post content using standard markdown formatting.
+
+## Code Examples
+```solidity
+// Your code here
+```
+
+**Bold text**, *italic text*, and [links](https://example.com) work as expected.
+```
+
+3. **Content appears immediately**:
+```bash
+# No build needed! Content appears instantly via API routes
+# Just refresh the page or restart dev server
+npm run dev
+```
+
+#### 🏆 Adding a New Case Study
+
+1. **Create the file** in `src/content/case-studies/`:
+```bash
+# Create new case study
+nano src/content/case-studies/my-case-study.mdx
+```
+
+2. **Add frontmatter and content**:
+```markdown
+---
+id: 7
+title: "Your Case Study Title"
+client: "Client Name"
+description: "Brief description for listings"
+category: "DeFi"  # Options: DeFi, Infrastructure, Gaming, NFT
+blockchain: "Solana"  # Solana, Ethereum, Cardano, Sui, Polygon, Multi-chain
+date: "2024-07"
+highlights:
+  - "Key achievement 1"
+  - "Key achievement 2"
+  - "Key achievement 3"
+metrics:
+  duration: "3 weeks"
+  vulnerabilities: 8
+  severity: "Critical"
+  tvlSecured: "$25M+"
+---
+
+Your case study content here with **markdown formatting**.
+
+**Challenge:**
+Describe the security challenges...
+
+**Our Approach:**
+- Bullet point 1
+- Bullet point 2
+
+**Results:**
+The outcomes and impact...
+```
+
+3. **Content appears immediately**:
+```bash
+# No build needed! Content appears instantly via API routes
+# Just refresh the page or restart dev server
+npm run dev
+```
+
+#### 📁 Content Directory Structure
+```
+src/content/
+├── blog/
+│   ├── solana-smart-contract-security-guide.mdx
+│   ├── defi-flash-loan-attacks-prevention.mdx
+│   ├── cardano-plutus-security-utxo-best-practices.mdx
+│   ├── sui-move-security-resource-oriented-programming.mdx
+│   ├── cross-chain-bridge-security-multi-chain-assets.mdx
+│   └── web3-security-audit-checklist-comprehensive-guide.mdx
+└── case-studies/
+    ├── solana-defi-protocol-security-audit.mdx
+    ├── layer-2-bridge-security-assessment.mdx
+    ├── cardano-dapp-security-review.mdx
+    ├── sui-gaming-protocol-audit.mdx
+    ├── multi-chain-yield-farming-protocol.mdx
+    └── nft-marketplace-security-assessment.mdx
+```
+
+#### ✨ Content Features
+- **Automatic Sorting**: Posts sorted by date (newest first)
+- **Search & Filter**: Built-in search and category filtering
+- **Featured Posts**: Set `featured: true` to highlight posts
+- **SEO Optimized**: Automatic metadata generation from frontmatter
+- **Analytics**: PostHog tracking integrated for user interactions
+- **Responsive Design**: Mobile-first design maintained
+
+#### 🔧 Content Workflow
+```bash
+# Quick workflow for adding content:
+
+# 1. Add new file
+echo "---
+title: 'Security Alert: New Vulnerability'
+date: '$(date +%Y-%m-%d)'
+category: 'Security Guide'
+featured: true
+---
+Content here..." > src/content/blog/new-alert.mdx
+
+# 2. Build and deploy
+npm run build
+git add . && git commit -m "Add new security alert"
+git push origin main
+# Auto-deploys to Vercel in ~2 minutes
+```
+
+### Legacy Content (Component-Based)
+Quick content changes for other sections can still be made by editing constants at the top of components:
 
 ```javascript
 // Hero.jsx
