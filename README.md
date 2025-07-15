@@ -403,3 +403,11 @@ npm run build
 ---
 
 **Built for builders who can't wait.** ⚡
+
+
+### Future ref:
+https://unsplash.com/s/photos/dark-wavy-background?license=free
+https://www.istockphoto.com/search/2/image?utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdark-wavy-background%3Flicense%3Dfree&utm_medium=affiliate&utm_source=unsplash&utm_term=dark+wavy+background%3A%3A%3A&alloweduse=availableforalluses&excludenudity=true&mediatype=photography&phrase=dark+wavy+background&sort=best
+https://www.istockphoto.com/photo/carbon-fiber-style-background-3d-illustration-gm1293376123-387806236
+https://unsplash.com/photos/a-computer-generated-image-of-wavy-lines-JG2DaZZzvzk
+design ref: https://ibcprotocol.dev/blog

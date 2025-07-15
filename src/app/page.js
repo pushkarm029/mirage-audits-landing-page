@@ -19,10 +19,10 @@ export default function Home() {
       </header>
       <main>
         <Hero />
-        <TrustedBySection />
-        <CredibilitySection />
+        {/* <TrustedBySection /> */}
+        {/* <CredibilitySection />
         <PricingSection />
-        <Featuresection />
+        <Featuresection /> */}
         <CaseStudies />
         <BlogSection />
         {/* <TwitterSection /> */}
