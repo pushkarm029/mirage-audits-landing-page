@@ -74,8 +74,9 @@ export default function CaseStudiesList() {
 
 
   return (
-    <div className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative py-20 bg-black" style={{backgroundImage: 'url(/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
+      <div className="absolute inset-0 bg-black/80"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Header */}
         <div className="text-center mb-16">
@@ -127,6 +128,26 @@ export default function CaseStudiesList() {
         {filteredStudies.length === 0 ? (
           <div className="text-center py-12">
             <div className="text-white/60 font-inter">No case studies found matching your criteria.</div>
+          </div>
+        ) : loading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Array(6).fill(0).map((_, index) => (
+              <div key={index} className="bg-white/5 rounded-lg border border-white/10 overflow-hidden animate-pulse">
+                <div className="h-48 bg-white/10"></div>
+                <div className="p-6">
+                  <div className="flex items-center mb-3">
+                    <div className="w-8 h-8 bg-white/10 rounded-full mr-3"></div>
+                    <div className="h-4 bg-white/10 rounded w-24"></div>
+                  </div>
+                  <div className="h-6 bg-white/10 rounded mb-3"></div>
+                  <div className="h-16 bg-white/10 rounded mb-4"></div>
+                  <div className="space-y-2">
+                    <div className="h-3 bg-white/10 rounded w-3/4"></div>
+                    <div className="h-3 bg-white/10 rounded w-1/2"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

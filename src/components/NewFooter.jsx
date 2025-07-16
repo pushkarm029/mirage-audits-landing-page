@@ -29,8 +29,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-black text-white" role="contentinfo">
-      <div className="absolute inset-0 bg-black"></div>
+    <footer className="relative bg-black text-white" role="contentinfo" style={{backgroundImage: 'url(/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
+      <div className="absolute inset-0 bg-black/50"></div>
       
       <div className="relative">
         {/* Main Footer Content */}
@@ -111,8 +111,8 @@ export default function Footer() {
                 <a href="/blog" onClick={() => handleNavClick('Blog')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px]">
                   Blog
                 </a>
-                <a href="/contact" onClick={() => handleNavClick('Contact')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px]">
-                  Contact
+                <a href="/careers" onClick={() => handleNavClick('Careers')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px]">
+                  Careers
                 </a>
               </div>
 

@@ -43,18 +43,11 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen text-white overflow-hidden flex items-center">
-      {/* Background gradient - Halborn style */}
-      <div className="bg-gradient-to-b from-black from-[18.5%] to-gray-900 to-[93%] absolute top-0 left-0 w-full h-full max-h-[1440px] z-0"></div>
+      {/* Background image */}
+      <div className="absolute inset-0 bg-cover bg-no-repeat bg-center hero-bg"></div>
       
-      {/* Space Background overlay */}
-      {/* <div
-        className="absolute inset-0 bg-cover bg-no-repeat opacity-30"
-        style={{
-          backgroundImage: 'url(/new-bg.jpg)',
-          backgroundPosition: 'center 30%'
-        }}
-      >
-      </div> */}
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
 
       {/* Main hero content - centered vertically */}
       <div className="relative w-full py-20">
@@ -71,7 +64,7 @@ export default function Hero() {
                   <header className="flex flex-col text-blue-400 mt-[6px] md:mt-[22px] mb-[10px] lg:mb-[26px] md:max-w-[970px]">
                     <div className="flex gap-[25px] mt-2">
                       <h1 className="my-auto uppercase font-space-grotesk text-lg leading-[23px] tracking-[2px] text-white md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[40px] 2xl:leading-[50px] font-bold">
-                        <span>Elite Blockchain Security for Financial Services and Web3</span>
+                        <span>Elite Security Infrastructure for Next-Gen Chains</span>
                       </h1>
                     </div>
                   </header>
@@ -97,8 +90,16 @@ export default function Hero() {
                   {/* Call-to-action button */}
                   <div className="flex justify-start gap-6 mt-6 mb-8">
                     <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
-                      <button type="button" className="border my-3 font-inter font-bold uppercase tracking-[0.7px] text-sm h-[32px] w-fit group bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:text-white px-11 rounded-full transition-colors duration-200">
-                        GET IN TOUCH
+                      <button type="button" className="inline-flex items-center gap-2 font-inter font-bold uppercase tracking-wider text-xs md:text-sm px-3 md:px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200">
+                        Book An Audit
+                        <svg 
+                          className="w-4 h-4" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </button>
                     </a>
                   </div>

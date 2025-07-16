@@ -6,6 +6,7 @@ import Featuresection from "@/components/Featuresection";
 import CaseStudies from "@/components/CaseStudies";
 import BlogSection from "@/components/BlogSection";
 import TwitterSection from "@/components/TwitterSection";
+import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/NewFooter";
 
@@ -27,7 +28,7 @@ export default function Home() {
         <BlogSection />
         {/* <TwitterSection /> */}
         {/* <SupportedChains /> */}
-        {/* <Contact/> */}
+        <Contact />
         {/* <PartnersSection /> */}
         {/* <Testimonial /> */}
       </main>

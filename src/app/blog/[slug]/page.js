@@ -81,8 +81,9 @@ export default async function BlogPost({ params }) {
   const { content, meta } = post;
 
   return (
-    <div className="py-20 bg-black min-h-screen">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative py-20 bg-black min-h-screen" style={{backgroundImage: 'url(/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
+      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Back Button */}
         <a

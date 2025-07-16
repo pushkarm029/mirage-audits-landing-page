@@ -87,26 +87,24 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 bg-black" id="contact">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 sm:py-20 bg-black" id="contact" style={{backgroundImage: 'url(/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
+      <div className="absolute inset-0 bg-black/80"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="text-sm text-blue-300 font-jetbrains-mono mb-4 uppercase tracking-wider">
-            // Contact Us
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-space-grotesk">
-            Get Your Security Audit
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-space-grotesk">
+            Get Your <span className="text-blue-400">Security Audit</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto font-inter">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto font-inter">
             Ready to secure your Web3 project? Our expert team provides fast, 
             affordable audits for Solana, Sui, Cardano, and Layer 2 protocols.
           </p>
         </div>
 
         {/* Contact Information */}
-        <div className="text-center mb-12">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 text-lg">
+        <div className="text-center mb-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 text-base">
             <div>
               <span className="text-white/70 font-inter">Security Inquiries: </span>
               <a 
@@ -131,8 +129,8 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div className="max-w-4xl mx-auto">
-          <form onSubmit={handleSubmit} className="grid lg:grid-cols-2 gap-8">
+        <div className="max-w-3xl mx-auto">
+          <form onSubmit={handleSubmit} className="grid lg:grid-cols-2 gap-6">
             
             {/* Personal Information */}
             <div className="space-y-6">
@@ -275,16 +273,13 @@ export default function Contact() {
             </div>
 
             {/* Submit Button */}
-            <div className="lg:col-span-2 text-center">
+            <div className="lg:col-span-2 text-center mt-6">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="relative inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white rounded-lg border-2 border-blue-500 hover:bg-blue-700 hover:border-blue-400 transition-all duration-300 font-inter font-medium text-lg disabled:opacity-50"
+                className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-colors duration-200 font-inter font-medium disabled:opacity-50"
               >
-                <div className="absolute inset-0 rounded-lg border-2 border-blue-400 animate-pulse"></div>
-                <span className="relative">
-                  {isSubmitting ? 'Sending...' : 'Send Inquiry'}
-                </span>
+                {isSubmitting ? 'Sending...' : 'Send Inquiry'}
               </button>
             </div>
 

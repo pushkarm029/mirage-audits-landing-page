@@ -15,6 +15,11 @@ body::before {
   z-index: -1;
 }
 
+/* Hero Background */
+.hero-bg {
+  background-image: url('/hero-bg.png');
+}
+
 /* Hero Content Animation */
 .hero-content {
   opacity: 0.8;

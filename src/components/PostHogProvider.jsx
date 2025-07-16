@@ -6,18 +6,27 @@ import { useEffect } from "react"
 
 export function PostHogProvider({ children }) {
   useEffect(() => {
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-      api_host: "/ingest",
-      ui_host: "https://us.posthog.com",
-      defaults: '2025-05-24',
-      capture_exceptions: true, // This enables capturing exceptions using Error Tracking, set to false if you don't want this
-      debug: process.env.NODE_ENV === "development",
-    })
+    // Only initialize PostHog in production
+    if (process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+        api_host: "/ingest",
+        ui_host: "https://us.posthog.com",
+        defaults: '2025-05-24',
+        capture_exceptions: true,
+        debug: false,
+      })
+    }
   }, [])
 
-  return (
-    <PHProvider client={posthog}>
-      {children}
-    </PHProvider>
-  )
+  // Only provide PostHog client in production
+  if (process.env.NODE_ENV === "production") {
+    return (
+      <PHProvider client={posthog}>
+        {children}
+      </PHProvider>
+    )
+  }
+
+  // In development, just render children without PostHog
+  return children
 }
