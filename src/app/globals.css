@@ -193,6 +193,20 @@ body::before {
   }
 }
 
+/* Production-ready styles */
+img {
+  pointer-events: none; /* Prevent image dragging */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  user-select: none; /* Prevent image selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 @theme inline {
   @keyframes spin-slow {
     from {
