@@ -63,15 +63,15 @@ export default function Hero() {
                   {/* Header with main headline */}
                   <header className="flex flex-col text-blue-400 mt-[6px] md:mt-[22px] mb-[10px] lg:mb-[26px] md:max-w-[970px]">
                     <div className="flex gap-[25px] mt-2">
-                      <h1 className="my-auto uppercase font-space-grotesk text-lg leading-[23px] tracking-[2px] text-white md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[40px] 2xl:leading-[50px] font-bold">
+                      <h1 className="my-auto uppercase font-space-grotesk text-xl leading-[28px] tracking-[2px] text-white md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px] 2xl:leading-[60px] font-bold">
                         <span>Elite Security Infrastructure for Next-Gen Chains</span>
                       </h1>
                     </div>
                   </header>
 
                   {/* Description paragraph */}
-                  <p className="text-white/80 text-base leading-5 font-light tracking-[0.16px] pr-3 md:max-w-[920px] mb-10">
-                    Mirage Audits is the industry-leading blockchain solutions firm for enterprise-grade digital assets, trusted by the top financial institutions and Web3 ecosystem leaders. Experience world-class, end-to-end security, from smart contract auditing and pen testing to advisory services and beyond.
+                  <p className="text-white text-base leading-5 font-light tracking-[0.16px] pr-3 md:max-w-[920px] mb-10">
+                    Mirage Audits is a trusted partner in securing the future of blockchain. Our team of experienced auditors specializes in next-generation chains, delivering rigorous smart contract audits backed by deep technical expertise. With a proven track record across leading Web3 ecosystems, we provide the security assurance needed to build with confidence.
                   </p>
 
                   {/* Blockchain logos - Simple placement */}

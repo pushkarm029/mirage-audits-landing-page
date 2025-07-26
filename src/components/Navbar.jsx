@@ -91,15 +91,14 @@ const Navbar = () => {
           {/* Flag Icon Button */}
           <div className="relative hidden sm:block">
             <a 
-              href="/damn-vulnerable-solana" 
+              href="/coming-soon" 
               className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200 border border-white/20 hover:border-white/40"
-              aria-label="Damn Vulnerable Solana"
+              aria-label="Coming Soon"
             >
               <svg className="w-5 h-5 text-white/70 hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/>
               </svg>
             </a>
-            {/* Blue dot indicator */}
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-600 rounded-full border-2 border-black"></div>
           </div>
           
@@ -182,7 +181,7 @@ const Navbar = () => {
                   </a>
                 </div>
               </li>
-              
+{/*               
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
                   <a href="/damn-vulnerable-solana" onClick={() => setMenuOpen(false)}>
@@ -191,7 +190,7 @@ const Navbar = () => {
                     </p>
                   </a>
                 </div>
-              </li>
+              </li> */}
               
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
