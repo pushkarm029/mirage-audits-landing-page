@@ -1,7 +1,12 @@
 import Hero from "@/components/Hero";
+import TrustedBySection from "@/components/TrustedBySection";
 import CredibilitySection from "@/components/CredibilitySection";
 import PricingSection from "@/components/PricingSection";
 import Featuresection from "@/components/Featuresection";
+import CaseStudies from "@/components/CaseStudies";
+import BlogSection from "@/components/BlogSection";
+import TwitterSection from "@/components/TwitterSection";
+import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/NewFooter";
 
@@ -15,11 +20,15 @@ export default function Home() {
       </header>
       <main>
         <Hero />
-        <CredibilitySection />
+        {/* <TrustedBySection /> */}
+        {/* <CredibilitySection />
         <PricingSection />
-        <Featuresection />
+        <Featuresection /> */}
+        <CaseStudies />
+        <BlogSection />
+        {/* <TwitterSection /> */}
         {/* <SupportedChains /> */}
-        {/* <Contact/> */}
+        <Contact />
         {/* <PartnersSection /> */}
         {/* <Testimonial /> */}
       </main>

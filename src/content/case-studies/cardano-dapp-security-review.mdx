@@ -1,0 +1,51 @@
+---
+id: 3
+title: "Cardano dApp Security Review"
+client: "CardanoSwap"
+description: "Security review of Cardano-based decentralized exchange. Focused on Plutus smart contract vulnerabilities and UTXO model security."
+category: "DeFi"
+blockchain: "Cardano"
+date: "2024-03"
+highlights:
+  - "Plutus expertise"
+  - "UTXO model security"
+  - "Mainnet deployment support"
+  - "$5M+ trading volume secured"
+metrics:
+  duration: "2.5 weeks"
+  vulnerabilities: 5
+  severity: "High"
+  tvlSecured: "$5M+"
+---
+
+CardanoSwap, a pioneering decentralized exchange on Cardano, requested our expertise to audit their Plutus-based smart contracts and validate their innovative UTXO-based DEX model.
+
+**Challenge:**
+Cardano's UTXO model presents unique security considerations compared to account-based blockchains. The challenge was ensuring the novel DEX mechanisms were secure while leveraging Cardano's unique features.
+
+**Our Approach:**
+Our Cardano specialists conducted a thorough review:
+- Plutus smart contract analysis using formal verification
+- UTXO spending validation logic review
+- Concurrent transaction handling assessment
+- Economic model analysis and validation
+- Integration testing with Cardano infrastructure
+
+**Key Findings:**
+1. Logic error in UTXO handling that could lock funds
+2. Potential for transaction collision in high-traffic scenarios
+3. Insufficient validation in Plutus scripts
+4. Economic attack vector through fee manipulation
+5. Datum validation vulnerability
+
+**Technical Deep Dive:**
+The most critical issue involved improper UTXO consumption logic that could result in permanent fund locks. Our team identified this through extensive testing of edge cases in concurrent transaction scenarios.
+
+**Results:**
+All issues were resolved, and the DEX launched successfully. The platform has processed over $5M in trading volume with zero security incidents.
+
+**Innovation:**
+This audit helped establish best practices for UTXO-based DEX development, contributing to the broader Cardano ecosystem security standards.
+
+**Client Testimonial:**
+"Mirage Audits' deep understanding of Cardano's UTXO model was crucial for our DEX. Their insights helped us build a more robust and efficient platform." - Lead Developer, CardanoSwap

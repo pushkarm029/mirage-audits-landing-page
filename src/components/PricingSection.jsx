@@ -18,7 +18,7 @@ export default function PricingSection() {
         
         {/* Section Header */}
         <div className="mb-8 sm:mb-12">
-          <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+          <h2 className="font-inter text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
             Transparent{" "}
             <span className="text-green-300">Pricing</span>
           </h2>
@@ -30,7 +30,7 @@ export default function PricingSection() {
         {/* Main Pricing Card */}
         <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-lg p-6 sm:p-8 rounded-xl border border-green-400/30 mb-6 sm:mb-8">
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-300 mb-2 font-space-grotesk">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-300 mb-2">
               $1K/week
             </div>
             <div className="bg-white/5 backdrop-blur-lg p-3 sm:p-4 rounded-lg border border-white/10">
@@ -45,7 +45,7 @@ export default function PricingSection() {
         {/* Quick Comparison */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="bg-red-500/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-red-500/30">
-            <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-red-200 mb-3">
+            <h4 className="font-inter text-base sm:text-lg font-semibold text-red-200 mb-3">
               Traditional Audits
             </h4>
             <ul className="font-inter text-sm text-white/70 space-y-2">
@@ -57,7 +57,7 @@ export default function PricingSection() {
           </div>
           
           <div className="bg-green-500/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-green-500/30">
-            <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-green-200 mb-3">
+            <h4 className="font-inter text-base sm:text-lg font-semibold text-green-200 mb-3">
               Mirage Audits
             </h4>
             <ul className="font-inter text-sm text-white/70 space-y-2">

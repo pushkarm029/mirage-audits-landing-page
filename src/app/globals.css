@@ -15,6 +15,11 @@ body::before {
   z-index: -1;
 }
 
+/* Hero Background */
+.hero-bg {
+  background-image: url('/hero-bg.png');
+}
+
 /* Hero Content Animation */
 .hero-content {
   opacity: 0.8;
@@ -188,7 +193,30 @@ body::before {
   }
 }
 
+/* Production-ready styles */
+img {
+  pointer-events: none; /* Prevent image dragging */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  user-select: none; /* Prevent image selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 @theme inline {
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   @keyframes marquee {
   from {
     transform: translateX(0);
@@ -237,6 +265,15 @@ body::before {
   100% {
     opacity: 0;
     transform: translateX(100%);
+    }
+  }
+  
+  @keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(360deg);
     }
   }
 }
