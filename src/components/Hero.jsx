@@ -70,7 +70,7 @@ export default function Hero() {
                   </header>
 
                   {/* Description paragraph */}
-                  <p className="text-white/60 text-base leading-relaxed font-normal tracking-wide pr-3 md:max-w-[920px] mb-10">
+                  <p className="text-white/60 text-sm leading-snug font-normal tracking-normal pr-3 md:max-w-[720px] mb-6">
                     Mirage Audits is a trusted partner in securing the future of blockchain. Our team of experienced auditors specializes in next-generation chains, delivering rigorous smart contract audits backed by deep technical expertise. With a proven track record across leading Web3 ecosystems, we provide the security assurance needed to build with confidence.
                   </p>
 

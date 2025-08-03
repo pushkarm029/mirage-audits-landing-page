@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Careers - Mirage Audits | Join Our Web3 Security Team",
-  description: "Join the Mirage Audits team and help secure the future of Web3. We're building the next generation of blockchain security solutions.",
-  keywords: "careers, jobs, Web3 security, blockchain security, smart contract auditing, remote work, crypto jobs",
+  title: "Careers - Join Next-Gen Chain Security Experts | Starknet, Sui, Solana, Rust, Stellar",
+  description: "Join our specialized security team focusing on Starknet, Sui, Solana, Rust & Stellar blockchains. Help secure the next generation of blockchain technology.",
+  keywords: "Starknet jobs, Sui careers, Solana security jobs, Rust developer jobs, Stellar careers, blockchain security careers, Cairo developer, Move developer",
   openGraph: {
     title: "Careers - Mirage Audits",
     description: "Join our mission to make Web3 safer. Build the future of blockchain security with us.",

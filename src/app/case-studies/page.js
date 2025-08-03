@@ -1,9 +1,9 @@
 import CaseStudiesList from "@/components/CaseStudiesList";
 
 export const metadata = {
-  title: "Case Studies - Mirage Audits | Web3 Security Success Stories",
-  description: "Explore real-world Web3 security audits by Mirage Audits. See how we've secured Solana, Sui, Cardano & Layer 2 protocols, preventing millions in potential losses.",
-  keywords: "case studies, Web3 security audit results, smart contract audit examples, Solana audit case study, Cardano security review, DeFi audit success",
+  title: "Security Case Studies - Starknet, Sui, Solana, Rust & Stellar Audits",
+  description: "Real-world security audit case studies for Starknet, Sui, Solana, Rust & Stellar projects. See how we've prevented millions in potential losses.",
+  keywords: "Starknet audit case study, Sui audit examples, Solana security review, Rust audit results, Stellar security case study, next-gen chain audits",
   openGraph: {
     title: "Case Studies - Mirage Audits",
     description: "Real-world security successes across Web3 ecosystems. See how we've secured the future of blockchain technology.",
