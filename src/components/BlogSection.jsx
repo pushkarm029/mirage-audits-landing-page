@@ -44,7 +44,7 @@ export default function BlogSection() {
 
         {/* Section Header - Halborn style */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="font-space-grotesk text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="text-blue-400">Blockchain Security</span> Insights
           </h2>
           <p className="font-inter text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
@@ -80,11 +80,11 @@ export default function BlogSection() {
                   <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-2 mx-auto">
-                        <span className="text-lg font-bold text-white font-jetbrains-mono">
+                        <span className="text-lg font-bold text-white">
                           {article.category?.slice(0, 2).toUpperCase() || 'BL'}
                         </span>
                       </div>
-                      <div className="text-xs text-white/70 font-jetbrains-mono">
+                      <div className="text-xs text-white/70">
                         {article.category}
                       </div>
                     </div>
@@ -96,13 +96,13 @@ export default function BlogSection() {
                 <div className="p-6">
                   {/* Category Badge */}
                   <div className="mb-4">
-                    <span className="inline-flex px-3 py-1 text-xs font-jetbrains-mono font-medium uppercase tracking-wider bg-blue-600/20 text-blue-300 rounded-full border border-blue-400/20">
+                    <span className="inline-flex px-3 py-1 text-xs font-medium uppercase tracking-wider bg-blue-600/20 text-blue-300 rounded-full border border-blue-400/20">
                       {article.category}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-space-grotesk text-xl font-bold mb-3 text-white group-hover:text-blue-200 transition-colors duration-300 leading-tight">
+                  <h3 className="font-inter text-xl font-bold mb-3 text-white group-hover:text-blue-200 transition-colors duration-300 leading-tight">
                     {article.title}
                   </h3>
 
@@ -126,7 +126,7 @@ export default function BlogSection() {
         <div className="text-center mt-12 sm:mt-16">
           <a
             href="/blog"
-            className="inline-flex items-center gap-2 font-inter font-bold uppercase tracking-wider text-sm h-12 px-8 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
+            className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm h-12 px-8 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
           >
             View All Articles
             <svg

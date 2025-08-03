@@ -27,7 +27,7 @@ export default function SecurityAnimation() {
         {/* Central M logo */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center border border-blue-400/30">
-            <span className="text-blue-400 font-bold text-3xl font-jetbrains-mono">M</span>
+            <span className="text-blue-400 font-bold text-3xl">M</span>
           </div>
         </div>
 

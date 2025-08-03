@@ -84,7 +84,7 @@ export default function TrustedBySection() {
         
         {/* Trusted by Section - exact Halborn structure */}
         <div className="mt-0 sm:mt-[-2rem] mb-16">
-          <h4 className="flex justify-center font-inter text-base font-bold text-white/60 mb-6 md:mb-8 uppercase tracking-wider">
+          <h4 className="flex justify-center text-base font-bold text-white/60 mb-6 md:mb-8 uppercase tracking-wider">
             Trusted by
           </h4>
           
@@ -137,7 +137,7 @@ export default function TrustedBySection() {
         {/* Featured In Section - exact Halborn structure */}
         <div className="flex">
           <div className="mx-auto text-center flex flex-col gap-10">
-            <h4 className="font-space-grotesk text-2xl md:text-3xl font-bold text-center text-white">
+            <h4 className="font-inter text-2xl md:text-3xl font-bold text-center text-white">
               Featured In
             </h4>
             

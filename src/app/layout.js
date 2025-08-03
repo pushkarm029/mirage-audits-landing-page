@@ -1,4 +1,4 @@
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/Analytics";
 import { PostHogProvider } from "@/components/PostHogProvider";
@@ -6,17 +6,11 @@ import { PostHogProvider } from "@/components/PostHogProvider";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: 'swap',
-  fallback: ['system-ui', 'arial']
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: 'swap',
   fallback: ['system-ui', 'arial']
 });
+
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -260,7 +254,7 @@ export default function RootLayout({ children }) {
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-inter antialiased bg-black text-white`}
       >
         <PostHogProvider>
           {/* Add GA component here - it will only render in production */}

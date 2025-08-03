@@ -63,14 +63,14 @@ export default function Hero() {
                   {/* Header with main headline */}
                   <header className="flex flex-col text-blue-400 mt-[6px] md:mt-[22px] mb-[10px] lg:mb-[26px] md:max-w-[970px]">
                     <div className="flex gap-[25px] mt-2">
-                      <h1 className="my-auto uppercase font-space-grotesk text-xl leading-[28px] tracking-[2px] text-white md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px] 2xl:leading-[60px] font-bold">
+                      <h1 className="my-auto uppercase text-xl leading-tight tracking-[1.5px] text-white md:text-4xl lg:text-5xl xl:text-6xl font-bold">
                         <span>Elite Security Infrastructure for Next-Gen Chains</span>
                       </h1>
                     </div>
                   </header>
 
                   {/* Description paragraph */}
-                  <p className="text-white text-base leading-5 font-light tracking-[0.16px] pr-3 md:max-w-[920px] mb-10">
+                  <p className="text-white/60 text-base leading-relaxed font-normal tracking-wide pr-3 md:max-w-[920px] mb-10">
                     Mirage Audits is a trusted partner in securing the future of blockchain. Our team of experienced auditors specializes in next-generation chains, delivering rigorous smart contract audits backed by deep technical expertise. With a proven track record across leading Web3 ecosystems, we provide the security assurance needed to build with confidence.
                   </p>
 
@@ -87,7 +87,7 @@ export default function Hero() {
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-blue-300 text-xs font-jetbrains-mono whitespace-nowrap">NEAR</span>
+                        <span className="text-blue-300 text-xs whitespace-nowrap">NEAR</span>
                       </div>
                     </div>
                     <div className="group relative">
@@ -101,7 +101,7 @@ export default function Hero() {
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-blue-300 text-xs font-jetbrains-mono whitespace-nowrap">Rust</span>
+                        <span className="text-blue-300 text-xs whitespace-nowrap">Rust</span>
                       </div>
                     </div>
                     <div className="group relative">
@@ -113,7 +113,7 @@ export default function Hero() {
                         className="h-8 w-auto transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-blue-300 text-xs font-jetbrains-mono whitespace-nowrap">Solana</span>
+                        <span className="text-blue-300 text-xs whitespace-nowrap">Solana</span>
                       </div>
                     </div>
                     {/* <div className="group relative">
@@ -125,7 +125,7 @@ export default function Hero() {
                         className="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-blue-300 text-xs font-jetbrains-mono whitespace-nowrap">Starknet</span>
+                        <span className="text-blue-300 text-xs whitespace-nowrap">Starknet</span>
                       </div>
                     </div> */}
                     <div className="group relative">
@@ -137,7 +137,7 @@ export default function Hero() {
                         className="h-9 w-auto transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-blue-300 text-xs font-jetbrains-mono whitespace-nowrap">Sui</span>
+                        <span className="text-blue-300 text-xs whitespace-nowrap">Sui</span>
                       </div>
                     </div>
                     <div className="group relative">
@@ -151,7 +151,7 @@ export default function Hero() {
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-blue-300 text-xs font-jetbrains-mono whitespace-nowrap">Stellar</span>
+                        <span className="text-blue-300 text-xs whitespace-nowrap">Stellar</span>
                       </div>
                     </div>
                   </div>
@@ -159,7 +159,7 @@ export default function Hero() {
                   {/* Call-to-action button */}
                   <div className="flex justify-start gap-6">
                     <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
-                      <button type="button" className="inline-flex items-center gap-2 font-inter font-bold uppercase tracking-wider text-xs md:text-sm px-3 md:px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200">
+                      <button type="button" className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-xs md:text-sm px-3 md:px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200">
                         Book An Audit
                         <svg
                           className="w-4 h-4"

@@ -109,7 +109,7 @@ const Navbar = () => {
               target="_blank" 
               rel="noopener noreferrer" 
               onClick={handleCTAClick}
-              className="inline-flex items-center gap-2 font-inter font-bold uppercase tracking-wider text-xs md:text-sm px-3 md:px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
+              className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-xs md:text-sm px-3 md:px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
             >
               Book An Audit
               <svg 

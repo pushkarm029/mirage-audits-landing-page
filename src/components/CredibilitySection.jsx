@@ -70,7 +70,7 @@ export default function CredibilitySection() {
 
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="font-space-grotesk text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+          <h2 className="font-inter text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
             Security Specialists for{" "}
             <span className="text-blue-200">Early-Stage Builders</span>
           </h2>
@@ -86,10 +86,10 @@ export default function CredibilitySection() {
               key={index}
               className="bg-white/5 backdrop-blur-lg p-4 sm:p-6 rounded-xl border border-white/10 hover:border-blue-400/30 transition-all duration-300 text-center group"
             >
-              <div className="text-2xl sm:text-3xl font-bold text-blue-200 mb-2 font-space-grotesk">
+              <div className="text-2xl sm:text-3xl font-bold text-blue-200 mb-2">
                 {stat.highlight}
               </div>
-              <h4 className="font-space-grotesk text-base sm:text-lg font-semibold text-white mb-2">
+              <h4 className="font-inter text-base sm:text-lg font-semibold text-white mb-2">
                 {stat.title}
               </h4>
               <p className="font-inter text-sm text-white/70">
@@ -101,7 +101,7 @@ export default function CredibilitySection() {
 
         {/* Deep Expertise Section */}
         <div className="bg-gray-900/60 backdrop-blur-lg p-6 sm:p-8 rounded-xl border border-white/20 mb-6 sm:mb-8">
-          <h3 className="font-space-grotesk text-lg sm:text-xl font-semibold text-blue-200 mb-4 sm:mb-6 text-center">
+          <h3 className="font-inter text-lg sm:text-xl font-semibold text-blue-200 mb-4 sm:mb-6 text-center">
             Deep Ecosystem Expertise
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
@@ -114,13 +114,13 @@ export default function CredibilitySection() {
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: area.color }}
                 ></div>
-                <span className="font-jetbrains-mono text-sm font-medium text-white">
+                <span className="font-inter text-sm font-medium text-white">
                   {area.ecosystem}
                 </span>
                 <span className="text-white/50 text-sm">
                   /
                 </span>
-                <span className="font-jetbrains-mono text-sm text-white/70">
+                <span className="font-inter text-sm text-white/70">
                   {area.language}
                 </span>
               </div>

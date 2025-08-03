@@ -34,7 +34,7 @@ export default function BlogList() {
       <div className="py-20 bg-black min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="text-white/60 font-inter">Loading blog posts...</div>
+            <div className="text-white/60">Loading blog posts...</div>
           </div>
         </div>
       </div>
@@ -86,10 +86,10 @@ export default function BlogList() {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-space-grotesk">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Security Blog
           </h1>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto font-inter">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Expert insights on Web3 security, smart contract vulnerabilities, and blockchain security best practices.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function BlogList() {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-500/50 font-inter"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-500/50"
               />
             </div>
             
@@ -113,7 +113,7 @@ export default function BlogList() {
               <select
                 value={filterCategory}
                 onChange={(e) => handleFilterChange(e.target.value)}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-blue-500/50 font-inter"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-blue-500/50"
               >
                 {categories.map(category => (
                   <option key={category} value={category} className="bg-black">
@@ -128,7 +128,7 @@ export default function BlogList() {
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-white mb-8 font-space-grotesk">Featured Articles</h2>
+            <h2 className="text-2xl font-bold text-white mb-8">Featured Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPosts.slice(0, 3).map((post) => (
                 <Link
@@ -139,25 +139,25 @@ export default function BlogList() {
                 >
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-jetbrains-mono">
+                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">
                         Featured
                       </span>
-                      <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs font-jetbrains-mono">
+                      <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs">
                         {post.category}
                       </span>
                     </div>
                     
-                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors font-space-grotesk line-clamp-2">
+                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
                     
-                    <p className="text-white/70 text-sm mb-4 line-clamp-3 font-inter">
+                    <p className="text-white/70 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
                     
                     <div className="flex items-center justify-between text-xs text-white/60">
                       <span className="font-inter">{post.author}</span>
-                      <span className="font-jetbrains-mono">{post.readingTime}</span>
+                      <span className="font-inter">{post.readingTime}</span>
                     </div>
                   </div>
                 </Link>
@@ -168,11 +168,11 @@ export default function BlogList() {
 
         {/* All Posts */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-8 font-space-grotesk">All Articles</h2>
+          <h2 className="text-2xl font-bold text-white mb-8">All Articles</h2>
           
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
-              <div className="text-white/60 font-inter">No articles found matching your criteria.</div>
+              <div className="text-white/60">No articles found matching your criteria.</div>
             </div>
           ) : loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -204,25 +204,25 @@ export default function BlogList() {
                 >
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs font-jetbrains-mono">
+                      <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs">
                         {post.category}
                       </span>
-                      <span className="text-white/60 text-xs font-jetbrains-mono">
+                      <span className="text-white/60 text-xs">
                         {post.date}
                       </span>
                     </div>
                     
-                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors font-space-grotesk line-clamp-2">
+                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
                     
-                    <p className="text-white/70 text-sm mb-4 line-clamp-3 font-inter">
+                    <p className="text-white/70 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
                     
                     <div className="flex items-center justify-between text-xs text-white/60">
                       <span className="font-inter">{post.author}</span>
-                      <span className="font-jetbrains-mono">{post.readingTime}</span>
+                      <span className="font-inter">{post.readingTime}</span>
                     </div>
                   </div>
                 </Link>

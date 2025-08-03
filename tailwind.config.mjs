@@ -13,8 +13,8 @@ module.exports = {
   	extend: {
   		fontFamily: {
   			inter: ['var(--font-inter)', 'sans-serif'],
-  			'space-grotesk': ['var(--font-space-grotesk)', 'sans-serif'],
   			'jetbrains-mono': ['var(--font-jetbrains-mono)', 'monospace'],
+  			sans: ['var(--font-inter)', 'sans-serif'],
   		},
   		colors: {
   			background: 'hsl(var(--background))',

@@ -123,7 +123,7 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   onClick={handleCTAClick}
-                  className="inline-flex items-center gap-2 font-inter font-bold uppercase tracking-wider text-sm px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
+                  className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
                 >
                   Book An Audit
                   <svg 
@@ -144,7 +144,7 @@ export default function Footer() {
 
         {/* Copyright Section */}
         <div className="lg:max-w-[1440px] lg:mx-auto px-3 lg:px-16">
-          <div className="text-left pb-4 font-inter text-white/50 text-sm">
+          <div className="text-left pb-4 text-white/50 text-sm">
             © Mirage Audits 2025. All rights reserved.
           </div>
         </div>

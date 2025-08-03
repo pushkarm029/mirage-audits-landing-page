@@ -18,10 +18,10 @@ export default function CareersPage() {
         {/* Header */}
         <div className="pt-24 pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-space-grotesk">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Careers at <span className="text-blue-400">Mirage Audits</span>
             </h1>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto font-inter">
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
               Join our mission to make Web3 safer. We're building the next generation of blockchain security solutions.
             </p>
           </div>
@@ -39,12 +39,12 @@ export default function CareersPage() {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">
+            <h2 className="text-3xl font-bold text-white mb-4">
               No Open Positions
             </h2>
 
             {/* Description */}
-            <p className="text-lg text-white/70 mb-6 font-inter max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 mb-6 max-w-2xl mx-auto">
               We're currently not hiring, but we're always looking for exceptional talent to join our team. 
               If you're passionate about Web3 security and want to help shape the future of blockchain auditing, 
               we'd love to hear from you.
@@ -52,12 +52,12 @@ export default function CareersPage() {
 
             {/* Contact Info */}
             <div className="space-y-4">
-              <p className="text-white/60 font-inter">
+              <p className="text-white/60">
                 Interested in future opportunities? Send us your resume at:
               </p>
               <a 
                 href="mailto:careers@mirageaudits.com" 
-                className="inline-block text-blue-400 hover:text-blue-300 font-jetbrains-mono text-lg transition-colors"
+                className="inline-block text-blue-400 hover:text-blue-300 text-lg transition-colors"
               >
                 careers@mirageaudits.com
               </a>
@@ -65,7 +65,7 @@ export default function CareersPage() {
 
             {/* Future Roles */}
             <div className="mt-8 pt-8 border-t border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4 font-space-grotesk">
+              <h3 className="text-xl font-semibold text-white mb-4">
                 Roles We Typically Hire For:
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">

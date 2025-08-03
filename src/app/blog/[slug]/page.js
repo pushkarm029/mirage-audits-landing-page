@@ -88,7 +88,7 @@ export default async function BlogPost({ params }) {
         {/* Back Button */}
         <a
           href="/blog"
-          className="mb-8 flex items-center text-blue-300 hover:text-blue-200 transition-colors font-inter"
+          className="mb-8 flex items-center text-blue-300 hover:text-blue-200 transition-colors"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -99,30 +99,30 @@ export default async function BlogPost({ params }) {
         {/* Article Header */}
         <article className="mb-8">
           <div className="flex flex-wrap items-center gap-4 mb-6">
-            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-jetbrains-mono">
+            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">
               {meta.category}
             </span>
-            <span className="text-white/60 text-sm font-jetbrains-mono">
+            <span className="text-white/60 text-sm">
               {meta.date}
             </span>
-            <span className="text-white/60 text-sm font-jetbrains-mono">
+            <span className="text-white/60 text-sm">
               {meta.readingTime}
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-space-grotesk">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {meta.title}
           </h1>
           
           <div className="flex items-center gap-4 mb-8">
             <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-              <span className="text-sm font-bold text-white font-jetbrains-mono">
+              <span className="text-sm font-bold text-white">
                 {meta.author.split(' ').map(n => n[0]).join('')}
               </span>
             </div>
             <div>
-              <div className="text-white font-medium font-inter">{meta.author}</div>
-              <div className="text-white/60 text-sm font-inter">Security Expert</div>
+              <div className="text-white font-medium">{meta.author}</div>
+              <div className="text-white/60 text-sm">Security Expert</div>
             </div>
           </div>
 
@@ -132,7 +132,7 @@ export default async function BlogPost({ params }) {
               {meta.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-sm font-jetbrains-mono"
+                  className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-sm"
                 >
                   #{tag}
                 </span>
@@ -149,7 +149,7 @@ export default async function BlogPost({ params }) {
         {/* Share Section */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex items-center justify-between">
-            <div className="text-white/60 font-inter">
+            <div className="text-white/60">
               Found this helpful? Share it with your team.
             </div>
             <div className="flex gap-4">

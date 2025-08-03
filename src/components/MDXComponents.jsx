@@ -4,37 +4,37 @@ const MDXComponents = {
   // Headings
   h1: (props) => (
     <h1 
-      className="text-3xl md:text-4xl font-bold text-white mb-6 font-space-grotesk" 
+      className="text-3xl md:text-4xl font-bold text-white mb-6" 
       {...props} 
     />
   ),
   h2: (props) => (
     <h2 
-      className="text-2xl md:text-3xl font-semibold text-white mb-4 font-space-grotesk" 
+      className="text-2xl md:text-3xl font-semibold text-white mb-4" 
       {...props} 
     />
   ),
   h3: (props) => (
     <h3 
-      className="text-xl md:text-2xl font-semibold text-white mb-3 font-space-grotesk" 
+      className="text-xl md:text-2xl font-semibold text-white mb-3" 
       {...props} 
     />
   ),
   h4: (props) => (
     <h4 
-      className="text-lg md:text-xl font-medium text-white mb-3 font-space-grotesk" 
+      className="text-lg md:text-xl font-medium text-white mb-3" 
       {...props} 
     />
   ),
   h5: (props) => (
     <h5 
-      className="text-base md:text-lg font-medium text-white mb-2 font-space-grotesk" 
+      className="text-base md:text-lg font-medium text-white mb-2" 
       {...props} 
     />
   ),
   h6: (props) => (
     <h6 
-      className="text-sm md:text-base font-medium text-white mb-2 font-space-grotesk" 
+      className="text-sm md:text-base font-medium text-white mb-2" 
       {...props} 
     />
   ),
@@ -42,7 +42,7 @@ const MDXComponents = {
   // Paragraphs and text
   p: (props) => (
     <p 
-      className="text-white/80 mb-4 leading-relaxed font-inter text-base" 
+      className="text-white/80 mb-4 leading-relaxed text-base" 
       {...props} 
     />
   ),
@@ -50,13 +50,13 @@ const MDXComponents = {
   // Lists
   ul: (props) => (
     <ul 
-      className="text-white/80 mb-4 space-y-2 list-disc list-inside font-inter" 
+      className="text-white/80 mb-4 space-y-2 list-disc list-inside" 
       {...props} 
     />
   ),
   ol: (props) => (
     <ol 
-      className="text-white/80 mb-4 space-y-2 list-decimal list-inside font-inter" 
+      className="text-white/80 mb-4 space-y-2 list-decimal list-inside" 
       {...props} 
     />
   ),
@@ -80,13 +80,13 @@ const MDXComponents = {
   // Code
   code: (props) => (
     <code 
-      className="bg-white/10 text-blue-300 px-2 py-1 rounded text-sm font-jetbrains-mono" 
+      className="bg-white/10 text-blue-300 px-2 py-1 rounded text-sm" 
       {...props} 
     />
   ),
   pre: (props) => (
     <pre 
-      className="bg-white/5 border border-white/10 p-4 rounded-lg overflow-x-auto mb-6 text-sm font-jetbrains-mono" 
+      className="bg-white/5 border border-white/10 p-4 rounded-lg overflow-x-auto mb-6 text-sm" 
       {...props} 
     />
   ),
@@ -127,13 +127,13 @@ const MDXComponents = {
   ),
   th: (props) => (
     <th 
-      className="border border-white/20 px-4 py-2 text-left font-semibold text-white font-space-grotesk" 
+      className="border border-white/20 px-4 py-2 text-left font-semibold text-white" 
       {...props} 
     />
   ),
   td: (props) => (
     <td 
-      className="border border-white/20 px-4 py-2 text-white/80 font-inter" 
+      className="border border-white/20 px-4 py-2 text-white/80" 
       {...props} 
     />
   ),

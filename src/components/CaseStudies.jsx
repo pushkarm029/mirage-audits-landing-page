@@ -52,10 +52,10 @@ export default function CaseStudies() {
 
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-space-grotesk">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Case Studies
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto font-inter">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Real-world security successes across Web3 ecosystems. From DeFi protocols to gaming platforms,
             see how we've helped secure the future of blockchain technology.
           </p>
@@ -90,11 +90,11 @@ export default function CaseStudies() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <span className="text-2xl font-bold text-white font-jetbrains-mono">
+                        <span className="text-2xl font-bold text-white">
                           {caseStudy.blockchain?.slice(0, 2).toUpperCase() || 'CS'}
                         </span>
                       </div>
-                      <div className="text-xs text-white/70 bg-white/10 px-3 py-1 rounded-full font-jetbrains-mono">
+                      <div className="text-xs text-white/70 bg-white/10 px-3 py-1 rounded-full">
                         {caseStudy.category}
                       </div>
                     </div>
@@ -102,7 +102,7 @@ export default function CaseStudies() {
 
                   {/* Blockchain Badge */}
                   <div className="absolute top-4 right-4">
-                    <div className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs font-jetbrains-mono">
+                    <div className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs">
                       {caseStudy.blockchain || 'Multi-Chain'}
                     </div>
                   </div>
@@ -114,22 +114,22 @@ export default function CaseStudies() {
                   {/* Client Name */}
                   <div className="flex items-center mb-3">
                     <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-xs font-bold text-white font-jetbrains-mono">
+                      <span className="text-xs font-bold text-white">
                         {caseStudy.client.slice(0, 2).toUpperCase()}
                       </span>
                     </div>
-                    <span className="text-sm text-blue-300 font-jetbrains-mono">
+                    <span className="text-sm text-blue-300">
                       {caseStudy.client}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors font-space-grotesk">
+                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors">
                     {caseStudy.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-white/70 text-sm mb-4 line-clamp-3 font-inter">
+                  <p className="text-white/70 text-sm mb-4 line-clamp-3">
                     {caseStudy.description}
                   </p>
 
@@ -156,7 +156,7 @@ export default function CaseStudies() {
 
                   {/* Read More Indicator */}
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <span className="text-xs text-blue-300 font-jetbrains-mono group-hover:text-blue-200 transition-colors">
+                    <span className="text-xs text-blue-300 group-hover:text-blue-200 transition-colors">
                       Read Case Study →
                     </span>
                   </div>
@@ -172,7 +172,7 @@ export default function CaseStudies() {
           <a href="/case-studies">
             <button
               onClick={handleViewAllClick}
-              className="relative inline-flex items-center justify-center px-8 py-3 bg-white/5 text-white rounded-lg border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 font-inter"
+              className="relative inline-flex items-center justify-center px-8 py-3 bg-white/5 text-white rounded-lg border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
             >
               <div className="absolute inset-0 rounded-lg border-2 border-blue-500/30 animate-pulse"></div>
               <span className="relative">View All Case Studies</span>

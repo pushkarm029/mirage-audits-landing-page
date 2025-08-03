@@ -18,7 +18,7 @@ export default function Contact() {
     'Other'
   ];
 
-  const inputClassName = "w-full h-10 px-3 bg-white/5 border border-white/20 text-white text-sm focus:outline-none focus:border-blue-400 transition-colors font-inter rounded";
+  const inputClassName = "w-full h-10 px-3 bg-white/5 border border-white/20 text-white text-sm focus:outline-none focus:border-blue-400 transition-colors rounded";
 
   // Generate random math problem on component mount
   useEffect(() => {
@@ -119,10 +119,10 @@ export default function Contact() {
         
         {/* Section Header */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-space-grotesk">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Get Your <span className="text-blue-400">Security Audit</span>
           </h2>
-          <p className="text-base text-white/70 max-w-2xl mx-auto font-inter">
+          <p className="text-base text-white/70 max-w-2xl mx-auto">
             Ready to secure your Web3 project? Our expert team provides fast, 
             affordable audits for Solana, Sui, Cardano, and Layer 2 protocols.
           </p>
@@ -132,10 +132,10 @@ export default function Contact() {
         <div className="text-center mb-8">
           <div className="flex justify-center items-center text-sm">
             <div>
-              <span className="text-white/70 font-inter">Security Inquiries: </span>
+              <span className="text-white/70">Security Inquiries: </span>
               <a 
                 href="mailto:security@mirageaudits.com" 
-                className="text-blue-300 hover:text-blue-200 transition-colors underline font-jetbrains-mono"
+                className="text-blue-300 hover:text-blue-200 transition-colors underline"
                 onClick={() => posthog?.capture('email_clicked', { email_type: 'security' })}
               >
                 security@mirageaudits.com
@@ -150,7 +150,7 @@ export default function Contact() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-white mb-1 font-inter">
+                <label className="block text-sm font-medium text-white mb-1">
                   Name *
                 </label>
                 <input
@@ -163,7 +163,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-1 font-inter">
+                <label className="block text-sm font-medium text-white mb-1">
                   Email *
                 </label>
                 <input
@@ -178,7 +178,7 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-white mb-1 font-inter">
+                <label className="block text-sm font-medium text-white mb-1">
                   Company
                 </label>
                 <input
@@ -190,7 +190,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-1 font-inter">
+                <label className="block text-sm font-medium text-white mb-1">
                   Project Type
                 </label>
                 <select
@@ -206,20 +206,20 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-white mb-1 font-inter">
+              <label className="block text-sm font-medium text-white mb-1">
                 Additional Information
               </label>
               <textarea
                 name="message"
                 rows={3}
-                className="w-full px-3 py-2 bg-white/5 border border-white/20 text-white text-sm focus:outline-none focus:border-blue-400 transition-colors font-inter resize-none rounded"
+                className="w-full px-3 py-2 bg-white/5 border border-white/20 text-white text-sm focus:outline-none focus:border-blue-400 transition-colors resize-none rounded"
                 placeholder="Tell us about your project, timeline, or specific security concerns..."
               />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-white mb-1 font-inter">
+                <label className="block text-sm font-medium text-white mb-1">
                   What's {mathProblem.num1} + {mathProblem.num2}? *
                 </label>
                 <input
@@ -237,7 +237,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-10 px-4 bg-blue-600 text-white text-sm font-medium border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-colors duration-200 font-inter disabled:opacity-50 disabled:cursor-not-allowed rounded"
+                  className="w-full h-10 px-4 bg-blue-600 text-white text-sm font-medium border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed rounded"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
@@ -256,7 +256,7 @@ export default function Contact() {
           
           {/* Success/Error Message */}
           {submitMessage && (
-            <div className={`mt-4 p-3 rounded text-center text-sm font-inter transition-all duration-300 ${
+            <div className={`mt-4 p-3 rounded text-center text-sm transition-all duration-300 ${
               submitStatus === 'success' 
                 ? 'bg-green-500/10 border border-green-500/20 text-green-400' 
                 : 'bg-red-500/10 border border-red-500/20 text-red-400'
