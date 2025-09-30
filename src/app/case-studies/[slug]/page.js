@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import MDXComponents from '@/components/MDXComponents';
+import MDXComponents from '@/components/blog/MDXComponents';
 import { notFound } from 'next/navigation';
 
 async function getCaseStudy(slug) {

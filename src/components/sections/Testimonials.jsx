@@ -1,7 +1,7 @@
 import React from 'react';
 import GradientButton from "./ui/GradientButton";
 
-export default function Testimonial() {
+export default function Testimonials() {
   const testimonials = [
     {
       initial: "D",
