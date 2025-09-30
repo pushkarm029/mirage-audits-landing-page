@@ -47,7 +47,7 @@ export default function BlogSection() {
           <h2 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="text-blue-400">Blockchain Security</span> Insights
           </h2>
-          <p className="font-inter text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="font-inter text-sm sm:text-base md:text-lg text-white/70 max-w-3xl mx-auto">
             Stay informed with the latest security research, threat analysis, and best practices from our expert team
           </p>
         </div>
@@ -76,11 +76,11 @@ export default function BlogSection() {
                 className="group bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 overflow-hidden hover:border-blue-400/30 transition-all duration-300 block"
               >
                 {/* Cover Image */}
-                <div className="aspect-video relative overflow-hidden">
+                <div className="aspect-video sm:aspect-[4/3] relative overflow-hidden">
                   <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-2 mx-auto">
-                        <span className="text-lg font-bold text-white">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center mb-2 mx-auto">
+                        <span className="text-sm sm:text-base md:text-lg font-bold text-white">
                           {article.category?.slice(0, 2).toUpperCase() || 'BL'}
                         </span>
                       </div>
@@ -93,7 +93,7 @@ export default function BlogSection() {
                 </div>
 
                 {/* Article Content */}
-                <div className="p-6">
+                <div className="p-4 sm:p-5 md:p-6">
                   {/* Category Badge */}
                   <div className="mb-4">
                     <span className="inline-flex px-3 py-1 text-xs font-medium uppercase tracking-wider bg-blue-600/20 text-blue-300 rounded-full border border-blue-400/20">
@@ -102,12 +102,12 @@ export default function BlogSection() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-inter text-xl font-bold mb-3 text-white group-hover:text-blue-200 transition-colors duration-300 leading-tight">
+                  <h3 className="font-inter text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-blue-200 transition-colors duration-300 leading-tight">
                     {article.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="font-inter text-sm text-white/70 mb-4 leading-relaxed line-clamp-3">
+                  <p className="font-inter text-xs sm:text-sm text-white/70 mb-3 sm:mb-4 leading-relaxed line-clamp-2 sm:line-clamp-3">
                     {article.description}
                   </p>
 
@@ -126,7 +126,7 @@ export default function BlogSection() {
         <div className="text-center mt-12 sm:mt-16">
           <a
             href="/blog"
-            className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm h-12 px-8 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
+            className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm h-12 px-6 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
           >
             View All Articles
             <svg

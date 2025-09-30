@@ -31,7 +31,7 @@ export default function TwitterSection() {
           <h2 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="text-blue-400">Security</span> Insights from X
           </h2>
-          <p className="font-inter text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="font-inter text-sm sm:text-base md:text-lg text-white/70 max-w-3xl mx-auto">
             Follow our real-time security analysis, threat alerts, and educational threads on X (formerly Twitter)
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function TwitterSection() {
               href="https://x.com/mirageaudits" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm h-12 px-8 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
+              className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm h-12 px-6 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -89,7 +89,7 @@ export default function TwitterSection() {
               href="https://x.com/search?q=%23BlockchainSecurity%20from%3Amirageaudits" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm h-12 px-8 bg-white/5 text-white border border-white/20 hover:bg-white/10 hover:border-white/30 rounded-full transition-colors duration-200"
+              className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm h-12 px-6 bg-white/5 text-white border border-white/20 hover:bg-white/10 hover:border-white/30 rounded-full transition-colors duration-200"
             >
               View All Threads
               <svg 
