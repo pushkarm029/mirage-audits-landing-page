@@ -1,7 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import GoogleAnalytics from "@/components/Analytics";
-import { PostHogProvider } from "@/components/PostHogProvider";
+import GoogleAnalytics from "@/components/providers/Analytics";
+import { PostHogProvider } from "@/components/providers/PostHogProvider";
 
 const inter = Inter({
   variable: "--font-inter",

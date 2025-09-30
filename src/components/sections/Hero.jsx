@@ -3,32 +3,6 @@
 
 import Image from 'next/image';
 import { usePostHog } from 'posthog-js/react';
-import SecurityAnimation from './SecurityAnimation';
-
-const BENEFITS = [
-  {
-    title: "Non-EVM specialists",
-    description: "Deep expertise in Solana, Cardano, Fuel, Sui, Starknet—not generic EVM auditors"
-  },
-  {
-    title: "$100M+ in Exploits Prevented",
-    description: "Real security that saves real money—we've stopped millions in potential losses"
-  },
-  {
-    title: "$1K/week vs $10K+ minimums",
-    description: "Professional security that doesn't consume your major development budget"
-  },
-];
-
-const SUPPORTED_NETWORKS = [
-  { name: "Cardano", symbol: "ADA", color: "#0033AD", image: "/images/cardano.png" },
-  { name: "Fuel", symbol: "FUEL", color: "#00C896", image: "/images/fuel.png" },
-  { name: "Solana", symbol: "SOL", color: "#9945FF", image: "/images/solana.png" },
-  { name: "Starknet", symbol: "STRK", color: "#EC796B", image: "/images/starknet.png" },
-  { name: "Sui", symbol: "SUI", color: "#4CA2FF", image: "/images/sui.png" },
-];
-
-// TODO: Add a wavy gradient background
 
 export default function Hero() {
   const posthog = usePostHog();

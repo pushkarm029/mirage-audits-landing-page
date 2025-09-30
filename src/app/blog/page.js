@@ -1,4 +1,4 @@
-import BlogList from "@/components/BlogList";
+import BlogList from "@/components/blog/BlogList";
 
 export const metadata = {
   title: "Security Blog - NEAR, Sui, Solana, Rust & Stellar Insights",

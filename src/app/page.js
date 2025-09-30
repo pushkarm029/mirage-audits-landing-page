@@ -1,14 +1,13 @@
-import Hero from "@/components/Hero";
-import TrustedBySection from "@/components/TrustedBySection";
-import CredibilitySection from "@/components/CredibilitySection";
-import PricingSection from "@/components/PricingSection";
-import Featuresection from "@/components/Featuresection";
-import CaseStudies from "@/components/CaseStudies";
-import BlogSection from "@/components/BlogSection";
-import TwitterSection from "@/components/TwitterSection";
-import Contact from "@/components/Contact";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/NewFooter";
+import Hero from "@/components/sections/Hero";
+import TrustedBySection from "@/components/sections/TrustedBySection";
+import CredibilitySection from "@/components/sections/CredibilitySection";
+import PricingSection from "@/components/sections/PricingSection";
+import FeaturesSection from "@/components/sections/FeaturesSection";
+import CaseStudies from "@/components/sections/CaseStudies";
+import BlogSection from "@/components/sections/BlogSection";
+import Contact from "@/components/sections/Contact";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Metadata is now consolidated in layout.js
 

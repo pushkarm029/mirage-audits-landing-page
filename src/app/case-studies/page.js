@@ -1,4 +1,4 @@
-import CaseStudiesList from "@/components/CaseStudiesList";
+import CaseStudiesList from "@/components/case-studies/CaseStudiesList";
 
 export const metadata = {
   title: "Security Case Studies - NEAR, Sui, Solana, Rust & Stellar Audits",
