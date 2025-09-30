@@ -42,7 +42,7 @@ export default function Footer() {
             <div className="flex justify-between items-center mb-8">
               <div>
                 <Image 
-                  src="/logo.png" 
+                  src="/logo.webp" 
                   alt="Mirage Audits - Smart Contract Security Audits" 
                   width={150} 
                   height={32} 

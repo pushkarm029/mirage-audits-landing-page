@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import MDXComponents from '@/components/blog/MDXComponents';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 async function getPost(slug) {
   try {
@@ -53,7 +54,7 @@ export async function generateMetadata({ params }) {
 
   const imageUrl = post.meta.image
     ? `https://mirageaudits.com${post.meta.image}`
-    : 'https://mirageaudits.com/logo.png';
+    : 'https://mirageaudits.com/logo.webp';
 
   return {
     title: `${post.meta.title} - Mirage Audits`,
@@ -105,7 +106,7 @@ export default async function BlogPost({ params }) {
     "@type": "Article",
     "headline": meta.title,
     "description": meta.excerpt,
-    "image": meta.image ? `https://mirageaudits.com${meta.image}` : "https://mirageaudits.com/logo.png",
+    "image": meta.image ? `https://mirageaudits.com${meta.image}` : "https://mirageaudits.com/logo.webp",
     "datePublished": meta.date,
     "dateModified": meta.date,
     "author": {
@@ -118,7 +119,7 @@ export default async function BlogPost({ params }) {
       "name": "Mirage Audits",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://mirageaudits.com/logo.png"
+        "url": "https://mirageaudits.com/logo.webp"
       }
     },
     "mainEntityOfPage": {

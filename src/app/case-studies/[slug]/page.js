@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
 
   const imageUrl = study.meta.image
     ? `https://mirageaudits.com${study.meta.image}`
-    : 'https://mirageaudits.com/logo.png';
+    : 'https://mirageaudits.com/logo.webp';
 
   return {
     title: `${study.meta.title} - ${study.meta.client} | Mirage Audits`,

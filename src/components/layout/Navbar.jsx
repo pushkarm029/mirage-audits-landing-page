@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="w-[150px] grid my-auto">
           <a href="/" className="">
             <Image 
-              src="/logo.png" 
+              src="/logo.webp" 
               alt="Mirage Audits - Smart Contract Security Audits" 
               width={150} 
               height={32} 

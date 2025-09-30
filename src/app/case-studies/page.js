@@ -14,7 +14,7 @@ export const metadata = {
     url: 'https://mirageaudits.com/case-studies',
     images: [
       {
-        url: 'https://mirageaudits.com/logo.png',
+        url: 'https://mirageaudits.com/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Mirage Audits Case Studies',
@@ -25,7 +25,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: "Security Case Studies - Mirage Audits",
     description: "Real-world security successes across Web3 ecosystems.",
-    images: ['https://mirageaudits.com/logo.png'],
+    images: ['https://mirageaudits.com/logo.webp'],
     creator: '@mirageaudits',
     site: '@mirageaudits',
   },

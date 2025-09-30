@@ -47,8 +47,8 @@ export const metadata = {
     },
   },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo.webp',
+    apple: '/logo.webp',
   },
   openGraph: {
     title: 'Security Audits for Next-Gen Chains | NEAR • Sui • Solana • Rust • Stellar',
@@ -93,7 +93,7 @@ export const metadata = {
         "@id": "https://mirageaudits.com/#organization",
         "name": "Mirage Audits",
         "url": "https://mirageaudits.com",
-        "logo": "https://mirageaudits.com/logo.png",
+        "logo": "https://mirageaudits.com/logo.webp",
         "description": "Next-gen chain security specialists providing professional smart contract audits for NEAR, Sui, Solana, Rust, and Stellar at $1K/week.",
         "contactPoint": {
           "@type": "ContactPoint",

@@ -14,7 +14,7 @@ export const metadata = {
     url: 'https://mirageaudits.com/blog',
     images: [
       {
-        url: 'https://mirageaudits.com/logo.png',
+        url: 'https://mirageaudits.com/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Mirage Audits Security Blog',
@@ -25,7 +25,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: "Security Blog - Mirage Audits",
     description: "Expert insights on Web3 security and blockchain security best practices.",
-    images: ['https://mirageaudits.com/logo.png'],
+    images: ['https://mirageaudits.com/logo.webp'],
     creator: '@mirageaudits',
     site: '@mirageaudits',
   },
