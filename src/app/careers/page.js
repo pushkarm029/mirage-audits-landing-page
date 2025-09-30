@@ -53,29 +53,31 @@ export default function CareersPage() {
         {/* Header */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Careers at <span className="text-blue-400">Mirage Audits</span>
+            Hack the Future with <span className="text-blue-400">Mirage</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto">
-            Join our mission to make Web3 safer. We're building the next generation of blockchain security solutions.
+          <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto mb-6">
+            We're auditors hunting bugs in next-gen chains. Remote-first, async, no BS. We need talent who finds vulnerabilities. Degrees optional, skills required.
           </p>
+          <div className="flex flex-wrap justify-center gap-3 text-sm text-white/70">
+            <span className="px-3 py-1 bg-white/5 rounded-full">Global Remote</span>
+            <span className="px-3 py-1 bg-white/5 rounded-full">Async by Default</span>
+            <span className="px-3 py-1 bg-white/5 rounded-full">Impact &gt; Hours</span>
+          </div>
         </div>
 
         {/* Job Listings */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-          {/* Security Researcher Position */}
+          {/* Security Auditor Position */}
           <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-6 md:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Security Researcher
+                  Blockchain Security Auditor
                 </h2>
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs md:text-sm">
-                    Full-time
-                  </span>
-                  <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs md:text-sm">
                     Remote
                   </span>
                 </div>
@@ -83,50 +85,58 @@ export default function CareersPage() {
             </div>
 
             <p className="text-sm md:text-base text-white/60 mb-6">
-              Join our security research team to identify vulnerabilities in next-generation blockchain protocols. Work with cutting-edge technology across Sui, Solana, Stellar, NEAR, and other emerging chains.
+              Hunt bugs in Rust, Move, Anchor & Soroban. Audit protocols on Solana, Sui, Stellar, NEAR. Ship reports that save millions.
             </p>
 
             <div className="space-y-4 mb-6">
               <div>
-                <h3 className="text-base md:text-lg font-semibold text-white mb-3">Responsibilities</h3>
+                <h3 className="text-base md:text-lg font-semibold text-white mb-3">You'll Do</h3>
                 <ul className="space-y-2 text-sm md:text-base text-white/60">
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Conduct security audits of smart contracts and blockchain protocols
+                    Conduct thorough security assessments of smart contracts, DeFi protocols, and blockchain infrastructure across next-gen chains
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Research and identify novel attack vectors and vulnerabilities
+                    Identify critical vulnerabilities in consensus mechanisms, cryptographic implementations, and protocol logic
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Develop automated security testing tools and frameworks
+                    Collaborate with protocol teams to provide actionable remediation strategies and best practices
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Collaborate with development teams to remediate security issues
+                    Develop and maintain internal security tooling, fuzzing frameworks, and automated analysis systems
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-blue-400">•</span>
+                    Stay current with emerging threats, attack vectors, and security research in the Web3 ecosystem
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-blue-400">•</span>
+                    Serve as a technical expert, educating clients on security best practices and risk mitigation
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-base md:text-lg font-semibold text-white mb-3">Requirements</h3>
+                <h3 className="text-base md:text-lg font-semibold text-white mb-3">You Have</h3>
                 <ul className="space-y-2 text-sm md:text-base text-white/60">
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    3+ years of experience in security research or smart contract auditing
+                    3+ years breaking or building blockchain systems
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Deep understanding of blockchain technology and cryptography
+                    Expert-level proficiency in Rust, Move, or Anchor framework
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Proficiency in Rust, Move, or Anchor framework
+                    Deep crypto & consensus knowledge
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Experience with static analysis and formal verification tools
+                    Proven track record: Top audit contest placements, strong private audit history, or experience at a leading security firm
                   </li>
                 </ul>
               </div>
@@ -145,72 +155,73 @@ export default function CareersPage() {
             </a>
           </div>
 
-          {/* Security Researcher Intern Position */}
+          {/* Security Auditor Intern Position */}
           <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-6 md:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Security Researcher Intern
+                  Security Auditor Intern
                 </h2>
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs md:text-sm">
-                    Internship
+                    3-6 months
                   </span>
                   <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs md:text-sm">
                     Remote
-                  </span>
-                  <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs md:text-sm">
-                    3-6 months
                   </span>
                 </div>
               </div>
             </div>
 
             <p className="text-sm md:text-base text-white/60 mb-6">
-              Kickstart your career in blockchain security. Learn from experienced auditors while working on real-world security assessments for next-gen blockchain protocols.
+              Learn from senior auditors on real protocol audits. Paid internship, remote work, hands-on security research.
             </p>
 
             <div className="space-y-4 mb-6">
               <div>
-                <h3 className="text-base md:text-lg font-semibold text-white mb-3">Responsibilities</h3>
+                <h3 className="text-base md:text-lg font-semibold text-white mb-3">You'll Do</h3>
                 <ul className="space-y-2 text-sm md:text-base text-white/60">
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Assist in smart contract security audits under senior auditor guidance
+                    Assist senior auditors in conducting security assessments of smart contracts and blockchain protocols
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Research blockchain vulnerabilities and document findings
+                    Identify and document potential vulnerabilities in testnet and production codebases
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Contribute to internal security tooling and automation
+                    Collaborate with the team to research emerging attack vectors and security patterns
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Participate in code reviews and security assessments
+                    Contribute to internal tooling and automation for security testing workflows
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-blue-400">•</span>
+                    Stay up-to-date with industry trends and security developments in the Web3 space
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-base md:text-lg font-semibold text-white mb-3">Requirements</h3>
+                <h3 className="text-base md:text-lg font-semibold text-white mb-3">You Have</h3>
                 <ul className="space-y-2 text-sm md:text-base text-white/60">
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Currently pursuing or recently completed degree in Computer Science or related field
+                    Solid programming fundamentals (any language)
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Strong understanding of programming concepts and data structures
+                    Curiosity about security & blockchain
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Basic knowledge of blockchain technology and smart contracts
+                    Some experience with Rust, Move, Anchor, or Soroban
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Familiarity with Rust, Move, Anchor, or Soroban (preferred)
+                    Track record: Top audit contest finishes, bug bounty programs, or prior security research
                   </li>
                 </ul>
               </div>
@@ -231,16 +242,13 @@ export default function CareersPage() {
 
           {/* Technical Writer Position */}
           <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-6 md:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+            <div className="flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Technical Writer
+                  Security Technical Writer
                 </h2>
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs md:text-sm">
-                    Full-time
-                  </span>
-                  <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs md:text-sm">
                     Remote
                   </span>
                 </div>
@@ -248,50 +256,58 @@ export default function CareersPage() {
             </div>
 
             <p className="text-sm md:text-base text-white/60 mb-6">
-              Transform complex security findings into clear, actionable audit reports. Help educate the Web3 community through technical documentation, blog posts, and security guides.
+              Create technical content that educates the Web3 community about security. Write blog posts, research papers, and guides that builders actually read.
             </p>
 
             <div className="space-y-4 mb-6">
               <div>
-                <h3 className="text-base md:text-lg font-semibold text-white mb-3">Responsibilities</h3>
+                <h3 className="text-base md:text-lg font-semibold text-white mb-3">You'll Do</h3>
                 <ul className="space-y-2 text-sm md:text-base text-white/60">
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Write comprehensive security audit reports for client projects
+                    Publish in-depth security research articles and vulnerability analysis for the Web3 community
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Create technical documentation for security best practices
+                    Create educational blog posts covering security best practices, common pitfalls, and emerging threats
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Develop educational content including blog posts and security guides
+                    Develop comprehensive technical guides and documentation for blockchain security topics
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Collaborate with security researchers to communicate findings effectively
+                    Collaborate with security researchers to translate complex findings into accessible content
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-blue-400">•</span>
+                    Stay current with Web3 security trends and contribute thought leadership to the ecosystem
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-blue-400">•</span>
+                    Engage with the developer community through technical content and educational initiatives
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-base md:text-lg font-semibold text-white mb-3">Requirements</h3>
+                <h3 className="text-base md:text-lg font-semibold text-white mb-3">You Have</h3>
                 <ul className="space-y-2 text-sm md:text-base text-white/60">
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    2+ years of technical writing experience, preferably in blockchain or security
+                    2+ years writing about security, crypto, or dev tools
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Ability to explain complex technical concepts to diverse audiences
+                    Can read Rust/Move code and understand what it does
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Understanding of blockchain technology and smart contract security
+                    Portfolio of technical writing (blog, docs, reports)
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-blue-400">•</span>
-                    Excellent written and verbal communication skills
+                    Understand blockchain fundamentals & common vulnerabilities
                   </li>
                 </ul>
               </div>

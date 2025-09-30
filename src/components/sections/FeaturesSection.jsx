@@ -95,7 +95,7 @@ const FeatureSection = () => {
             <span className="text-blue-200">Building Projects</span>
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
-            Integrate security into your development workflow—no delays, no surprises
+            Integrate security into your development workflow. No delays, no surprises
           </p>
         </div>
         
