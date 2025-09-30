@@ -24,7 +24,7 @@ export default function Home() {
         {/* <CredibilitySection />
         <PricingSection />
         <Featuresection /> */}
-        <CaseStudies />
+        {/* <CaseStudies /> */}
         <BlogSection />
         {/* <TwitterSection /> */}
         {/* <SupportedChains /> */}

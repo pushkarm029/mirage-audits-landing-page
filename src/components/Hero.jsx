@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="z-10 mx-4 lg:mx-[40px]">
           <div className="lg:mx-auto lg:px-44 print:m-0 px-0 lg:pl-10 xl:pl-20 2xl:pl-[134px] lg:pr-4 xl:pr-8 2xl:pr-[54px] lg:max-w-full">
             <div className="flex md:h-590px">
-              <div className="flex md:flex-row md:h-fit md:w-full flex-col items-center md:items-start">
+              <div className="flex md:flex-row md:h-fit md:w-full flex-col items-center">
 
                 {/* Mobile: Image First, Desktop: Right side */}
                 <div className="w-full md:w-2/5 flex items-center justify-center order-1 md:order-2 mb-8 md:mb-0 md:mt-8 lg:mt-4">
