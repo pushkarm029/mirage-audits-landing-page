@@ -77,18 +77,41 @@ const MDXComponents = {
     />
   ),
 
-  // Code
-  code: (props) => (
-    <code 
-      className="bg-white/10 text-blue-300 px-2 py-1 rounded text-sm" 
-      {...props} 
-    />
-  ),
-  pre: (props) => (
-    <pre 
-      className="bg-white/5 border border-white/10 p-4 rounded-lg overflow-x-auto mb-6 text-sm" 
-      {...props} 
-    />
+  // Code - inline code vs code blocks
+  code: ({ className, children, ...props }) => {
+    // Check if this is a code block (has language class from rehype-highlight)
+    const isCodeBlock = className && className.startsWith('hljs');
+
+    if (isCodeBlock) {
+      // This is a code block - preserve highlighting classes
+      return (
+        <code
+          className={`${className} font-mono`}
+          {...props}
+        >
+          {children}
+        </code>
+      );
+    }
+
+    // This is inline code
+    return (
+      <code
+        className="bg-white/10 text-blue-300 px-2 py-1 rounded text-sm font-mono"
+        {...props}
+      >
+        {children}
+      </code>
+    );
+  },
+
+  pre: ({ children, ...props }) => (
+    <pre
+      className="bg-[#0d1117] border border-white/10 p-4 rounded-lg overflow-x-auto mb-6 text-sm"
+      {...props}
+    >
+      {children}
+    </pre>
   ),
 
   // Blockquotes

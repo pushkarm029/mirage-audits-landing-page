@@ -99,19 +99,19 @@ export default function Footer() {
 
             {/* Navigation Links and CTA */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0">
-              
-              {/* Navigation Links */}
-              <div className="flex flex-wrap gap-8">
-                <a href="https://github.com/MirageAudits#contacts-and-profiles" target="_blank" rel="noopener noreferrer" onClick={() => handleNavClick('Portfolio')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px]">
+
+              {/* Navigation Links - 2x2 grid on mobile */}
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 md:gap-6 lg:gap-8 w-full sm:w-auto">
+                <a href="https://github.com/MirageAudits#contacts-and-profiles" target="_blank" rel="noopener noreferrer" onClick={() => handleNavClick('Portfolio')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px] whitespace-nowrap">
                   Portfolio
                 </a>
-                <a href="/case-studies" onClick={() => handleNavClick('Case Studies')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px]">
+                <a href="/case-studies" onClick={() => handleNavClick('Case Studies')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px] whitespace-nowrap">
                   Case Studies
                 </a>
-                <a href="/blog" onClick={() => handleNavClick('Blog')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px]">
+                <a href="/blog" onClick={() => handleNavClick('Blog')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px] whitespace-nowrap">
                   Blog
                 </a>
-                <a href="/careers" onClick={() => handleNavClick('Careers')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px]">
+                <a href="/careers" onClick={() => handleNavClick('Careers')} className="font-inter text-white/70 hover:text-white transition ease-in-out text-sm leading-6 uppercase font-light tracking-[0.7px] whitespace-nowrap">
                   Careers
                 </a>
               </div>
@@ -144,7 +144,7 @@ export default function Footer() {
 
         {/* Copyright Section */}
         <div className="lg:max-w-[1440px] lg:mx-auto px-3 lg:px-16">
-          <div className="text-left pb-4 text-white/50 text-sm">
+          <div className="text-center lg:text-left pb-4 text-white/50 text-sm">
             © Mirage Audits 2025. All rights reserved.
           </div>
         </div>

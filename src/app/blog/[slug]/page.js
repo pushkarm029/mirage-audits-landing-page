@@ -185,10 +185,12 @@ export default async function BlogPost({ params }) {
           </h1>
           
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-              <span className="text-sm font-bold text-white">
-                {meta.author.split(' ').map(n => n[0]).join('')}
-              </span>
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
+              <img
+                src="/images/pushkar-author.jpg"
+                alt={meta.author}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="flex items-center gap-3">
               <div>
@@ -228,7 +230,28 @@ export default async function BlogPost({ params }) {
 
         {/* Article Content */}
         <div className="prose prose-lg prose-invert max-w-none">
-          <MDXRemote source={content} components={MDXComponents} />
+          <MDXRemote
+            source={content}
+            components={MDXComponents}
+            options={{
+              mdxOptions: {
+                rehypePlugins: [
+                  [
+                    // @ts-ignore
+                    (await import('rehype-highlight')).default,
+                    {
+                      languages: {
+                        rust: (await import('highlight.js/lib/languages/rust')).default,
+                        move: (await import('highlight.js/lib/languages/rust')).default,
+                        bash: (await import('highlight.js/lib/languages/bash')).default,
+                        json: (await import('highlight.js/lib/languages/json')).default,
+                      }
+                    }
+                  ]
+                ]
+              }
+            }}
+          />
         </div>
 
         {/* Share Section */}
