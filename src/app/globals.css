@@ -17,7 +17,7 @@ body::before {
 
 /* Hero Background */
 .hero-bg {
-  background-image: url('/hero-bg.png');
+  background-image: url('/images/hero/hero-bg.png');
 }
 
 /* Hero Content Animation */

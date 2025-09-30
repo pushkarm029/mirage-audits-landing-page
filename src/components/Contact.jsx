@@ -113,7 +113,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 bg-black" id="contact" style={{backgroundImage: 'url(/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
+    <section className="relative py-16 sm:py-20 bg-black" id="contact" style={{backgroundImage: 'url(/images/backgrounds/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
       <div className="absolute inset-0 bg-black/80"></div>
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         

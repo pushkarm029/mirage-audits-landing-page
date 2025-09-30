@@ -36,7 +36,7 @@ export default function BlogList() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url(/noise-bg.png)',
+            backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
             backgroundRepeat: 'repeat',
             opacity: 0.3
           }}

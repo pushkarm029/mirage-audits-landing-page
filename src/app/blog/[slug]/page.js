@@ -86,7 +86,7 @@ export default async function BlogPost({ params }) {
       <div
         className="absolute inset-0 bg-black"
         style={{
-          backgroundImage: 'url(/noise-bg.png)',
+          backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
           backgroundRepeat: 'repeat'
         }}
       ></div>
