@@ -38,7 +38,7 @@ export default function BlogSection() {
   };
 
   return (
-    <section className="relative bg-black text-white py-16 sm:py-20" style={{ backgroundImage: 'url(/noise-bg.png)' }}>
+    <section className="relative bg-black text-white py-16 sm:py-20" style={{ backgroundImage: 'url(/images/backgrounds/noise-bg.png)' }}>
       <div className="absolute inset-0 bg-black/30"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
 

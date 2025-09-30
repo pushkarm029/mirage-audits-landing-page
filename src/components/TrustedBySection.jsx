@@ -24,18 +24,18 @@ export default function TrustedBySection() {
 
   // Featured media outlets - using same logos as Halborn for credibility
   const featuredMedia = [
-    { name: "Fortune", src: "/featured-in-fortune.svg" },
-    { name: "TechCrunch", src: "/featured-in-techcrunch.svg" },
-    { name: "CNBC", src: "/featured-in-cnbc.svg" },
-    { name: "CoinDesk", src: "/featured-in-coindesk.svg" },
-    { name: "Yahoo Finance", src: "/featured-in-yahoo-finance.svg" },
-    { name: "Forbes", src: "/featured-in-forbes.svg" },
-    { name: "Blockworks", src: "/featured-in-blockworks.svg" },
-    { name: "The New York Times", src: "/featured-in-nyt.svg" },
-    { name: "CoinTelegraph", src: "/featured-in-cointelegraph.svg" },
-    { name: "Bloomberg", src: "/featured-in-bloomberg.svg" },
-    { name: "BeInCrypto", src: "/featured-in-beincrypto.svg" },
-    { name: "Decrypt", src: "/featured-in-decrypt.svg" }
+    { name: "Fortune", src: "/media/featured-in/featured-in-fortune.svg" },
+    { name: "TechCrunch", src: "/media/featured-in/featured-in-techcrunch.svg" },
+    { name: "CNBC", src: "/media/featured-in/featured-in-cnbc.svg" },
+    { name: "CoinDesk", src: "/media/featured-in/featured-in-coindesk.svg" },
+    { name: "Yahoo Finance", src: "/media/featured-in/featured-in-yahoo-finance.svg" },
+    { name: "Forbes", src: "/media/featured-in/featured-in-forbes.svg" },
+    { name: "Blockworks", src: "/media/featured-in/featured-in-blockworks.svg" },
+    { name: "The New York Times", src: "/media/featured-in/featured-in-nyt.svg" },
+    { name: "CoinTelegraph", src: "/media/featured-in/featured-in-cointelegraph.svg" },
+    { name: "Bloomberg", src: "/media/featured-in/featured-in-bloomberg.svg" },
+    { name: "BeInCrypto", src: "/media/featured-in/featured-in-beincrypto.svg" },
+    { name: "Decrypt", src: "/media/featured-in/featured-in-decrypt.svg" }
   ];
 
   useEffect(() => {

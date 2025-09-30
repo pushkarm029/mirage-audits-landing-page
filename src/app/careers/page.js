@@ -2,10 +2,30 @@ export const metadata = {
   title: "Careers - Join Next-Gen Chain Security Experts | NEAR, Sui, Solana, Rust, Stellar",
   description: "Join our specialized security team focusing on NEAR, Sui, Solana, Rust & Stellar blockchains. Help secure the next generation of blockchain technology.",
   keywords: "NEAR jobs, Sui careers, Solana security jobs, Rust developer jobs, Stellar careers, blockchain security careers, Move developer, Anchor developer, Soroban developer",
+  alternates: {
+    canonical: 'https://mirageaudits.com/careers',
+  },
   openGraph: {
     title: "Careers - Mirage Audits",
     description: "Join our mission to make Web3 safer. Build the future of blockchain security with us.",
     type: "website",
+    url: 'https://mirageaudits.com/careers',
+    images: [
+      {
+        url: 'https://mirageaudits.com/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Careers at Mirage Audits',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Careers - Mirage Audits",
+    description: "Join our mission to make Web3 safer.",
+    images: ['https://mirageaudits.com/logo.png'],
+    creator: '@mirageaudits',
+    site: '@mirageaudits',
   },
 };
 
@@ -19,7 +39,7 @@ export default function CareersPage() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(/noise-bg.png)',
+          backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
           backgroundRepeat: 'repeat',
           opacity: 0.3
         }}
