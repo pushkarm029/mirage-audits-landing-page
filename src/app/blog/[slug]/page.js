@@ -43,7 +43,7 @@ async function getPost(slug) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = await getPost(slug);
-  
+
   if (!post) {
     return {
       title: 'Post Not Found - Mirage Audits',
@@ -51,9 +51,16 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const imageUrl = post.meta.image
+    ? `https://mirageaudits.com${post.meta.image}`
+    : 'https://mirageaudits.com/logo.png';
+
   return {
     title: `${post.meta.title} - Mirage Audits`,
     description: post.meta.excerpt,
+    alternates: {
+      canonical: `https://mirageaudits.com/blog/${slug}`,
+    },
     openGraph: {
       title: post.meta.title,
       description: post.meta.excerpt,
@@ -61,11 +68,23 @@ export async function generateMetadata({ params }) {
       publishedTime: post.meta.date,
       authors: [post.meta.author],
       tags: post.meta.tags,
+      url: `https://mirageaudits.com/blog/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.meta.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.meta.title,
       description: post.meta.excerpt,
+      images: [imageUrl],
+      creator: '@mirageaudits',
+      site: '@mirageaudits',
     },
   };
 }
@@ -80,7 +99,45 @@ export default async function BlogPost({ params }) {
 
   const { content, meta } = post;
 
+  // Article Structured Data (JSON-LD)
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": meta.title,
+    "description": meta.excerpt,
+    "image": meta.image ? `https://mirageaudits.com${meta.image}` : "https://mirageaudits.com/logo.png",
+    "datePublished": meta.date,
+    "dateModified": meta.date,
+    "author": {
+      "@type": "Person",
+      "name": meta.author,
+      "url": "https://mirageaudits.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mirage Audits",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mirageaudits.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://mirageaudits.com/blog/${slug}`
+    },
+    "keywords": meta.tags ? meta.tags.join(', ') : '',
+    "articleSection": meta.category,
+    "inLanguage": "en-US"
+  };
+
   return (
+    <>
+      {/* Add structured data script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
+      />
+
     <section className="relative min-h-screen text-white overflow-hidden">
       {/* Noise background - repeatable */}
       <div
@@ -133,9 +190,24 @@ export default async function BlogPost({ params }) {
                 {meta.author.split(' ').map(n => n[0]).join('')}
               </span>
             </div>
-            <div>
-              <div className="text-white font-medium">{meta.author}</div>
-              <div className="text-white/60 text-sm">Security Expert</div>
+            <div className="flex items-center gap-3">
+              <div>
+                <div className="text-white font-medium">{meta.author}</div>
+                <div className="text-white/60 text-sm">Security Expert</div>
+              </div>
+              {meta.authorTwitter && (
+                <a
+                  href={`https://x.com/${meta.authorTwitter}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-blue-400 transition-colors"
+                  aria-label={`Follow ${meta.author} on X`}
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
 
@@ -183,5 +255,6 @@ export default async function BlogPost({ params }) {
         </div>
       </div>
     </section>
+    </>
   );
 }

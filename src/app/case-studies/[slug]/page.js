@@ -44,7 +44,7 @@ async function getCaseStudy(slug) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const study = await getCaseStudy(slug);
-  
+
   if (!study) {
     return {
       title: 'Case Study Not Found - Mirage Audits',
@@ -52,19 +52,38 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const imageUrl = study.meta.image
+    ? `https://mirageaudits.com${study.meta.image}`
+    : 'https://mirageaudits.com/logo.png';
+
   return {
-    title: `${study.meta.title} - Mirage Audits`,
+    title: `${study.meta.title} - ${study.meta.client} | Mirage Audits`,
     description: study.meta.description,
+    alternates: {
+      canonical: `https://mirageaudits.com/case-studies/${slug}`,
+    },
     openGraph: {
-      title: study.meta.title,
+      title: `${study.meta.title} - ${study.meta.client}`,
       description: study.meta.description,
       type: 'article',
       publishedTime: study.meta.date,
+      url: `https://mirageaudits.com/case-studies/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${study.meta.title} - ${study.meta.client}`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: study.meta.title,
+      title: `${study.meta.title} - ${study.meta.client}`,
       description: study.meta.description,
+      images: [imageUrl],
+      creator: '@mirageaudits',
+      site: '@mirageaudits',
     },
   };
 }
