@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://mirageaudits.com/careers',
     images: [
       {
-        url: 'https://mirageaudits.com/logo.png',
+        url: 'https://mirageaudits.com/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Careers at Mirage Audits',
@@ -23,7 +23,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: "Careers - Mirage Audits",
     description: "Join our mission to make Web3 safer.",
-    images: ['https://mirageaudits.com/logo.png'],
+    images: ['https://mirageaudits.com/logo.webp'],
     creator: '@mirageaudits',
     site: '@mirageaudits',
   },
@@ -39,7 +39,7 @@ export default function CareersPage() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
+          backgroundImage: 'url(/images/backgrounds/noise-bg.webp)',
           backgroundRepeat: 'repeat',
           opacity: 0.3
         }}

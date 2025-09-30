@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { usePostHog } from 'posthog-js/react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function BlogListClient({ initialPosts }) {
   const [filterCategory, setFilterCategory] = useState('All');
@@ -57,7 +58,7 @@ export default function BlogListClient({ initialPosts }) {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
+          backgroundImage: 'url(/images/backgrounds/noise-bg.webp)',
           backgroundRepeat: 'repeat',
           opacity: 0.3
         }}
@@ -126,9 +127,11 @@ export default function BlogListClient({ initialPosts }) {
                     {/* Thumbnail Image */}
                     {post.image && (
                       <div className="relative h-48 overflow-hidden">
-                        <img
+                        <Image
                           src={post.image}
                           alt={post.title}
+                          width={400}
+                          height={192}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -184,9 +187,11 @@ export default function BlogListClient({ initialPosts }) {
                     {/* Thumbnail Image */}
                     {post.image && (
                       <div className="relative h-48 overflow-hidden">
-                        <img
+                        <Image
                           src={post.image}
                           alt={post.title}
+                          width={400}
+                          height={192}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

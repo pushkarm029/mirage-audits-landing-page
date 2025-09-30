@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePostHog } from 'posthog-js/react';
+import Image from 'next/image';
 
 export default function BlogSection() {
   const [blogArticles, setBlogArticles] = useState([]);
@@ -38,7 +39,7 @@ export default function BlogSection() {
   };
 
   return (
-    <section className="relative bg-black text-white py-16 sm:py-20" style={{ backgroundImage: 'url(/images/backgrounds/noise-bg.png)' }}>
+    <section className="relative bg-black text-white py-16 sm:py-20" style={{ backgroundImage: 'url(/images/backgrounds/noise-bg.webp)' }}>
       <div className="absolute inset-0 bg-black/30"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
 
@@ -78,9 +79,11 @@ export default function BlogSection() {
                 {/* Cover Image */}
                 <div className="aspect-video relative overflow-hidden">
                   {article.image ? (
-                    <img
+                    <Image
                       src={article.image}
                       alt={article.title}
+                      width={600}
+                      height={338}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (

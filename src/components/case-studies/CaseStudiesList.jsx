@@ -36,7 +36,7 @@ export default function CaseStudiesList() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
+            backgroundImage: 'url(/images/backgrounds/noise-bg.webp)',
             backgroundRepeat: 'repeat',
             opacity: 0.3
           }}
@@ -94,7 +94,7 @@ export default function CaseStudiesList() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(/noise-bg.png)',
+          backgroundImage: 'url(/noise-bg.webp)',
           backgroundRepeat: 'repeat',
           opacity: 0.3
         }}
