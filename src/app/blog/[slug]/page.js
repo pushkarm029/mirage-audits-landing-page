@@ -81,9 +81,22 @@ export default async function BlogPost({ params }) {
   const { content, meta } = post;
 
   return (
-    <div className="relative py-20 bg-black min-h-screen" style={{backgroundImage: 'url(/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
+    <section className="relative min-h-screen text-white overflow-hidden">
+      {/* Noise background - repeatable */}
+      <div
+        className="absolute inset-0 bg-black"
+        style={{
+          backgroundImage: 'url(/noise-bg.png)',
+          backgroundRepeat: 'repeat'
+        }}
+      ></div>
+
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+
+      {/* Content */}
+      <div className="relative z-10 py-20 pt-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Button */}
         <a
@@ -167,7 +180,8 @@ export default async function BlogPost({ params }) {
           </div>
         </div>
 
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

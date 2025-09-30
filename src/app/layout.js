@@ -29,11 +29,11 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL('https://mirageaudits.com'),
   title: {
-    default: 'Security Audits for Next-Gen Chains | Starknet • Sui • Solana • Rust • Stellar | Mirage Audits',
+    default: 'Security Audits for Next-Gen Chains | NEAR • Sui • Solana • Rust • Stellar | Mirage Audits',
     template: '%s | Mirage Audits',
   },
-  description: "Expert security audits for Starknet, Sui, Solana, Rust & Stellar blockchains. $1K/week professional auditing. Book an audit via Telegram: https://t.me/mirageaudits",
-  keywords: ['Starknet audit', 'Sui audit', 'Solana audit', 'Rust security', 'Stellar audit', 'blockchain security', 'smart contract audit', 'Cairo audit', 'Move audit', 'next-gen chains security', 'DeFi security', 'Web3 audit'],
+  description: "Expert security audits for NEAR, Sui, Solana, Rust & Stellar blockchains. $1K/week professional auditing. Book an audit via Telegram: https://t.me/mirageaudits",
+  keywords: ['NEAR audit', 'Sui audit', 'Solana audit', 'Rust security', 'Stellar audit', 'blockchain security', 'smart contract audit', 'Move audit', 'Anchor audit', 'Soroban audit', 'next-gen chains security', 'DeFi security', 'Web3 audit'],
   authors: [{ name: 'Mirage Audits', url: 'https://mirageaudits.com' }],
   robots: {
     index: true,
@@ -51,8 +51,8 @@ export const metadata = {
     apple: '/logo.png',
   },
   openGraph: {
-    title: 'Security Audits for Next-Gen Chains | Starknet • Sui • Solana • Rust • Stellar',
-    description: 'Expert security audits for Starknet, Sui, Solana, Rust & Stellar blockchains. $1K/week professional auditing. Book via https://t.me/mirageaudits',
+    title: 'Security Audits for Next-Gen Chains | NEAR • Sui • Solana • Rust • Stellar',
+    description: 'Expert security audits for NEAR, Sui, Solana, Rust & Stellar blockchains. $1K/week professional auditing. Book via https://t.me/mirageaudits',
     url: 'https://mirageaudits.com',
     siteName: 'Mirage Audits',
     type: 'website',
@@ -60,8 +60,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Security Audits for Next-Gen Chains | Starknet • Sui • Solana • Rust • Stellar',
-    description: 'Expert security audits for Starknet, Sui, Solana, Rust & Stellar blockchains. $1K/week professional auditing. Book via https://t.me/mirageaudits',
+    title: 'Security Audits for Next-Gen Chains | NEAR • Sui • Solana • Rust • Stellar',
+    description: 'Expert security audits for NEAR, Sui, Solana, Rust & Stellar blockchains. $1K/week professional auditing. Book via https://t.me/mirageaudits',
   },
   other: {
     'script[type="application/ld+json"]': JSON.stringify([
@@ -71,7 +71,7 @@ export const metadata = {
         "@id": "https://mirageaudits.com/#website",
         "url": "https://mirageaudits.com",
         "name": "Mirage Audits",
-        "description": "Expert security audits for Starknet, Sui, Solana, Rust & Stellar blockchains at $1K/week.",
+        "description": "Expert security audits for NEAR, Sui, Solana, Rust & Stellar blockchains at $1K/week.",
         "publisher": {
           "@id": "https://mirageaudits.com/#organization"
         },
@@ -94,7 +94,7 @@ export const metadata = {
         "name": "Mirage Audits",
         "url": "https://mirageaudits.com",
         "logo": "https://mirageaudits.com/logo.png",
-        "description": "Next-gen chain security specialists providing professional smart contract audits for Starknet, Sui, Solana, Rust, and Stellar at $1K/week.",
+        "description": "Next-gen chain security specialists providing professional smart contract audits for NEAR, Sui, Solana, Rust, and Stellar at $1K/week.",
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "security@mirageaudits.com",
@@ -176,7 +176,7 @@ export const metadata = {
             "name": "What blockchains do you audit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We specialize in next-generation blockchains including Starknet (Cairo), Sui (Move), Solana (Anchor), Rust (various frameworks), and Stellar (Soroban). We focus exclusively on advanced blockchain architectures."
+              "text": "We specialize in next-generation blockchains including NEAR, Sui (Move), Solana (Anchor), Rust (various frameworks), and Stellar (Soroban). We focus exclusively on advanced blockchain architectures."
             }
           }
         ]

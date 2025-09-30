@@ -31,13 +31,25 @@ export default function CaseStudiesList() {
 
   if (loading) {
     return (
-      <div className="py-20 bg-black min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="text-white/60">Loading case studies...</div>
+      <section className="relative min-h-screen text-white overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-no-repeat bg-center hero-bg"></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(/noise-bg.png)',
+            backgroundRepeat: 'repeat',
+            opacity: 0.3
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative z-10 py-20 pt-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="text-white/60">Loading case studies...</div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 
@@ -74,10 +86,27 @@ export default function CaseStudiesList() {
 
 
   return (
-    <div className="relative py-20 bg-black" style={{backgroundImage: 'url(/noise-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat'}}>
-      <div className="absolute inset-0 bg-black/80"></div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        
+    <section className="relative min-h-screen text-white overflow-hidden">
+      {/* Background image - same as hero */}
+      <div className="absolute inset-0 bg-cover bg-no-repeat bg-center hero-bg"></div>
+
+      {/* Noise overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/noise-bg.png)',
+          backgroundRepeat: 'repeat',
+          opacity: 0.3
+        }}
+      ></div>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      {/* Content */}
+      <div className="relative z-10 py-20 pt-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -233,8 +262,9 @@ export default function CaseStudiesList() {
           </div>
         )}
 
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

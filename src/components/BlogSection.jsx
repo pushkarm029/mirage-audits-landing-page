@@ -77,18 +77,26 @@ export default function BlogSection() {
               >
                 {/* Cover Image */}
                 <div className="aspect-video relative overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-2 mx-auto">
-                        <span className="text-lg font-bold text-white">
-                          {article.category?.slice(0, 2).toUpperCase() || 'BL'}
-                        </span>
-                      </div>
-                      <div className="text-xs text-white/70">
-                        {article.category}
+                  {article.image ? (
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-2 mx-auto">
+                          <span className="text-lg font-bold text-white">
+                            {article.category?.slice(0, 2).toUpperCase() || 'BL'}
+                          </span>
+                        </div>
+                        <div className="text-xs text-white/70">
+                          {article.category}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </div>
 

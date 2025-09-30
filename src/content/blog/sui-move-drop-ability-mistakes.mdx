@@ -1,0 +1,396 @@
+---
+id: 7
+title: "The Drop Ability Mistakes You'll Make in Sui Move"
+slug: "sui-move-drop-ability-mistakes"
+excerpt: "Move's type system isn't a magic shield: here's what still goes wrong. Discover the subtle gotchas hiding in the drop ability that can drain your protocol."
+author: "David Park"
+date: "2025-01-15"
+category: "Blockchain Security"
+tags: ["Sui", "Move", "Security", "Smart Contracts"]
+readingTime: "22 min read"
+featured: true
+blockchain: "Sui"
+image: "/move-1-thumb.jpg"
+---
+
+**Move's type system isn't a magic shield: here's what still goes wrong**
+
+Sui Move development promises compile-time security that Solidity can only dream of. "Just use the ability system," they say, "and your assets will be safe." Not quite. Even with Move's safety guarantees, there are subtle gotchas that can drain your protocol: and they're hiding in plain sight in the `drop` ability.
+
+## Background
+
+Move's killer feature is its ability system. Unlike Solidity where anything can be copied, dropped, or stored by default, Move makes you explicitly opt-in to these behaviors. The four abilities: `copy`, `drop`, `store`, and `key`: control what operations are valid on your types.
+
+The `drop` ability is particularly critical. It controls whether a value can be ignored or implicitly destroyed. When a struct lacks `drop`, the Move compiler forces you to explicitly consume it. This creates powerful security patterns that are impossible in other languages.
+
+Here's the promise: flash loans that can't be stolen, receipts that must be honored, and resources that can never accidentally disappear. It's beautiful in theory. In practice? Let's explore where developers still shoot themselves in the foot.
+
+## The Accidental Droppable Hot Potato
+
+The "hot potato" pattern is Move's secret weapon for building secure flash loans. You create a struct with zero abilities:
+
+```move
+struct FlashLoanReceipt {
+    pool_id: ID,
+    amount: u64,
+}
+```
+
+This receipt has no `key`, `store`, `copy`, or `drop`. It can't be saved, copied, or ignored. The borrower *must* call your repayment function or their transaction fails to compile. It's compile-time enforcement of financial guarantees.
+
+Except when it's not.
+
+Here's the vulnerability we've seen multiple times in audits:
+
+```move
+struct FlashLoanReceipt has drop {  // <-- CRITICAL BUG
+    pool_id: ID,
+    amount: u64,
+}
+
+public fun borrow(pool: &mut Pool, amount: u64): (Coin<SUI>, FlashLoanReceipt) {
+    let coins = withdraw_from_pool(pool, amount);
+    let receipt = FlashLoanReceipt {
+        pool_id: object::id(pool),
+        amount
+    };
+    (coins, receipt)
+}
+
+public fun repay(pool: &mut Pool, payment: Coin<SUI>, receipt: FlashLoanReceipt) {
+    let FlashLoanReceipt { pool_id, amount } = receipt;
+    assert!(pool_id == object::id(pool), WRONG_POOL);
+    assert!(coin::value(&payment) >= amount, INSUFFICIENT_PAYMENT);
+    deposit_to_pool(pool, payment);
+}
+```
+
+See the problem? That innocent `has drop` on line 1 just destroyed your entire security model. Now attackers can do this:
+
+```move
+public fun exploit(pool: &mut Pool) {
+    let (stolen_coins, receipt) = borrow(pool, 1_000_000);
+
+    // Just... don't call repay
+    // The receipt gets dropped automatically
+
+    transfer::public_transfer(stolen_coins, @attacker);
+}
+```
+
+The compiler happily accepts this code. The receipt gets dropped at the end of scope. Your pool is drained. **This exact vulnerability was found in a production Sui protocol during audit: caught before deployment, but it was there.**
+
+The fix is simple but critical: never add `drop` to enforcement mechanisms. Zero abilities means zero escape routes.
+
+## The UID Field Confusion
+
+Coming from Solidity, developers assume objects can be deleted. In Move, deletion requires explicit handling. This creates confusion around the `UID` type.
+
+On Sui, every object must have `id: UID` as its first field. Here's where things get weird:
+
+```move
+struct GameItem has drop, key, store {  // <-- Won't compile
+    id: UID,
+    power: u64,
+    rarity: u8,
+}
+```
+
+This fails with a cryptic error: "The struct was declared with ability 'drop' so all fields require ability 'drop'. The type 'sui::object::UID' does not have ability 'drop'."
+
+Wait, what? You wanted to make items droppable for cleanup purposes. Seems reasonable. But `UID` deliberately lacks `drop` to maintain unique object identity. If objects could be dropped, they'd disappear from Sui's object graph without proper accounting.
+
+The correct pattern depends on your use case:
+
+```move
+// For actual on-chain objects
+struct GameItem has key, store {
+    id: UID,
+    power: u64,
+    rarity: u8,
+}
+
+public fun delete_item(item: GameItem) {
+    let GameItem { id, power: _, rarity: _ } = item;
+    object::delete(id);  // Explicit deletion
+}
+
+// For temporary computation structs (not objects)
+struct ItemStats has drop, copy {
+    // No UID field - this isn't an object
+    power: u64,
+    rarity: u8,
+}
+```
+
+The mental model shift: **objects with `key` can never have `drop`**. They must be explicitly deleted through the ID. Temporary structs used for computation can have `drop` but aren't objects.
+
+## The Phantom Type Bypass
+
+Generic types enable flexible contracts, but they open a subtle attack vector with the `drop` ability:
+
+```move
+struct PaymentReceipt {  // No phantom type parameter
+    amount: u64,
+}
+
+public fun purchase<CoinType>(
+    item: &mut Item,
+    payment: Coin<CoinType>
+): PaymentReceipt {
+    let amount = coin::value(&payment);
+    deposit_somewhere(payment);
+    PaymentReceipt { amount }
+}
+
+public fun claim_item(receipt: PaymentReceipt, item: Item) {
+    let PaymentReceipt { amount } = receipt;
+    assert!(amount >= item.price, INSUFFICIENT_PAYMENT);
+    transfer::public_transfer(item, tx_context::sender(ctx));
+}
+```
+
+Looks fine, right? Here's the attack:
+
+```move
+public fun exploit() {
+    // Create worthless token
+    let worthless = create_scam_coin();
+
+    // Buy expensive item with worthless token
+    let receipt = purchase<ScamCoin>(expensive_item, worthless);
+
+    // Claim the item - no validation that we paid with the right token!
+    claim_item(receipt, expensive_item);
+}
+```
+
+The `PaymentReceipt` doesn't encode what type of coin was used. An attacker creates a custom `ScamCoin` type with no value, uses it to get a receipt, then claims real items.
+
+The fix requires phantom type parameters:
+
+```move
+struct PaymentReceipt<phantom CoinType> {  // Now type-safe
+    amount: u64,
+}
+
+public fun purchase<CoinType>(
+    item: &mut Item,
+    payment: Coin<CoinType>
+): PaymentReceipt<CoinType> {  // Receipt is bound to CoinType
+    let amount = coin::value(&payment);
+    deposit_somewhere(payment);
+    PaymentReceipt { amount }
+}
+
+public fun claim_item<CoinType>(
+    receipt: PaymentReceipt<CoinType>,  // Must match purchase
+    item: Item
+) {
+    // Validation logic knows the coin type
+}
+```
+
+Now `PaymentReceipt<USDC>` and `PaymentReceipt<ScamCoin>` are different types. The type system prevents the substitution attack. This pattern extends beyond payments: any receipt or promise that depends on a specific type needs phantom parameters.
+
+## The Option Trap
+
+Move's `Option<T>` type is essential for representing optional values, but it introduces surprising behavior with non-droppable types:
+
+```move
+public fun risky_function(maybe_receipt: Option<FlashLoanReceipt>) {
+    if (option::is_some(&maybe_receipt)) {
+        let receipt = option::extract(&mut maybe_receipt);
+        // Use receipt
+    }
+
+    // Function ends - what happens to maybe_receipt?
+}
+```
+
+This code fails with: "The local variable 'maybe_receipt' still contains a value." If the condition is false, `maybe_receipt` still holds `None`, but the compiler doesn't know that. Even empty `Option`s must be explicitly destroyed when they contain non-droppable types:
+
+```move
+public fun safe_function(maybe_receipt: Option<FlashLoanReceipt>) {
+    if (option::is_some(&maybe_receipt)) {
+        let receipt = option::extract(&mut maybe_receipt);
+        // Use receipt
+        option::destroy_none(maybe_receipt);  // Explicitly destroy the empty Option
+    } else {
+        option::destroy_none(maybe_receipt);  // Or destroy it here
+    }
+}
+```
+
+The pattern gets more complex with early returns:
+
+```move
+public fun complex_function(
+    maybe_receipt: Option<FlashLoanReceipt>,
+    condition: bool
+): Option<FlashLoanReceipt> {
+    if (!condition) {
+        return maybe_receipt;  // Pass the hot potato to caller
+    }
+
+    if (option::is_some(&maybe_receipt)) {
+        let receipt = option::extract(&mut maybe_receipt);
+        process_receipt(receipt);
+        option::destroy_none(maybe_receipt);
+    } else {
+        option::destroy_none(maybe_receipt);
+    }
+
+    option::none()  // Return empty Option
+}
+```
+
+This gets tedious fast. The lesson: **avoid wrapping hot potatoes in `Option` unless absolutely necessary.** Design APIs that handle hot potatoes deterministically rather than conditionally.
+
+## The Ability Combination Nightmare
+
+Move's abilities can be combined, and some combinations are dangerous:
+
+```move
+// CRITICAL VULNERABILITY - DO NOT USE
+struct TokenCoin has copy, drop, store {
+    amount: u64,
+}
+```
+
+This struct represents tokens but has both `copy` and `drop`. An attacker can:
+
+1. **Duplicate tokens infinitely** (via `copy`)
+2. **Destroy tokens at will** (via `drop`)
+3. **Create tokens from thin air** by copying and modifying the amount field
+
+This seems obviously wrong, but it appears in real code when developers think about temporary representations:
+
+```move
+// Developer's thought: "This is just for calculations"
+struct Balance has copy, drop {
+    amount: u64,
+}
+
+public fun calculate_rewards(balances: vector<Balance>): u64 {
+    // Calculations using the balances
+}
+```
+
+The problem emerges during refactoring. That innocent `Balance` struct gets reused somewhere else, combined with a transfer function, and suddenly you have token duplication. The safe pattern:
+
+```move
+// For actual assets - only key + store
+struct TokenCoin has key, store {
+    id: UID,
+    balance: Balance,
+}
+
+// For computations - copy + drop is fine
+struct BalanceSnapshot has copy, drop {
+    amount: u64,  // This is just a number, not an asset
+}
+```
+
+**Golden rule: assets should have only `key` and `store`. Never `copy` or `drop`.**
+
+## The Shared Object AdminCap Disaster
+
+Administrative capabilities are objects that grant special privileges. They're often implemented like this:
+
+```move
+struct AdminCap has key, store {
+    id: UID,
+}
+
+public fun initialize(ctx: &mut TxContext) {
+    let admin_cap = AdminCap {
+        id: object::new(ctx)
+    };
+    transfer::public_share_object(admin_cap);  // <-- CATASTROPHIC BUG
+}
+```
+
+That `public_share_object` makes the `AdminCap` globally accessible. Anyone can call admin functions:
+
+```move
+public fun set_fees(
+    _: &AdminCap,  // Anyone can pass this
+    pool: &mut Pool,
+    new_fee: u64
+) {
+    pool.fee = new_fee;
+}
+```
+
+The correct initialization:
+
+```move
+public fun initialize(ctx: &mut TxContext) {
+    let admin_cap = AdminCap {
+        id: object::new(ctx)
+    };
+    transfer::transfer(admin_cap, tx_context::sender(ctx));  // Send to deployer only
+}
+```
+
+Now only the address that received the `AdminCap` can call admin functions. The capability itself provides authorization: no need for address checks in every function.
+
+This mistake is particularly insidious because the contract still "works." Admin functions execute successfully. It's just that *everyone* is an admin.
+
+## Lessons from the $220M Cetus Exploit
+
+In May 2025, Cetus Protocol lost $223 million despite five professional security audits. The vulnerability wasn't in the `drop` ability handling: it was in a math library dependency. But the incident teaches crucial lessons:
+
+**Audits check ability annotations carefully, but dependencies get skimmed.** The Cetus contracts themselves had correct ability usage. The bug was in `inter_mate`, a widely-used open-source library. Auditors assumed "everyone uses this, it must be safe."
+
+**Type safety doesn't prevent logic bugs.** Move's abilities prevent entire vulnerability classes (reentrancy, accidental asset loss, type confusion). But they don't catch off-by-one errors, integer overflows in calculations, or incorrect business logic. The Cetus bug was an incorrect bit-shift validation: no type system catches that.
+
+**Defense in depth remains essential.** Cetus had circuit breakers that paused the protocol. Sui validators froze attacker addresses, recovering $162M. Without these layers, the loss would have been total.
+
+For developers: **audit your dependencies with the same rigor as your own code.** That innocuous math helper you imported? It needs review. The oracle library everyone uses? Verify it. The type system saves you from entire vulnerability classes, but you're still responsible for correctness.
+
+## Testing Your Drop Ability Usage
+
+The best test for hot potato correctness is attempting to write broken code:
+
+```move
+#[test]
+#[expected_failure]
+public fun test_cannot_drop_receipt() {
+    let receipt = create_flash_loan_receipt();
+    // Intentionally don't consume it
+    // If this compiles, your hot potato is broken
+}
+```
+
+If that test compiles, you have a problem. Add `#[expected_failure]` to assert that letting receipts go out of scope *should* fail.
+
+For testing destruction:
+
+```move
+#[test]
+public fun test_proper_cleanup() {
+    let receipt = create_flash_loan_receipt();
+    let Receipt { pool_id: _, amount: _ } = receipt;  // Explicit destruction
+    // Receipt is properly consumed
+}
+```
+
+In test code, you can use `test_utils::destroy<T>()` to clean up non-droppable types without implementing full destruction logic. But this should *never* appear in production code: flag any non-test usage in audits.
+
+## Conclusion
+
+Move's `drop` ability represents a genuine advancement in smart contract security. The ability to create types that cannot be ignored at compile-time enables security patterns that other languages can only dream of achieving. Flash loans that can't be stolen, receipts that must be honored, and resources that never accidentally disappear: these are real improvements.
+
+But the type system is a tool, not a magic wand. Adding `drop` to a hot potato doesn't generate a compiler error with a helpful message saying "you just broke your flash loans." It silently allows code that shouldn't compile to compile. Mixing abilities incorrectly doesn't trigger warnings: it creates vulnerabilities. Forgetting phantom types passes type checking but enables economic exploits.
+
+For auditors: **check ability annotations first, before reading any implementation logic.** A token with `copy` and `drop` isn't a minor issue: it's a critical vulnerability. A hot potato with any abilities is a fundamental security flaw. The abilities are not metadata; they're the primary security mechanism.
+
+For developers: treat ability annotations as security-critical code, not boilerplate. When you type `has drop`, ask "should this value really be ignorable?" When you omit `drop`, verify you've provided destruction mechanisms. When you use generics, add phantom types to prevent substitution attacks.
+
+The future of smart contract security is type systems that prevent vulnerabilities at compile time rather than detecting them at audit time. Move is leading this charge. But even the best type system can't save us from ourselves: we still have to use it correctly.
+
+---
+
+*Want to learn more about building secure Sui contracts? Check out the official Move documentation and security best practices. Found this helpful? We can help secure your protocol - [reach out here](https://t.me/mirageaudits).*
