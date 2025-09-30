@@ -59,12 +59,12 @@ export default function Hero() {
 
                 {/* Mobile: Image First, Desktop: Right side */}
                 <div className="w-full md:w-2/5 flex items-center justify-center order-1 md:order-2 mb-8 md:mb-0 md:mt-8 lg:mt-4">
-                  <div className="relative w-48 md:w-64 lg:w-80 xl:w-96 max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl">
+                  <div className="relative w-64 md:w-80 lg:w-96 xl:w-[500px] max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
                     <Image
                       src="/hero3d.png"
                       alt="Mirage Audits Security Infrastructure"
-                      width={600}
-                      height={600}
+                      width={800}
+                      height={800}
                       className="w-full h-auto object-contain filter drop-shadow-2xl brightness-105 contrast-110 saturate-155"
                       priority
                     />
