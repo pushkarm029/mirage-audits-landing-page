@@ -55,7 +55,7 @@ export default function CaseStudies() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Case Studies
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
             Real-world security successes across Web3 ecosystems. From DeFi protocols to gaming platforms,
             see how we've helped secure the future of blockchain technology.
           </p>
@@ -85,12 +85,12 @@ export default function CaseStudies() {
               >
 
                 {/* Case Study Image */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
+                <div className="relative h-36 sm:h-40 md:h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
                   <div className="absolute inset-0 bg-black/50"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <span className="text-2xl font-bold text-white">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 mx-auto">
+                        <span className="text-sm sm:text-lg md:text-2xl font-bold text-white">
                           {caseStudy.blockchain?.slice(0, 2).toUpperCase() || 'CS'}
                         </span>
                       </div>
@@ -109,12 +109,12 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Case Study Content */}
-                <div className="p-6">
+                <div className="p-4 sm:p-5 md:p-6">
 
                   {/* Client Name */}
                   <div className="flex items-center mb-3">
-                    <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-xs font-bold text-white">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-white/10 rounded-full flex items-center justify-center mr-2 sm:mr-3">
+                      <span className="text-xs sm:text-xs md:text-xs font-bold text-white">
                         {caseStudy.client.slice(0, 2).toUpperCase()}
                       </span>
                     </div>
@@ -124,12 +124,12 @@ export default function CaseStudies() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors">
+                  <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 group-hover:text-blue-200 transition-colors">
                     {caseStudy.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-white/70 text-sm mb-4 line-clamp-3">
+                  <p className="text-white/70 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
                     {caseStudy.description}
                   </p>
 

@@ -109,7 +109,7 @@ const Navbar = () => {
               target="_blank" 
               rel="noopener noreferrer" 
               onClick={handleCTAClick}
-              className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-xs md:text-sm px-3 md:px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
+              className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm px-6 h-12 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200"
             >
               Book An Audit
               <svg 
@@ -145,7 +145,7 @@ const Navbar = () => {
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
                   <a href="https://github.com/MirageAudits#contacts-and-profiles" target="_blank" rel="noopener noreferrer" onClick={() => {handleNavClick('Portfolio'); setMenuOpen(false);}}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
+                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px] text-sm py-2">
                       Portfolio
                     </p>
                   </a>
@@ -155,7 +155,7 @@ const Navbar = () => {
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
                   <a href="/case-studies" onClick={() => {handleNavClick('Case Studies'); setMenuOpen(false);}}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
+                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px] text-sm py-2">
                       Case Studies
                     </p>
                   </a>
@@ -165,7 +165,7 @@ const Navbar = () => {
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
                   <a href="/blog" onClick={() => {handleNavClick('Blog'); setMenuOpen(false);}}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
+                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px] text-sm py-2">
                       Blog
                     </p>
                   </a>
@@ -175,7 +175,7 @@ const Navbar = () => {
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
                   <a href="/careers" onClick={() => {handleNavClick('Careers'); setMenuOpen(false);}}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
+                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px] text-sm py-2">
                       Careers
                     </p>
                   </a>
@@ -185,21 +185,27 @@ const Navbar = () => {
               <li className="flex justify-between">
                 <div className="flex flex-col w-full">
                   <a href="/damn-vulnerable-solana" onClick={() => setMenuOpen(false)}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
+                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px] text-sm py-2">
                       Damn Vulnerable Solana
                     </p>
                   </a>
                 </div>
               </li> */}
               
-              <li className="flex justify-between">
-                <div className="flex flex-col w-full">
-                  <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={() => {handleCTAClick(); setMenuOpen(false);}}>
-                    <p className="font-inter cursor-pointer text-white transition ease-in-out uppercase font-light tracking-[0.7px]">
-                      Book An Audit
-                    </p>
-                  </a>
-                </div>
+              <li className="flex justify-center mt-4">
+                <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={() => {handleCTAClick(); setMenuOpen(false);}}>
+                  <button className="inline-flex items-center gap-2 font-semibold text-sm px-6 h-12 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200">
+                    Book An Audit
+                    <svg 
+                      className="w-4 h-4" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </a>
               </li>
               
             </ul>

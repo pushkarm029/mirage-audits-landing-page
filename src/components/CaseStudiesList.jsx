@@ -83,7 +83,7 @@ export default function CaseStudiesList() {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Case Studies
           </h1>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
             Real-world security successes across Web3 ecosystems. From DeFi protocols to gaming platforms, 
             see how we've helped secure the future of blockchain technology.
           </p>

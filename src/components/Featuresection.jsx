@@ -59,7 +59,7 @@ const FeatureSection = () => {
               Building a Project? Avoid These{" "}
               <span className="text-red-400">Security Mistakes</span>
             </h2>
-            <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
+            <p className="font-inter text-sm sm:text-base md:text-lg text-white/70">
               Don&apos;t let expensive, slow audits derail your development timeline
             </p>
           </div>
@@ -94,7 +94,7 @@ const FeatureSection = () => {
             Security Process for{" "}
             <span className="text-blue-200">Building Projects</span>
           </h2>
-          <p className="font-inter text-base sm:text-lg md:text-xl text-white/70">
+          <p className="font-inter text-sm sm:text-base md:text-lg text-white/70">
             Integrate security into your development workflow—no delays, no surprises
           </p>
         </div>
@@ -167,7 +167,7 @@ const FeatureSection = () => {
         
         <div className="mb-6 sm:mb-8">
           <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
-            <button className="relative h-11 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300 mx-auto">
+            <button className="relative h-12 px-6 text-sm font-semibold bg-white text-black rounded-md border border-white/20 shadow-lg flex items-center gap-2 transition-all duration-300 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 animate-scan"></div>
               <span className="relative z-10">Book Security Audit</span>
               <svg

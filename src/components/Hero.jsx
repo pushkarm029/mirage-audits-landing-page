@@ -57,33 +57,49 @@ export default function Hero() {
             <div className="flex md:h-590px">
               <div className="flex md:flex-row md:h-fit md:w-full flex-col items-center md:items-start">
 
-                {/* Left content section */}
-                <div className="w-full h-fit max-w-[970px] md:w-3/5 md:my-[93px]">
+                {/* Mobile: Image First, Desktop: Right side */}
+                <div className="w-full md:w-2/5 flex items-center justify-end order-1 md:order-2 mb-8 md:mb-0 md:mt-8 lg:mt-4">
+                  <div className="relative w-48 md:w-64 lg:w-80 xl:w-96 max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl">
+                    <Image
+                      src="/hero3d.png"
+                      alt="Mirage Audits Security Infrastructure"
+                      width={600}
+                      height={600}
+                      className="w-full h-auto object-contain filter drop-shadow-2xl brightness-105 contrast-110 saturate-155"
+                      priority
+                    />
+                    {/* Enhanced glow effect for security vibe */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg blur-2xl -z-10"></div>
+                  </div>
+                </div>
+
+                {/* Mobile: Content After Image, Desktop: Left side */}
+                <div className="w-full h-fit max-w-[970px] md:w-3/5 md:my-[93px] order-2 md:order-1 text-right md:text-left">
 
                   {/* Header with main headline */}
                   <header className="flex flex-col text-blue-400 mt-[6px] md:mt-[22px] mb-[10px] lg:mb-[26px] md:max-w-[970px]">
-                    <div className="flex gap-[25px] mt-2">
-                      <h1 className="my-auto uppercase text-xl leading-tight tracking-[1.5px] text-white md:text-4xl lg:text-5xl xl:text-6xl font-bold">
+                    <div className="flex gap-[25px] mt-2 justify-end md:justify-start">
+                      <h1 className="my-auto uppercase text-2xl leading-tight tracking-[1.5px] text-white md:text-4xl lg:text-5xl xl:text-6xl font-bold text-right md:text-left">
                         <span>Elite Security Infrastructure for Next-Gen Chains</span>
                       </h1>
                     </div>
                   </header>
 
                   {/* Description paragraph */}
-                  <p className="text-white/60 text-sm leading-snug font-normal tracking-normal pr-3 md:max-w-[720px] mb-6">
+                  <p className="text-white/60 text-sm leading-snug font-normal tracking-normal md:pr-3 md:max-w-[720px] mb-6 text-right md:text-left">
                     Mirage Audits is a trusted partner in securing the future of blockchain. Our team of experienced auditors specializes in next-generation chains, delivering rigorous smart contract audits backed by deep technical expertise. With a proven track record across leading Web3 ecosystems, we provide the security assurance needed to build with confidence.
                   </p>
 
-                  {/* Blockchain logos - Simple placement */}
-                  <div className="flex items-center gap-6 md:gap-8 mb-10">
+                  {/* Blockchain logos - Right aligned on mobile */}
+                  <div className="flex items-center justify-end md:justify-start gap-4 md:gap-6 mb-8">
                     <div className="group relative">
-                      <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full transition-transform duration-300 group-hover:scale-110">
+                      <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-white rounded-full transition-transform duration-300 group-hover:scale-110">
                         <Image
                           src="/near.png"
                           alt="NEAR Protocol"
                           width={80}
                           height={40}
-                          className="h-6 w-auto"
+                          className="h-4 md:h-6 w-auto"
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -91,13 +107,13 @@ export default function Hero() {
                       </div>
                     </div>
                     <div className="group relative">
-                      <div className="flex items-center justify-center w-10 h-10 bg-orange-300 rounded-full transition-transform duration-300 group-hover:scale-110">
+                      <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-orange-300 rounded-full transition-transform duration-300 group-hover:scale-110">
                         <Image
                           src="/rust.png"
                           alt="Rust"
                           width={80}
                           height={40}
-                          className="h-8 w-auto"
+                          className="h-6 md:h-8 w-auto"
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -110,44 +126,32 @@ export default function Hero() {
                         alt="Solana"
                         width={60}
                         height={30}
-                        className="h-8 w-auto transition-transform duration-300 group-hover:scale-110"
+                        className="h-6 md:h-8 w-auto transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="text-blue-300 text-xs whitespace-nowrap">Solana</span>
                       </div>
                     </div>
-                    {/* <div className="group relative">
-                      <Image
-                        src="/starknet.png"
-                        alt="Starknet"
-                        width={80}
-                        height={40}
-                        className="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-blue-300 text-xs whitespace-nowrap">Starknet</span>
-                      </div>
-                    </div> */}
                     <div className="group relative">
                       <Image
                         src="/sui.png"
                         alt="Sui"
                         width={80}
                         height={40}
-                        className="h-9 w-auto transition-transform duration-300 group-hover:scale-110"
+                        className="h-7 md:h-9 w-auto transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="text-blue-300 text-xs whitespace-nowrap">Sui</span>
                       </div>
                     </div>
                     <div className="group relative">
-                      <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full transition-transform duration-300 group-hover:scale-110">
+                      <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-white rounded-full transition-transform duration-300 group-hover:scale-110">
                         <Image
                           src="/xlm.png"
                           alt="Stellar"
                           width={80}
                           height={40}
-                          className="h-7 w-auto"
+                          className="h-5 md:h-7 w-auto"
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -156,10 +160,10 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Call-to-action button */}
-                  <div className="flex justify-start gap-6">
+                  {/* Call-to-action button - Right aligned on mobile */}
+                  <div className="flex justify-end md:justify-start gap-6">
                     <a href="https://t.me/mirageaudits" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick}>
-                      <button type="button" className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-xs md:text-sm px-3 md:px-4 h-10 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200">
+                      <button type="button" className="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm md:text-sm px-4 md:px-4 h-12 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:border-blue-700 rounded-full transition-colors duration-200">
                         Book An Audit
                         <svg
                           className="w-4 h-4"
@@ -171,21 +175,6 @@ export default function Hero() {
                         </svg>
                       </button>
                     </a>
-                  </div>
-                </div>
-                {/* Right section - Hero 3D Image */}
-                <div className="w-full md:w-2/5 flex items-center justify-center md:justify-end mt-8 md:mt-8 lg:mt-4">
-                  <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-                    <Image
-                      src="/hero3d.png"
-                      alt="Mirage Audits Security Infrastructure"
-                      width={600}
-                      height={600}
-                      className="w-full h-auto object-contain filter drop-shadow-2xl brightness-105 contrast-110 saturate-155"
-                      priority
-                    />
-                    {/* Enhanced glow effect for security vibe */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg blur-2xl -z-10"></div>
                   </div>
                 </div>
 

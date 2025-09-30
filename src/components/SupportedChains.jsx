@@ -85,7 +85,7 @@ export function SupportedChains() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Securing the Multi-Chain Future
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-3xl mx-auto">
             <strong>We audit across the entire Web3 ecosystem:</strong>
           </p>
         </div>
