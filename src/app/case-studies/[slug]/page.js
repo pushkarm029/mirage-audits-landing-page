@@ -104,7 +104,7 @@ export default async function CaseStudyPost({ params }) {
       <div
         className="absolute inset-0 bg-black"
         style={{
-          backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
+          backgroundImage: 'url(/images/backgrounds/noise-bg.webp)',
           backgroundRepeat: 'repeat'
         }}
       ></div>

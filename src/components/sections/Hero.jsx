@@ -35,7 +35,7 @@ export default function Hero() {
                 <div className="w-full md:w-2/5 flex items-center justify-center order-1 md:order-2 mb-8 md:mb-0 md:mt-8 lg:mt-4">
                   <div className="relative w-64 md:w-80 lg:w-96 xl:w-[500px] max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
                     <Image
-                      src="/images/hero/hero3d.png"
+                      src="/images/hero/hero3d.webp"
                       alt="Mirage Audits Security Infrastructure"
                       width={800}
                       height={800}
@@ -69,11 +69,12 @@ export default function Hero() {
                     <div className="group relative">
                       <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-white rounded-full transition-transform duration-300 group-hover:scale-110">
                         <Image
-                          src="/images/logos/near.png"
+                          src="/images/logos/near.webp"
                           alt="NEAR Protocol"
                           width={80}
                           height={40}
                           className="h-4 md:h-6 w-auto"
+                          loading="eager"
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -83,11 +84,12 @@ export default function Hero() {
                     <div className="group relative">
                       <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-orange-300 rounded-full transition-transform duration-300 group-hover:scale-110">
                         <Image
-                          src="/images/logos/rust.png"
+                          src="/images/logos/rust.webp"
                           alt="Rust"
                           width={80}
                           height={40}
                           className="h-6 md:h-8 w-auto"
+                          loading="eager"
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -96,11 +98,12 @@ export default function Hero() {
                     </div>
                     <div className="group relative">
                       <Image
-                        src="/images/logos/solana.png"
+                        src="/images/logos/solana.webp"
                         alt="Solana"
                         width={60}
                         height={30}
                         className="h-6 md:h-8 w-auto transition-transform duration-300 group-hover:scale-110"
+                        loading="eager"
                       />
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="text-blue-300 text-xs whitespace-nowrap">Solana</span>
@@ -108,11 +111,12 @@ export default function Hero() {
                     </div>
                     <div className="group relative">
                       <Image
-                        src="/images/logos/sui.png"
+                        src="/images/logos/sui.webp"
                         alt="Sui"
                         width={80}
                         height={40}
                         className="h-7 md:h-9 w-auto transition-transform duration-300 group-hover:scale-110"
+                        loading="eager"
                       />
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="text-blue-300 text-xs whitespace-nowrap">Sui</span>
@@ -121,11 +125,12 @@ export default function Hero() {
                     <div className="group relative">
                       <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-white rounded-full transition-transform duration-300 group-hover:scale-110">
                         <Image
-                          src="/images/logos/xlm.png"
+                          src="/images/logos/xlm.webp"
                           alt="Stellar"
                           width={80}
                           height={40}
                           className="h-5 md:h-7 w-auto"
+                          loading="eager"
                         />
                       </div>
                       <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

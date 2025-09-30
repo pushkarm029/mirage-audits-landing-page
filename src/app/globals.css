@@ -20,7 +20,7 @@ body::before {
 
 /* Hero Background */
 .hero-bg {
-  background-image: url('/images/hero/hero-bg.png');
+  background-image: url('/images/hero/hero-bg.webp');
 }
 
 /* Hero Content Animation */

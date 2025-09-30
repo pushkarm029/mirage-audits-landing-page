@@ -143,7 +143,7 @@ export default async function BlogPost({ params }) {
       <div
         className="absolute inset-0 bg-black"
         style={{
-          backgroundImage: 'url(/images/backgrounds/noise-bg.png)',
+          backgroundImage: 'url(/images/backgrounds/noise-bg.webp)',
           backgroundRepeat: 'repeat'
         }}
       ></div>
@@ -186,9 +186,11 @@ export default async function BlogPost({ params }) {
           
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
-              <img
-                src="/images/pushkar-author.jpg"
+              <Image
+                src="/images/pushkar-author.webp"
                 alt={meta.author}
+                width={48}
+                height={48}
                 className="w-full h-full object-cover"
               />
             </div>

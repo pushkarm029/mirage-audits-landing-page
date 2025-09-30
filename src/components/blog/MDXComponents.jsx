@@ -185,7 +185,7 @@ const MDXComponents = {
 
   // Images
   img: (props) => (
-    <img 
+    <Image 
       className="rounded-lg mb-4 max-w-full h-auto" 
       {...props} 
     />

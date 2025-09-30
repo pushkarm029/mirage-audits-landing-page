@@ -144,7 +144,7 @@ export default function TrustedBySection() {
             <div className="flex shrink-0 gap-3 md:gap-10 w-full mx-auto flex-wrap justify-center max-w-[1260px]">
               {featuredMedia.map((media, index) => (
                 <div key={index} className="m-auto px-2 mx-0">
-                  <img 
+                  <Image 
                     alt={media.name}
                     loading="lazy"
                     width="0"
