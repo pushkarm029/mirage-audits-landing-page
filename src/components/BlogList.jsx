@@ -166,6 +166,18 @@ export default function BlogList() {
                   onClick={() => handlePostClick(post)}
                   className="group bg-white/5 rounded-lg border border-white/10 overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer block"
                 >
+                  {/* Thumbnail Image */}
+                  {post.image && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                  )}
+
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">
@@ -175,15 +187,15 @@ export default function BlogList() {
                         {post.category}
                       </span>
                     </div>
-                    
+
                     <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    
+
                     <p className="text-white/70 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
-                    
+
                     <div className="flex items-center justify-between text-xs text-white/60">
                       <span className="font-inter">{post.author}</span>
                       <span className="font-inter">{post.readingTime}</span>
@@ -231,6 +243,18 @@ export default function BlogList() {
                   onClick={() => handlePostClick(post)}
                   className="group bg-white/5 rounded-lg border border-white/10 overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer block"
                 >
+                  {/* Thumbnail Image */}
+                  {post.image && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                  )}
+
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="px-3 py-1 bg-white/10 text-white/70 rounded-full text-xs">
@@ -240,15 +264,15 @@ export default function BlogList() {
                         {post.date}
                       </span>
                     </div>
-                    
+
                     <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    
+
                     <p className="text-white/70 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
-                    
+
                     <div className="flex items-center justify-between text-xs text-white/60">
                       <span className="font-inter">{post.author}</span>
                       <span className="font-inter">{post.readingTime}</span>
