@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { usePostHog } from 'posthog-js/react';
-import { Mail, Github, MessageCircle } from 'lucide-react';
+import { Mail, Github, MessageCircle, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const posthog = usePostHog();
@@ -75,6 +75,15 @@ export default function Footer() {
                   onClick={() => handleSocialClick('telegram')}
                 >
                   <MessageCircle className="w-5 h-5" fill="currentColor" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/mirageaudits"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transition-colors"
+                  onClick={() => handleSocialClick('linkedin')}
+                >
+                  <Linkedin className="w-5 h-5" />
                 </a>
                 <a
                   href="https://twitter.com/mirageaudits"
