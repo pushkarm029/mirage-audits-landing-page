@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import WeveSecuredSection from "@/components/sections/WeveSecuredSection";
 import TrustedBySection from "@/components/sections/TrustedBySection";
 import CredibilitySection from "@/components/sections/CredibilitySection";
 import PricingSection from "@/components/sections/PricingSection";
@@ -19,6 +20,7 @@ export default function Home() {
       </header>
       <main>
         <Hero />
+        <WeveSecuredSection />
         {/* <TrustedBySection /> */}
         {/* <CredibilitySection />
         <PricingSection />

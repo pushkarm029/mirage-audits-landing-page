@@ -45,7 +45,7 @@ export default function BlogSection() {
 
         {/* Section Header - Halborn style */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="font-inter text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-inter text-3xl md:text-4xl font-bold mb-4">
             <span className="text-blue-400">Blockchain Security</span> Insights
           </h2>
           <p className="font-inter text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
