@@ -26,7 +26,7 @@ export default function WeveSecuredSection() {
             We've <span className="text-blue-400">Secured</span>
           </h2>
           <p className="text-base md:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed">
-            Former blockchain developers turned elite security researchers, we're the rare breed who've built the systems we now protect. Specializing in Rust and next-gen protocols, we bring builder's insight to breaking, and making us the trusted choice for teams pushing the boundaries of what's possible on-chain.
+            Trusted by protocols pushing the boundaries of decentralized innovation. Our track record speaks for itself: from DeFi powerhouses to emerging DePIN networks, we deliver security that scales with ambition.
           </p>
         </div>
 
