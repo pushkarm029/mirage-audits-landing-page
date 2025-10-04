@@ -341,9 +341,9 @@ This mistake is particularly insidious because the contract still "works." Admin
 
 ## Lessons from the $220M Cetus Exploit
 
-In May 2025, Cetus Protocol lost $223 million despite five professional security audits. The vulnerability wasn't in the `drop` ability handling: it was in a math library dependency. But the incident teaches crucial lessons:
+In May 2025, Cetus Protocol lost $223 million despite three professional security audits from OtterSec, MoveBit, and Zellic. The vulnerability wasn't in the `drop` ability handling: it was in a math library dependency. But the incident teaches crucial lessons:
 
-**Audits check ability annotations carefully, but dependencies get skimmed.** The Cetus contracts themselves had correct ability usage. The bug was in `inter_mate`, a widely-used open-source library. Auditors assumed "everyone uses this, it must be safe."
+**Audits check ability annotations carefully, but dependencies get skimmed.** The Cetus contracts themselves had correct ability usage. The bug was in `integer-mate`, a widely-used open-source library. Auditors assumed "everyone uses this, it must be safe."
 
 **Type safety doesn't prevent logic bugs.** Move's abilities prevent entire vulnerability classes (reentrancy, accidental asset loss, type confusion). But they don't catch off-by-one errors, integer overflows in calculations, or incorrect business logic. The Cetus bug was an incorrect bit-shift validation: no type system catches that.
 
