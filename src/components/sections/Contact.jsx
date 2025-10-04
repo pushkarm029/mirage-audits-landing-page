@@ -123,8 +123,8 @@ export default function Contact() {
             Get Your <span className="text-blue-400">Security Audit</span>
           </h2>
           <p className="text-base text-white/70 max-w-2xl mx-auto">
-            Ready to secure your Web3 project? Our expert team provides fast, 
-            affordable audits for Solana, Sui, Cardano, and Layer 2 protocols.
+            Ready to secure your Web3 project? Our expert team provides fast,
+            affordable audits for NEAR, Rust, Solana, Sui, and Stellar.
           </p>
         </div>
 
